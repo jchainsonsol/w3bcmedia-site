@@ -178,3 +178,265 @@ footer{padding:28px 0;background:#030405;border-top:1px solid #151c22}.footer-gr
 .media-sales .btn.primary{background:#00d7ff;color:#001015}.media-sales .btn.secondary{border:1px solid #263944;color:#dce5ea;background:#0a0f13}
 @media(max-width:960px){.offer-grid{grid-template-columns:repeat(2,1fr)}.sales-head{grid-template-columns:1fr;gap:18px}.custom-services{grid-template-columns:1fr}.service-chips{justify-content:flex-start}}
 @media(max-width:600px){.media-sales{padding:68px 0}.offer-grid{grid-template-columns:1fr}.offer-card{min-height:0}.sales-actions{flex-direction:column}.media-sales .btn{width:100%}}
+
+
+/* JChains Commercial Section */
+.jchains-commercial{
+  background:
+    radial-gradient(circle at 82% 18%,rgba(255,36,168,.08),transparent 30%),
+    radial-gradient(circle at 12% 10%,rgba(16,217,255,.06),transparent 28%),
+    #050607;
+  border-top:1px solid #111b22;
+  border-bottom:1px solid #111b22;
+}
+.jchains-hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:52px;
+  align-items:center;
+}
+.jchains-copy h2{
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:clamp(54px,6vw,92px);
+  line-height:.88;
+  letter-spacing:-.03em;
+  text-transform:uppercase;
+  margin:16px 0 20px;
+}
+.jchains-copy h2 em{
+  font-style:normal;
+  color:var(--cyan);
+}
+.jchains-lead{
+  max-width:660px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.7;
+}
+.jchains-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:24px;
+}
+.jchains-tags span{
+  border:1px solid #26343d;
+  border-radius:999px;
+  padding:7px 10px;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.09em;
+  color:#b9c3ca;
+}
+.jchains-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:26px;
+}
+.jchains-main-image{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid #24313b;
+  min-height:590px;
+  background:#090c10;
+}
+.jchains-main-image img{
+  width:100%;
+  height:100%;
+  position:absolute;
+  inset:0;
+  object-fit:cover;
+}
+.jchains-main-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 42%);
+}
+.jchains-image-badge{
+  position:absolute;
+  z-index:2;
+  right:18px;
+  bottom:18px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(4,6,8,.72);
+  backdrop-filter:blur(12px);
+  border-radius:12px;
+  padding:12px 14px;
+  text-align:right;
+}
+.jchains-image-badge span{
+  display:block;
+  color:var(--pink);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.jchains-image-badge strong{
+  display:block;
+  margin-top:3px;
+  font-family:"Barlow Condensed";
+  font-size:18px;
+  letter-spacing:.06em;
+}
+.jchains-offers{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:44px;
+}
+.jchains-offer{
+  min-height:285px;
+  padding:24px;
+  border:1px solid #1b2730;
+  border-radius:16px;
+  background:linear-gradient(180deg,#0c1116,#080b0f);
+  display:flex;
+  flex-direction:column;
+  transition:.2s;
+}
+.jchains-offer:hover{
+  transform:translateY(-5px);
+  border-color:#33515f;
+}
+.offer-kicker{
+  color:var(--pink);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.jchains-offer h3{
+  font-family:"Barlow Condensed";
+  font-size:27px;
+  line-height:1;
+  margin:26px 0 12px;
+}
+.jchains-offer p{
+  color:#929fa9;
+  font-size:13px;
+  line-height:1.6;
+  margin:0 0 20px;
+}
+.jchains-offer a{
+  margin-top:auto;
+  color:var(--cyan);
+  font-family:"Barlow Condensed";
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.07em;
+}
+.jchains-proof{
+  margin-top:56px;
+  padding-top:34px;
+  border-top:1px solid #1a252d;
+}
+.jchains-proof-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:18px;
+}
+.jchains-proof-head span{
+  font-family:"Barlow Condensed";
+  font-size:23px;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+.jchains-proof-head p{
+  margin:0;
+  color:#7f8b95;
+  font-size:12px;
+}
+.jchains-gallery{
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;
+  gap:10px;
+}
+.jchains-gallery figure{
+  position:relative;
+  height:250px;
+  margin:0;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #1b2730;
+}
+.jchains-gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.jchains-gallery figure:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.75),transparent 55%);
+}
+.jchains-gallery figcaption{
+  position:absolute;
+  z-index:2;
+  left:12px;
+  bottom:11px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.06em;
+  color:#fff;
+}
+.jchains-simple{
+  margin-top:18px;
+  padding:22px;
+  border:1px solid #23323b;
+  border-radius:16px;
+  background:linear-gradient(90deg,rgba(16,217,255,.05),rgba(255,36,168,.04));
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+.jchains-simple strong{
+  font-size:14px;
+  letter-spacing:.05em;
+}
+.jchains-simple p{
+  margin:6px 0 0;
+  color:#7f8c96;
+  font-size:12px;
+}
+.jchains-session{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.jchains-session div{
+  text-align:right;
+}
+.jchains-session small{
+  display:block;
+  color:#72808a;
+  font-size:8px;
+  font-weight:800;
+}
+.jchains-session strong{
+  display:block;
+  color:var(--cyan);
+  font-size:25px;
+  margin-top:2px;
+}
+@media(max-width:1020px){
+  .jchains-hero-grid{grid-template-columns:1fr}
+  .jchains-main-image{min-height:520px}
+  .jchains-offers{grid-template-columns:1fr 1fr}
+  .jchains-gallery{grid-template-columns:repeat(2,1fr)}
+  .jchains-gallery figure:first-child{grid-column:1/-1}
+}
+@media(max-width:680px){
+  .jchains-main-image{min-height:430px}
+  .jchains-offers{grid-template-columns:1fr}
+  .jchains-gallery{grid-template-columns:1fr 1fr}
+  .jchains-gallery figure{height:210px}
+  .jchains-gallery figure:first-child{grid-column:1/-1}
+  .jchains-simple{flex-direction:column;align-items:flex-start}
+  .jchains-session{width:100%;justify-content:space-between;align-items:center}
+}
