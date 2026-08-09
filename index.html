@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/better.css">
+  <link rel="stylesheet" href="css/bullpen.css">
 </head>
 <body>
   <header class="site-header">
@@ -453,6 +454,66 @@
   </div>
 </section>
 
+
+<section class="bullpen-commercial section" id="bullpen">
+  <div class="shell">
+    <div class="bullpen-hero">
+      <div class="bullpen-copy reveal">
+        <div class="eyebrow"><span></span> THE BULLPEN</div>
+        <h2>COMMUNITY.<br>CULTURE.<br><em>$JCHAINS.</em></h2>
+        <p>The Bullpen is the community side of the W3BC ecosystem — built around crypto, media, builders, trenchers, creators and the idea of getting 1% better every day.</p>
+
+        <div class="bullpen-actions">
+          <a class="btn btn-primary" href="https://t.me/JCHAINStheSilverBull" target="_blank" rel="noopener">Join Telegram</a>
+          <a class="btn btn-ghost" href="https://x.com/JCHAINSonSOL" target="_blank" rel="noopener">Follow $JCHAINS</a>
+        </div>
+      </div>
+
+      <div class="bullpen-stat-stack reveal">
+        <div class="bullpen-token-card">
+          <span class="token-label">COMMUNITY TOKEN</span>
+          <strong>$JCHAINS</strong>
+          <small>THE SILVER BULL</small>
+        </div>
+
+        <div class="bullpen-ca-card">
+          <span>CONTRACT ADDRESS</span>
+          <code id="jchainsCA">5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump</code>
+          <button type="button" id="copyCA">COPY CA</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bullpen-grid">
+      <article class="bullpen-card reveal">
+        <div class="bullpen-num">01</div>
+        <h3>JOIN THE COMMUNITY</h3>
+        <p>Daily conversation, live Spaces, project updates, community campaigns and a front-row seat to what W3BC is building.</p>
+        <a href="https://t.me/JCHAINStheSilverBull" target="_blank" rel="noopener">ENTER THE BULLPEN →</a>
+      </article>
+
+      <article class="bullpen-card reveal">
+        <div class="bullpen-num">02</div>
+        <h3>THE 1% CLUB</h3>
+        <p>Recognition for Silver Bulls who have reached the 1% threshold — now or at any point in the journey — with exclusive gear and member access.</p>
+        <a href="#better">EXPLORE THE 1% CLUB →</a>
+      </article>
+
+      <article class="bullpen-card reveal">
+        <div class="bullpen-num">03</div>
+        <h3>BUILD WITH US</h3>
+        <p>Creators, founders and communities can plug into media, collaborations, shows, activations and future ecosystem experiments.</p>
+        <a href="#work">LET'S BUILD →</a>
+      </article>
+    </div>
+
+    <div class="bullpen-disclaimer reveal">
+      <span>⚡</span>
+      <p>$JCHAINS is presented here as part of the W3BC community ecosystem. Nothing on this page is financial advice or a promise of returns.</p>
+    </div>
+  </div>
+</section>
+
 <section class="shop-preview section" id="shop">
       <div class="shell">
         <div class="section-heading reveal">
@@ -494,6 +555,26 @@
       </div>
     </div>
   </footer>
+
+  
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('copyCA');
+  const ca = document.getElementById('jchainsCA');
+  if (btn && ca) {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(ca.textContent.trim());
+        const old = btn.textContent;
+        btn.textContent = 'COPIED';
+        setTimeout(() => btn.textContent = old, 1400);
+      } catch (e) {
+        btn.textContent = 'SELECT + COPY';
+      }
+    });
+  }
+});
+</script>
 
   <script src="js/app.js"></script>
 </body>
