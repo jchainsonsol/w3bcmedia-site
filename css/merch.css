@@ -1,0 +1,307 @@
+
+/* W3BC Merch */
+.merch-commercial{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 88% 10%,rgba(255,36,168,.08),transparent 28%),
+    radial-gradient(circle at 12% 16%,rgba(16,217,255,.07),transparent 28%),
+    #050607;
+  border-top:1px solid #142029;
+  border-bottom:1px solid #142029;
+}
+.merch-head{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:48px;
+  align-items:end;
+}
+.merch-copy h2{
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:clamp(60px,7vw,102px);
+  line-height:.84;
+  text-transform:uppercase;
+  letter-spacing:-.035em;
+  margin:16px 0 20px;
+}
+.merch-copy h2 em{
+  color:var(--cyan);
+  font-style:normal;
+}
+.merch-copy p{
+  max-width:680px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.72;
+}
+.merch-note{
+  border:1px solid #20303a;
+  border-radius:18px;
+  padding:24px;
+  background:
+    linear-gradient(145deg,rgba(16,217,255,.05),rgba(255,36,168,.04)),
+    #090d11;
+}
+.merch-note-kicker{
+  color:var(--pink);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.15em;
+}
+.merch-note strong{
+  display:block;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:30px;
+  line-height:1;
+  margin:12px 0;
+}
+.merch-note p{
+  color:#8c99a3;
+  font-size:12px;
+  line-height:1.6;
+  margin:0;
+}
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:42px;
+}
+.product-card{
+  border:1px solid #1b2831;
+  border-radius:18px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#0c1217,#080c10);
+  transition:.2s;
+}
+.product-card:hover{
+  transform:translateY(-5px);
+  border-color:#35515f;
+}
+.product-visual{
+  min-height:310px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+  background:#090d11;
+}
+.cyan-glow:before,
+.pink-glow:before{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  filter:blur(90px);
+  opacity:.12;
+}
+.cyan-glow:before{background:var(--cyan)}
+.pink-glow:before{background:var(--pink)}
+.shirt-mock,
+.hat-mock,
+.hoodie-mock{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  border:1px solid #2b3d47;
+  background:#10161b;
+  box-shadow:0 24px 60px rgba(0,0,0,.28);
+}
+.shirt-mock{
+  width:190px;
+  height:220px;
+  clip-path:polygon(23% 0,77% 0,100% 20%,84% 37%,78% 28%,78% 100%,22% 100%,22% 28%,16% 37%,0 20%);
+}
+.hat-mock{
+  width:190px;
+  height:110px;
+  border-radius:90px 90px 24px 24px;
+}
+.hoodie-mock{
+  width:190px;
+  height:230px;
+  clip-path:polygon(27% 0,73% 0,82% 11%,100% 25%,84% 42%,78% 31%,78% 100%,22% 100%,22% 31%,16% 42%,0 25%,18% 11%);
+}
+.shirt-mock span,
+.hat-mock span,
+.hoodie-mock span{
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:50px;
+  font-weight:900;
+  line-height:.8;
+  color:var(--cyan);
+}
+.hat-mock span{font-size:42px}
+.hoodie-mock span{font-size:34px}
+.shirt-mock small,
+.hat-mock small,
+.hoodie-mock small{
+  margin-top:10px;
+  text-align:center;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.product-info{
+  padding:22px;
+}
+.product-type{
+  color:var(--pink);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.product-info h3{
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:30px;
+  line-height:1;
+  margin:10px 0 10px;
+}
+.product-info p{
+  color:#909da7;
+  font-size:13px;
+  line-height:1.62;
+  min-height:64px;
+}
+.product-bottom{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:12px;
+  margin:18px 0;
+  padding-top:14px;
+  border-top:1px solid #172128;
+}
+.product-bottom strong{
+  color:var(--cyan);
+  font-size:28px;
+}
+.product-bottom span{
+  color:#6f7d87;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.product-info a{
+  color:#fff;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+.club-merch{
+  margin-top:18px;
+  padding:34px;
+  border:1px solid #30424d;
+  border-radius:20px;
+  background:
+    linear-gradient(120deg,rgba(255,36,168,.06),rgba(16,217,255,.06)),
+    #080c10;
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:40px;
+  align-items:center;
+}
+.club-merch-kicker{
+  color:var(--pink);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.15em;
+}
+.club-merch-copy h3{
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:clamp(44px,5vw,72px);
+  line-height:.9;
+  margin:10px 0;
+}
+.club-merch-copy p{
+  color:#96a3ad;
+  font-size:14px;
+  line-height:1.68;
+  max-width:760px;
+}
+.club-merch-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:20px;
+}
+.club-merch-tags span{
+  border:1px solid #283943;
+  border-radius:999px;
+  padding:7px 9px;
+  color:#b4c0c7;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.club-merch-badge{
+  width:190px;
+  height:190px;
+  margin-left:auto;
+  border:1px solid var(--cyan);
+  border-radius:30px;
+  background:#070b0e;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 50px rgba(16,217,255,.07);
+}
+.club-merch-badge strong{
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:78px;
+  line-height:.75;
+  color:var(--cyan);
+}
+.club-merch-badge span{
+  margin-top:10px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.18em;
+}
+.club-merch-badge small{
+  margin-top:8px;
+  color:#71808a;
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.merch-bottom{
+  margin-top:18px;
+  border:1px solid #1f2c34;
+  border-radius:16px;
+  padding:22px 24px;
+  background:#080c10;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.merch-bottom strong{
+  font-size:13px;
+  letter-spacing:.05em;
+}
+.merch-bottom p{
+  margin:5px 0 0;
+  color:#7d8992;
+  font-size:11px;
+}
+@media(max-width:980px){
+  .merch-head{grid-template-columns:1fr}
+  .product-grid{grid-template-columns:1fr 1fr}
+  .product-card:last-child{grid-column:1/-1}
+  .club-merch{grid-template-columns:1fr}
+  .club-merch-badge{margin-left:0}
+}
+@media(max-width:640px){
+  .product-grid{grid-template-columns:1fr}
+  .product-card:last-child{grid-column:auto}
+  .merch-bottom{flex-direction:column;align-items:flex-start}
+  .merch-bottom .btn{width:100%}
+}
