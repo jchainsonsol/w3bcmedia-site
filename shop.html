@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop W3BC and 1% Better apparel with crypto-only checkout on Solana.">
+  <title>W3BC Shop | Crypto-Only Merch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/better.css">
+  <link rel="stylesheet" href="css/bullpen.css">
+  <link rel="stylesheet" href="css/network.css">
+  <link rel="stylesheet" href="css/merch.css">
+  <link rel="stylesheet" href="css/home-final.css">
+  <link rel="stylesheet" href="css/subpages.css">
+  <link rel="stylesheet" href="css/shop-page.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shell nav-wrap">
+    <a class="brand" href="index.html" aria-label="W3BC Media home">
+      <img src="assets/w3bc-logo-white.png" alt="W3BC Media">
+    </a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <a href="media.html">Media</a>
+      <a href="jchains.html">JChains</a>
+      <a href="network.html">Network</a>
+      <a href="better.html">1% Better</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a class="nav-cta" href="https://calendly.com/jchains/meeting" target="_blank" rel="noopener">Work With Us</a>
+    </nav>
+  </div>
+</header>
+<main class="subpage-main"><section class="shop-page-hero"><div class="shell shop-page-grid">
+<div class="shop-page-copy reveal"><div class="eyebrow"><span></span> W3BC SHOP</div><h1>WEAR THE<br><em>MINDSET.</em></h1><p>Crypto-only checkout. First drop: the 1% Better Tee. Hats and hoodies follow as we test what the community actually wants.</p><div class="crypto-badges"><span>SOLANA</span><span>USDC</span><span>CRYPTO ONLY</span></div></div>
+<div class="wallet-status reveal"><small>CHECKOUT WALLET</small><strong id="walletLabel">NOT CONNECTED</strong><button class="shop-btn primary" id="connectWallet">CONNECT WALLET</button><p id="walletHint">Connect Phantom on desktop or open this page inside Phantom on mobile. You approve every payment in your wallet.</p></div>
+</div></section>
+<section class="shop-products section"><div class="shell"><div class="shop-heading reveal"><div><div class="eyebrow"><span></span> FIRST DROP</div><h2>1% BETTER<br><em>EVERY DAY.</em></h2></div><p>Simple, wearable and intentionally priced to get the message out into the world.</p></div>
+<div class="real-product-grid"><article class="real-product reveal"><div class="real-product-art"><div class="tee-shape"><b>1%</b><span>BETTER<br>EVERY DAY</span></div></div><div class="real-product-info"><small>T-SHIRT / DROP 001</small><h3>1% BETTER TEE</h3><p>Black tee with a clean 1% Better Every Day front treatment.</p><div class="option-row"><label>SIZE<select id="teeSize"><option>S</option><option>M</option><option selected>L</option><option>XL</option><option>2XL</option><option>3XL</option></select></label><label>QTY<select id="teeQty"><option>1</option><option>2</option><option>3</option><option>4</option></select></label></div><div class="product-price"><strong>$25</strong><span>+ $5 SHIPPING / ORDER</span></div><button class="shop-btn primary" id="addTee">ADD TO CART</button></div></article>
+<article class="future-product reveal"><span>COMING NEXT</span><h3>1% BETTER CAP</h3><p>Minimal everyday hat. First production run coming after the tee launch.</p></article><article class="future-product reveal"><span>COMING NEXT</span><h3>W3BC HOODIE</h3><p>Limited-run hoodie blending W3BC and the 1% Better identity.</p></article></div></div></section>
+<section class="checkout-section section" id="checkout"><div class="shell checkout-layout"><div class="checkout-form reveal"><div class="eyebrow"><span></span> SHIPPING</div><h2>WHERE SHOULD WE SEND IT?</h2><div class="form-grid"><input id="shipName" placeholder="Full name"><input id="shipEmail" type="email" placeholder="Email"><input id="shipAddress" class="wide" placeholder="Street address"><input id="shipCity" placeholder="City"><input id="shipState" placeholder="State"><input id="shipZip" placeholder="ZIP code"><select id="shipCountry"><option>United States</option></select></div><p class="privacy-note">Shipping details stay in this browser in this prototype. Before launch, paid orders will be written to a private order backend — never the public GitHub repo.</p></div>
+<aside class="cart-panel reveal"><div class="cart-title"><span>CART</span><button id="clearCart">CLEAR</button></div><div id="cartItems" class="cart-items"><p>Your cart is empty.</p></div><div class="cart-lines"><div><span>Merch</span><b id="subtotal">$0.00</b></div><div><span>Shipping</span><b id="shipping">$0.00</b></div><div class="total"><span>Total</span><b id="total">$0.00</b></div></div><div class="payment-choice"><button class="pay-method active" data-method="USDC">USDC <small>SOLANA</small></button><button class="pay-method" disabled>SOL <small>V2</small></button><button class="pay-method" disabled>$JCHAINS <small>V2</small></button></div><button class="shop-btn primary" id="payCrypto" disabled>MERCHANT WALLET NOT SET</button><p class="checkout-note" id="checkoutNote">Wallet connection is ready. Payments stay locked until the W3BC merchant public address is configured.</p></aside></div></section>
+<section class="club-shop section"><div class="shell club-shop-inner reveal"><div><div class="eyebrow"><span></span> 1% CLUB</div><h2>MEMBER GEAR IS<br><em>NOT FOR SALE.</em></h2><p>Qualified members will receive a private claim code for their exclusive 1% Club order. Wallet-based qualification can be added after the standard checkout is proven.</p></div><div class="claim-box"><strong>1%</strong><span>CLUB</span><small>CLAIM FLOW COMING NEXT</small></div></div></section></main>
+
+<footer>
+  <div class="shell footer-grid">
+    <div class="footer-brand"><img src="assets/w3bc-logo-white.png" alt="W3BC Media"><p>1% Better Every Day.</p></div>
+    <div class="footer-copy"><span>© 2026 W3BC Media</span><a href="mailto:team@w3bcmedia.com">team@w3bcmedia.com</a></div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+<script src="https://unpkg.com/@solana/web3.js@1.98.4/lib/index.iife.min.js"></script>
+<script src="js/shop-config.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>
