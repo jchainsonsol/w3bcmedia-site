@@ -25,6 +25,18 @@
       <div class="controls"><button class="btn primary" id="startBtn">START</button><button class="btn" id="nextBtn">NEXT →</button><button class="btn" id="prevBtn">← BACK</button></div>
       <div class="quick"><button class="btn" id="minusBtn">− 1 MIN</button><button class="btn" id="plusBtn">+ 1 MIN</button><button class="btn warn" id="resetBtn">RESET</button></div>
     </section>
+
+    <section class="watch-card">
+      <div class="watch-head">
+        <div><div class="kicker">IPHONE + APPLE WATCH</div><h3>Station Alerts</h3></div>
+        <div id="alertStatus" class="badge">OFF</div>
+      </div>
+      <p id="alertHelp" class="watch-help">Get a notification at station changes, water breaks and the end of practice.</p>
+      <div class="watch-actions"><button class="btn primary" id="enableAlerts">ENABLE ALERTS</button><button class="btn" id="testAlert">TEST ALERT</button></div>
+      <label class="switchrow"><span><strong>30-second warning</strong><small>Get a heads-up before it is time to rotate.</small></span><input id="warn30" type="checkbox" checked></label>
+      <div id="watchNote" class="watch-note">For iPhone web notifications, add Coach Bot to your Home Screen first, then open it from the Home Screen and enable alerts.</div>
+    </section>
+
     <section class="section"><div class="sectitle"><h3>Up next</h3><span id="upNextTime"></span></div><div class="panel"><div class="step"><div class="time" id="upNextRange"></div><div><strong id="upNextTitle"></strong><small id="upNextDesc"></small></div><div class="mins">NEXT</div></div></div></section>
   </div>
 
