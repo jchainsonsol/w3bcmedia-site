@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="theme-color" content="#111111">
+<meta name="theme-color" content="#0b0d0d">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Coach Bot">
@@ -14,58 +14,106 @@
 </head>
 <body>
 <div class="app">
-  <div class="brand"><img alt="Hobgood Fireflies" src="assets/fireflies-logo.svg"><div class="brandbar"><strong>Coach Bot</strong><span>5U • 45-Minute Practice</span></div></div>
+  <header class="brand">
+    <img alt="Hobgood Fireflies" src="assets/fireflies-logo.svg">
+    <div class="brandbar"><strong>Coach Bot</strong><span>Hobgood Baseball • 5U Fireflies</span></div>
+  </header>
 
-  <div id="view-now" class="view active">
-    <div class="topline"><div><h1>Fireflies Practice</h1><p>2:00–2:45 PM • 10 players • 3 coaches</p></div><div class="badge"><i class="dot"></i><span id="statusText">READY</span></div></div>
-    <section class="hero">
-      <div class="metrics"><div class="metric"><label>Practice remaining</label><div id="overall" class="value">45:00</div></div><div class="metric"><label>Drill remaining</label><div id="segmentTime" class="value small">4:00</div></div></div>
-      <div class="progress"><i id="progressBar"></i></div>
-      <div class="now"><div class="nowhead"><div><div id="segmentLabel" class="kicker">Segment 1 of 7</div><h2 id="segmentTitle">Team Huddle + Safety</h2><div id="segmentRange" class="range">2:00–2:04</div></div><div id="roundBadge" class="badge" style="display:none">ROUND 1</div></div><ul id="cueList" class="cues"></ul></div>
-      <div class="controls"><button class="btn primary" id="startBtn">START</button><button class="btn" id="nextBtn">NEXT →</button><button class="btn" id="prevBtn">← BACK</button></div>
-      <div class="quick"><button class="btn" id="minusBtn">− 1 MIN</button><button class="btn" id="plusBtn">+ 1 MIN</button><button class="btn warn" id="resetBtn">RESET</button></div>
-    </section>
+  <main>
+    <div id="view-now" class="view active">
+      <section id="nextEventCard" class="event-hero">
+        <div><div class="kicker">NEXT TEAM EVENT</div><h1 id="nextEventTitle">Loading schedule…</h1><p id="nextEventMeta"></p></div>
+        <div class="event-right"><span id="nextEventType" class="badge">—</span><strong id="nextEventCountdown">—</strong></div>
+      </section>
 
-    <section class="watch-card">
-      <div class="watch-head">
-        <div><div class="kicker">IPHONE + APPLE WATCH</div><h3>Station Alerts</h3></div>
-        <div id="alertStatus" class="badge">OFF</div>
+      <div class="topline">
+        <div><h2 id="practiceTitle">Monday Practice</h2><p id="practiceMeta">5:30–6:15 PM • Field 8 • 10 players • 3 coaches</p></div>
+        <div class="badge"><i class="dot"></i><span id="statusText">READY</span></div>
       </div>
-      <p id="alertHelp" class="watch-help">Get a notification at station changes, water breaks and the end of practice.</p>
-      <div class="watch-actions"><button class="btn primary" id="enableAlerts">ENABLE ALERTS</button><button class="btn" id="testAlert">TEST ALERT</button></div>
-      <label class="switchrow"><span><strong>30-second warning</strong><small>Get a heads-up before it is time to rotate.</small></span><input id="warn30" type="checkbox" checked></label>
-      <div id="watchNote" class="watch-note">For iPhone web notifications, add Coach Bot to your Home Screen first, then open it from the Home Screen and enable alerts.</div>
-    </section>
 
-    <section class="section"><div class="sectitle"><h3>Up next</h3><span id="upNextTime"></span></div><div class="panel"><div class="step"><div class="time" id="upNextRange"></div><div><strong id="upNextTitle"></strong><small id="upNextDesc"></small></div><div class="mins">NEXT</div></div></div></section>
-  </div>
+      <section class="modebar">
+        <div><div class="kicker">PRACTICE MODE</div><strong id="modeTitle">Standard Practice</strong><small id="modeDesc">45 minutes • 7-minute station rounds</small></div>
+        <button class="mode-btn" id="heatModeBtn" type="button">🔥 HEAT MODE</button>
+      </section>
 
-  <div id="view-stations" class="view">
-    <div class="topline"><div><h1>Station Rotation</h1><p>Coaches stay put. Groups rotate every 7 minutes.</p></div><div class="badge"><span>3 × 7 MIN</span></div></div>
-    <div class="roundswitch"><button data-round="0" class="active">ROUND 1</button><button data-round="1">ROUND 2</button><button data-round="2">ROUND 3</button></div>
-    <div id="stationGrid" class="station-grid"></div>
-    <section class="section"><div class="sectitle"><h3>Station coaching cues</h3><span>Keep reps moving</span></div><div class="panel" id="stationCues"></div></section>
-  </div>
+      <section id="heatBanner" class="heat-banner" hidden>
+        <strong>🔥 Heat Mode Active</strong>
+        <span>Shorter 6-minute stations, mandatory shade/water breaks, no conditioning or prolonged running.</span>
+      </section>
 
-  <div id="view-roster" class="view">
-    <div class="topline"><div><h1>Roster + Coaches</h1><p>Saved only on this device — not in GitHub.</p></div><div class="badge"><span>LOCAL</span></div></div>
-    <div class="panel formpanel">
-      <div class="field"><label>Coach names</label><div class="roster-grid" style="grid-template-columns:1fr"><input id="coach0" placeholder="Head Coach"><input id="coach1" placeholder="Coach 2"><input id="coach2" placeholder="Coach 3"></div></div>
-      <div class="field"><label>Player roster — enter up to 10</label><div id="rosterInputs" class="roster-grid"></div></div>
-      <div class="savebar"><button class="btn primary" id="saveRoster">SAVE ROSTER</button><button class="btn" id="shuffleRoster">SHUFFLE GROUPS</button></div>
-      <div class="note">Player names are stored in your phone browser using local storage. The public GitHub source contains no child names.</div>
+      <section class="hero">
+        <div class="metrics">
+          <div class="metric"><label>Practice remaining</label><div id="overall" class="value">45:00</div></div>
+          <div class="metric"><label>Activity remaining</label><div id="segmentTime" class="value small">5:00</div></div>
+        </div>
+        <div class="progress"><i id="progressBar"></i></div>
+        <div class="now">
+          <div class="nowhead">
+            <div><div id="segmentLabel" class="kicker">Activity 1</div><h2 id="segmentTitle">Team Huddle + Safety</h2><div id="segmentRange" class="range">5:30–5:35</div></div>
+            <div id="roundBadge" class="badge" hidden>ROUND 1</div>
+          </div>
+          <ul id="cueList" class="cues"></ul>
+        </div>
+        <div class="controls"><button class="btn primary" id="startBtn">START</button><button class="btn" id="nextBtn">NEXT →</button><button class="btn" id="prevBtn">← BACK</button></div>
+        <div class="quick"><button class="btn" id="minusBtn">− 1 MIN</button><button class="btn" id="plusBtn">+ 1 MIN</button><button class="btn warn" id="resetBtn">RESET</button></div>
+      </section>
+
+      <section class="watch-card">
+        <div class="watch-head">
+          <div><div class="kicker">IPHONE + APPLE WATCH</div><h3>Station Alerts</h3></div>
+          <div id="alertStatus" class="badge">OFF</div>
+        </div>
+        <p id="alertHelp" class="watch-help">Alerts for 30 seconds remaining, station changes, water breaks and practice complete.</p>
+        <div class="watch-actions"><button class="btn primary" id="enableAlerts">ENABLE ALERTS</button><button class="btn" id="testAlert">TEST ALERT</button></div>
+        <label class="switchrow"><span><strong>30-second warning</strong><small>Heads-up before the next activity.</small></span><input id="warn30" type="checkbox" checked></label>
+        <div id="watchNote" class="watch-note">Add Coach Bot to your iPhone Home Screen before enabling notifications. Live timer alerts work while Coach Bot is active; fully reliable locked-screen delivery will require the push backend we are preparing for.</div>
+      </section>
+
+      <section class="section"><div class="sectitle"><h3>Up next</h3><span id="upNextTime"></span></div><div class="panel"><div class="step"><div class="time" id="upNextRange"></div><div><strong id="upNextTitle"></strong><small id="upNextDesc"></small></div><div class="mins">NEXT</div></div></div></section>
     </div>
-    <section class="section"><div class="sectitle"><h3>Groups</h3><span>4 / 3 / 3</span></div><div id="groupPreview" class="station-grid"></div></section>
-  </div>
 
-  <div id="view-plan" class="view">
-    <div class="topline"><div><h1>Full Practice Plan</h1><p>Built to finish exactly at 2:45 PM.</p></div><div class="badge"><span>45 MIN</span></div></div>
-    <div id="timeline" class="panel timeline"></div>
-    <section class="section"><div class="panel formpanel"><strong style="font-size:14px">Today’s win</strong><p class="note" style="font-size:13px;color:#cbd0d1">Safe swings. Know where first base is. Lots of touches. Very little standing around. Finish with the kids wanting to come back.</p></div></section>
-  </div>
+    <div id="view-stations" class="view">
+      <div class="topline"><div><h2>Station Rotation</h2><p id="stationSubhead">Coaches stay put. Groups rotate every 7 minutes.</p></div><div class="badge"><span id="stationDurationBadge">3 × 7 MIN</span></div></div>
+      <div class="roundswitch"><button data-round="0" class="active">ROUND 1</button><button data-round="1">ROUND 2</button><button data-round="2">ROUND 3</button></div>
+      <div id="stationGrid" class="station-grid"></div>
+      <section class="section"><div class="sectitle"><h3>Station coaching cues</h3><span>Keep reps moving</span></div><div class="panel" id="stationCues"></div></section>
+    </div>
+
+    <div id="view-schedule" class="view">
+      <div class="topline"><div><h2>Fireflies Schedule</h2><p>Practices + 2026 fall game schedule • Field 8</p></div><div class="badge"><span>FALL 2026</span></div></div>
+      <section class="schedule-next panel" id="scheduleNext"></section>
+      <section class="section"><div class="sectitle"><h3>Preseason Practices</h3><span>Field 8</span></div><div id="practiceSchedule" class="panel schedule-list"></div></section>
+      <section class="section"><div class="sectitle"><h3>Game Schedule</h3><span>10 games</span></div><div id="gameSchedule" class="panel schedule-list"></div></section>
+    </div>
+
+    <div id="view-roster" class="view">
+      <div class="topline"><div><h2>Roster + Coaches</h2><p>Player names stay on this device — not in the public GitHub source.</p></div><div class="badge"><span>LOCAL</span></div></div>
+      <div class="team-stats"><div><span>PLAYERS</span><strong>10</strong></div><div><span>BOYS</span><strong>6</strong></div><div><span>GIRLS</span><strong>4</strong></div><div><span>JERSEYS</span><strong>7 XS / 3 S</strong></div></div>
+      <div class="panel formpanel">
+        <div class="field"><label>Coach names</label><div class="roster-grid one"><input id="coach0" placeholder="Head Coach"><input id="coach1" placeholder="Coach 2"><input id="coach2" placeholder="Coach 3"></div></div>
+        <div class="field"><label>Quick roster import — one player per line</label><textarea id="bulkRoster" rows="5" placeholder="Paste player names here, one per line"></textarea><button class="btn mini" id="importRoster" type="button">IMPORT NAMES</button></div>
+        <div class="field"><label>Player roster — up to 10</label><div id="rosterInputs" class="roster-grid"></div></div>
+        <div class="savebar"><button class="btn primary" id="saveRoster">SAVE ROSTER</button><button class="btn" id="shuffleRoster">SHUFFLE GROUPS</button></div>
+        <div class="note">Names and coach assignments are stored in your browser's local storage. They are not committed to GitHub.</div>
+      </div>
+      <section class="section"><div class="sectitle"><h3>Groups</h3><span>4 / 3 / 3</span></div><div id="groupPreview" class="station-grid"></div></section>
+    </div>
+
+    <div id="view-plan" class="view">
+      <div class="topline"><div><h2>Practice Plan</h2><p id="planSubhead">Monday • 5:30–6:15 PM • Field 8</p></div><div class="badge"><span>45 MIN</span></div></div>
+      <div id="timeline" class="panel timeline"></div>
+      <section class="section"><div class="panel formpanel"><strong class="small-title">Today’s win</strong><p id="winText" class="note emphasis">Safe swings. Know where first base is. Lots of touches. Very little standing around. Finish with the kids wanting to come back.</p></div></section>
+    </div>
+  </main>
 </div>
 
-<nav class="tabs" aria-label="Coach Bot navigation"><button class="tab active" data-view="now"><b>◉</b>NOW</button><button class="tab" data-view="stations"><b>↻</b>STATIONS</button><button class="tab" data-view="roster"><b>👥</b>ROSTER</button><button class="tab" data-view="plan"><b>☰</b>PLAN</button></nav>
+<nav class="tabs" aria-label="Coach Bot navigation">
+  <button class="tab active" data-view="now"><b>◉</b>NOW</button>
+  <button class="tab" data-view="stations"><b>↻</b>STATIONS</button>
+  <button class="tab" data-view="schedule"><b>▣</b>SCHEDULE</button>
+  <button class="tab" data-view="roster"><b>👥</b>ROSTER</button>
+  <button class="tab" data-view="plan"><b>☰</b>PLAN</button>
+</nav>
 <div id="toast" class="toast">Saved</div>
 <script src="app.js"></script>
 <script src="alerts.js"></script>
