@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#111111">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Coach Bot">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/fireflies-logo.svg">
+<title>Coach Bot | Hobgood Fireflies</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <div class="brand"><img alt="Hobgood Fireflies" src="assets/fireflies-logo.svg"><div class="brandbar"><strong>Coach Bot</strong><span>5U • 45-Minute Practice</span></div></div>
+
+  <div id="view-now" class="view active">
+    <div class="topline"><div><h1>Fireflies Practice</h1><p>2:00–2:45 PM • 10 players • 3 coaches</p></div><div class="badge"><i class="dot"></i><span id="statusText">READY</span></div></div>
+    <section class="hero">
+      <div class="metrics"><div class="metric"><label>Practice remaining</label><div id="overall" class="value">45:00</div></div><div class="metric"><label>Drill remaining</label><div id="segmentTime" class="value small">4:00</div></div></div>
+      <div class="progress"><i id="progressBar"></i></div>
+      <div class="now"><div class="nowhead"><div><div id="segmentLabel" class="kicker">Segment 1 of 7</div><h2 id="segmentTitle">Team Huddle + Safety</h2><div id="segmentRange" class="range">2:00–2:04</div></div><div id="roundBadge" class="badge" style="display:none">ROUND 1</div></div><ul id="cueList" class="cues"></ul></div>
+      <div class="controls"><button class="btn primary" id="startBtn">START</button><button class="btn" id="nextBtn">NEXT →</button><button class="btn" id="prevBtn">← BACK</button></div>
+      <div class="quick"><button class="btn" id="minusBtn">− 1 MIN</button><button class="btn" id="plusBtn">+ 1 MIN</button><button class="btn warn" id="resetBtn">RESET</button></div>
+    </section>
+    <section class="section"><div class="sectitle"><h3>Up next</h3><span id="upNextTime"></span></div><div class="panel"><div class="step"><div class="time" id="upNextRange"></div><div><strong id="upNextTitle"></strong><small id="upNextDesc"></small></div><div class="mins">NEXT</div></div></div></section>
+  </div>
+
+  <div id="view-stations" class="view">
+    <div class="topline"><div><h1>Station Rotation</h1><p>Coaches stay put. Groups rotate every 7 minutes.</p></div><div class="badge"><span>3 × 7 MIN</span></div></div>
+    <div class="roundswitch"><button data-round="0" class="active">ROUND 1</button><button data-round="1">ROUND 2</button><button data-round="2">ROUND 3</button></div>
+    <div id="stationGrid" class="station-grid"></div>
+    <section class="section"><div class="sectitle"><h3>Station coaching cues</h3><span>Keep reps moving</span></div><div class="panel" id="stationCues"></div></section>
+  </div>
+
+  <div id="view-roster" class="view">
+    <div class="topline"><div><h1>Roster + Coaches</h1><p>Saved only on this device — not in GitHub.</p></div><div class="badge"><span>LOCAL</span></div></div>
+    <div class="panel formpanel">
+      <div class="field"><label>Coach names</label><div class="roster-grid" style="grid-template-columns:1fr"><input id="coach0" placeholder="Head Coach"><input id="coach1" placeholder="Coach 2"><input id="coach2" placeholder="Coach 3"></div></div>
+      <div class="field"><label>Player roster — enter up to 10</label><div id="rosterInputs" class="roster-grid"></div></div>
+      <div class="savebar"><button class="btn primary" id="saveRoster">SAVE ROSTER</button><button class="btn" id="shuffleRoster">SHUFFLE GROUPS</button></div>
+      <div class="note">Player names are stored in your phone browser using local storage. The public GitHub source contains no child names.</div>
+    </div>
+    <section class="section"><div class="sectitle"><h3>Groups</h3><span>4 / 3 / 3</span></div><div id="groupPreview" class="station-grid"></div></section>
+  </div>
+
+  <div id="view-plan" class="view">
+    <div class="topline"><div><h1>Full Practice Plan</h1><p>Built to finish exactly at 2:45 PM.</p></div><div class="badge"><span>45 MIN</span></div></div>
+    <div id="timeline" class="panel timeline"></div>
+    <section class="section"><div class="panel formpanel"><strong style="font-size:14px">Today’s win</strong><p class="note" style="font-size:13px;color:#cbd0d1">Safe swings. Know where first base is. Lots of touches. Very little standing around. Finish with the kids wanting to come back.</p></div></section>
+  </div>
+</div>
+
+<nav class="tabs" aria-label="Coach Bot navigation"><button class="tab active" data-view="now"><b>◉</b>NOW</button><button class="tab" data-view="stations"><b>↻</b>STATIONS</button><button class="tab" data-view="roster"><b>👥</b>ROSTER</button><button class="tab" data-view="plan"><b>☰</b>PLAN</button></nav>
+<div id="toast" class="toast">Saved</div>
+<script src="app.js"></script>
+</body>
+</html>
