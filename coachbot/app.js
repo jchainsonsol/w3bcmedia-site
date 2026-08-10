@@ -1,4 +1,4 @@
-const defaultPlayers=['Ariel','Benjamin','Emerson','Hudson','Thomas','Magnolia','Dylan','Everett','Oaklee','Matthew'];
+const defaultPlayers=['','','','','','','','','',''];
 const segments=[
  {title:'Team Huddle + Safety',range:'2:00–2:04',mins:4,desc:'Welcome, safety rules, Fireflies cheer.',cues:['No swinging until a coach says go.','When Coach says FREEZE, everybody freezes.','Hustle between drills.','Fireflies on 3!']},
  {title:'Baseball Warm-Up',range:'2:04–2:10',mins:6,desc:'Movement, bases, easy throwing.',cues:['Jog all four bases.','High knees + side shuffle.','Home → first at game speed.','Easy partner throws.']},
