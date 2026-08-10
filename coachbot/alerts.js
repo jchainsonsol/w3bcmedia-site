@@ -2,102 +2,89 @@
   const byId=id=>document.getElementById(id);
   let enabled=localStorage.getItem('firefliesAlertsEnabled')==='true';
   let warn30=localStorage.getItem('firefliesWarn30')!=='false';
-  let lastTitle='';
-  let warnedTitle='';
-  let lastRound='';
 
-  async function notify(title,body){
-    if(!enabled||!('Notification' in window)||Notification.permission!=='granted')return;
+  async function showNotification(title,body,force=false){
+    if(!force&&!enabled)return false;
+    if(!('Notification' in window)||Notification.permission!=='granted')return false;
     try{
+      const options={body,icon:'assets/fireflies-logo.svg',badge:'assets/fireflies-logo.svg',tag:`fireflies-${title.toLowerCase().replace(/[^a-z0-9]+/g,'-')}`,renotify:true};
       if('serviceWorker' in navigator){
         const reg=await navigator.serviceWorker.ready;
-        await reg.showNotification(title,{body,icon:'assets/fireflies-logo.svg',badge:'assets/fireflies-logo.svg',tag:'fireflies-coachbot-'+Date.now()});
+        await reg.showNotification(title,options);
       }else{
-        new Notification(title,{body,icon:'assets/fireflies-logo.svg'});
+        new Notification(title,options);
       }
-    }catch(e){console.warn('Coach Bot notification failed',e)}
+      return true;
+    }catch(e){console.warn('Coach Bot notification failed',e);return false}
   }
 
+  function isStandalone(){return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true}
+
   function updateUI(){
-    const status=byId('alertStatus'),help=byId('alertHelp'),btn=byId('enableAlerts'),toggle=byId('warn30');
+    const status=byId('alertStatus'),help=byId('alertHelp'),btn=byId('enableAlerts'),toggle=byId('warn30'),note=byId('watchNote');
     if(!status||!help||!btn||!toggle)return;
     toggle.checked=warn30;
     if(!('Notification' in window)){
       status.textContent='UNSUPPORTED';
-      help.textContent='This browser does not support web notifications.';
+      help.textContent='This browser does not expose web notifications here.';
+      btn.disabled=true;
     }else if(Notification.permission==='denied'){
       status.textContent='BLOCKED';
-      help.textContent='Notifications are blocked. Allow them in iPhone settings for Coach Bot.';
+      help.textContent='Notifications are blocked. Re-enable Coach Bot notifications in iPhone Settings.';
     }else if(Notification.permission==='granted'&&enabled){
       status.textContent='ON';
-      help.textContent='Alerts are enabled. When your iPhone is locked, your paired Apple Watch may mirror them.';
+      help.textContent='Timer alerts are armed for station changes, water breaks and practice complete.';
     }else if(Notification.permission==='granted'){
       status.textContent='READY';
-      help.textContent='Permission is granted. Tap Enable Alerts to turn station alerts on.';
+      help.textContent='Permission is granted. Tap Enable Alerts to arm the practice timer.';
     }else{
       status.textContent='OFF';
-      help.textContent='Get a notification at station changes, water breaks and the end of practice.';
+      help.textContent='Tap Enable Alerts to allow Coach Bot notifications.';
     }
     btn.textContent=enabled?'DISABLE ALERTS':'ENABLE ALERTS';
+    if(note&&!isStandalone())note.textContent='On iPhone: open this site in Safari → Share → Add to Home Screen. Then launch Coach Bot from the Home Screen and enable alerts.';
+  }
+
+  async function requestPermission(){
+    if(!('Notification' in window))return 'unsupported';
+    if(Notification.permission==='granted')return 'granted';
+    return Notification.requestPermission();
   }
 
   async function toggleAlerts(){
-    if(!('Notification' in window)){updateUI();return;}
-    if(enabled){
-      enabled=false;
-      localStorage.setItem('firefliesAlertsEnabled','false');
-      updateUI();
-      return;
-    }
-    let p=Notification.permission;
-    if(p!=='granted')p=await Notification.requestPermission();
+    if(enabled){enabled=false;localStorage.setItem('firefliesAlertsEnabled','false');updateUI();return}
+    const p=await requestPermission();
     if(p==='granted'){
-      enabled=true;
-      localStorage.setItem('firefliesAlertsEnabled','true');
-      updateUI();
-      notify('Fireflies Coach Bot','Alerts are ready.');
+      enabled=true;localStorage.setItem('firefliesAlertsEnabled','true');updateUI();
+      await showNotification('Fireflies Coach Bot','Alerts are armed for practice.',true);
     }else updateUI();
   }
 
-  function bodyForTitle(title){
-    if(/water/i.test(title))return '💧 Water break — cool down and hydrate.';
-    if(/station rotation/i.test(title))return '⚾ Station rotation starts — 7 minutes per station.';
-    if(/defense/i.test(title))return '🧤 Team defense starts.';
-    if(/relay/i.test(title))return '🏃 Home run relay starts.';
-    if(/huddle/i.test(title))return '✨ Huddle time — finish together.';
-    return title;
+  async function testAlert(){
+    const p=await requestPermission();
+    if(p!=='granted'){updateUI();return}
+    await showNotification('⚾ Fireflies Test Alert','Coach Bot notifications are working. Your Apple Watch may mirror this when the iPhone is locked.',true);
+    updateUI();
   }
 
-  function observeTimer(){
-    const titleEl=byId('segmentTitle'),timeEl=byId('segmentTime'),roundEl=byId('roundBadge');
-    if(!titleEl||!timeEl)return;
-    const check=()=>{
-      const title=titleEl.textContent.trim();
-      const time=timeEl.textContent.trim();
-      const round=roundEl?roundEl.textContent.trim():'';
-      if(lastTitle&&title!==lastTitle){
-        notify('Fireflies — Next Up',bodyForTitle(title));
-        warnedTitle='';
-      }
-      if(warn30&&time==='0:30'&&warnedTitle!==title){
-        warnedTitle=title;
-        notify('Fireflies — 30 Seconds',`Next change coming soon from ${title}.`);
-      }
-      if(round&&roundEl.style.display!=='none'&&lastRound&&round!==lastRound){
-        notify(`Fireflies — ROTATE • ${round}`,'🔄 Rotate groups to the next station.');
-      }
-      lastTitle=title;
-      if(round)lastRound=round;
-    };
-    check();
-    new MutationObserver(check).observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['style']});
+  function transitionMessage(detail){
+    if(detail.water)return ['💧 Fireflies — Water Break','Shade, cool down and hydrate.'];
+    return ['⚾ Fireflies — Next Activity',detail.title||'Move to the next activity.'];
   }
+
+  window.addEventListener('coachbot:transition',e=>{
+    const d=e.detail||{};
+    if(d.kind==='warning'&&warn30){showNotification('⏱ Fireflies — 30 Seconds',`Get ready to finish ${d.title||'this activity'} and rotate.`);return}
+    if(d.kind==='rotate'){showNotification(`🔄 Fireflies — ROTATE • ROUND ${Number(d.round||0)+1}`,'Rotate each group to the next station.');return}
+    if(d.kind==='activity'){const [title,body]=transitionMessage(d);showNotification(title,body);return}
+    if(d.kind==='complete')showNotification('✨ Fireflies Practice Complete','Great work. Hydrate, huddle and head home.');
+  });
 
   window.addEventListener('DOMContentLoaded',()=>{
     updateUI();
     byId('enableAlerts')?.addEventListener('click',toggleAlerts);
-    byId('testAlert')?.addEventListener('click',()=>notify('Fireflies Test Alert','If your iPhone is locked, this may mirror to your Apple Watch.'));
-    byId('warn30')?.addEventListener('change',e=>{warn30=e.target.checked;localStorage.setItem('firefliesWarn30',String(warn30));});
-    observeTimer();
+    byId('testAlert')?.addEventListener('click',testAlert);
+    byId('warn30')?.addEventListener('change',e=>{warn30=e.target.checked;localStorage.setItem('firefliesWarn30',String(warn30))});
+    document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')updateUI()});
   });
 })();
