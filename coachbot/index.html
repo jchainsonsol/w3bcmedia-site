@@ -26,19 +26,25 @@
         <div class="event-right"><span id="nextEventType" class="badge">—</span><strong id="nextEventCountdown">—</strong></div>
       </section>
 
+      <section class="checkin-strip">
+        <div><div class="kicker">TODAY'S CHECK-IN</div><strong><span id="presentPlayerCount">0</span> players • <span id="presentCoachCount">0</span> coaches</strong><small id="checkinHint">Set attendance before practice.</small></div>
+        <button class="btn primary compact" id="openTeamBtn" type="button">TEAM SELECT</button>
+      </section>
+      <div id="coachWarning" class="coach-warning" hidden></div>
+
       <div class="topline">
-        <div><h2 id="practiceTitle">Monday Practice</h2><p id="practiceMeta">5:30–6:15 PM • Field 8 • 10 players • 3 coaches</p></div>
+        <div><h2 id="practiceTitle">Monday Practice</h2><p id="practiceMeta">5:30–6:15 PM • Field 8 • 10 players • 4 coaches</p></div>
         <div class="badge"><i class="dot"></i><span id="statusText">READY</span></div>
       </div>
 
       <section class="modebar">
-        <div><div class="kicker">PRACTICE MODE</div><strong id="modeTitle">Standard Practice</strong><small id="modeDesc">45 minutes • 7-minute station rounds</small></div>
-        <button class="mode-btn" id="heatModeBtn" type="button">🔥 HEAT MODE</button>
+        <div><div class="kicker">PRACTICE MODE</div><strong id="modeTitle">Extreme-Heat Practice</strong><small id="modeDesc">45 minutes • cooling breaks • water-balloon finish</small></div>
+        <button class="mode-btn active" id="heatModeBtn" type="button">✓ HEAT MODE</button>
       </section>
 
-      <section id="heatBanner" class="heat-banner" hidden>
-        <strong>🔥 Heat Mode Active</strong>
-        <span>Shorter 6-minute stations, mandatory shade/water breaks, no conditioning or prolonged running.</span>
+      <section id="heatBanner" class="heat-banner">
+        <strong>🔥 100° Heat Plan</strong>
+        <span>Short station rounds, mandatory shade/water breaks, no conditioning, then Firefly Splash Catch with the reusable water balloons.</span>
       </section>
 
       <section class="hero">
@@ -49,7 +55,7 @@
         <div class="progress"><i id="progressBar"></i></div>
         <div class="now">
           <div class="nowhead">
-            <div><div id="segmentLabel" class="kicker">Activity 1</div><h2 id="segmentTitle">Team Huddle + Safety</h2><div id="segmentRange" class="range">5:30–5:35</div></div>
+            <div><div id="segmentLabel" class="kicker">Activity 1</div><h2 id="segmentTitle">Shade Huddle + Water</h2><div id="segmentRange" class="range">5:30–5:35 PM</div></div>
             <div id="roundBadge" class="badge" hidden>ROUND 1</div>
           </div>
           <ul id="cueList" class="cues"></ul>
@@ -66,17 +72,17 @@
         <p id="alertHelp" class="watch-help">Alerts for 30 seconds remaining, station changes, water breaks and practice complete.</p>
         <div class="watch-actions"><button class="btn primary" id="enableAlerts">ENABLE ALERTS</button><button class="btn" id="testAlert">TEST ALERT</button></div>
         <label class="switchrow"><span><strong>30-second warning</strong><small>Heads-up before the next activity.</small></span><input id="warn30" type="checkbox" checked></label>
-        <div id="watchNote" class="watch-note">Add Coach Bot to your iPhone Home Screen before enabling notifications. Live timer alerts work while Coach Bot is active; fully reliable locked-screen delivery will require the push backend we are preparing for.</div>
+        <div class="watch-note">Add Coach Bot to your iPhone Home Screen before enabling notifications. Live timer alerts work while Coach Bot is active; guaranteed locked-screen delivery still requires a Web Push backend.</div>
       </section>
 
       <section class="section"><div class="sectitle"><h3>Up next</h3><span id="upNextTime"></span></div><div class="panel"><div class="step"><div class="time" id="upNextRange"></div><div><strong id="upNextTitle"></strong><small id="upNextDesc"></small></div><div class="mins">NEXT</div></div></div></section>
     </div>
 
     <div id="view-stations" class="view">
-      <div class="topline"><div><h2>Station Rotation</h2><p id="stationSubhead">Coaches stay put. Groups rotate every 7 minutes.</p></div><div class="badge"><span id="stationDurationBadge">3 × 7 MIN</span></div></div>
+      <div class="topline"><div><h2>Station Rotation</h2><p id="stationSubhead">Present players only. Coaches stay put while groups rotate.</p></div><div class="badge"><span id="stationDurationBadge">3 × 5 MIN</span></div></div>
       <div class="roundswitch"><button data-round="0" class="active">ROUND 1</button><button data-round="1">ROUND 2</button><button data-round="2">ROUND 3</button></div>
       <div id="stationGrid" class="station-grid"></div>
-      <section class="section"><div class="sectitle"><h3>Station coaching cues</h3><span>Keep reps moving</span></div><div class="panel" id="stationCues"></div></section>
+      <section class="section"><div class="sectitle"><h3>Coach Assignments</h3><span id="floaterLabel">4th coach = floater</span></div><div class="panel" id="stationCues"></div></section>
     </div>
 
     <div id="view-schedule" class="view">
@@ -86,23 +92,29 @@
       <section class="section"><div class="sectitle"><h3>Game Schedule</h3><span>10 games</span></div><div id="gameSchedule" class="panel schedule-list"></div></section>
     </div>
 
-    <div id="view-roster" class="view">
-      <div class="topline"><div><h2>Roster + Coaches</h2><p>Player names stay on this device — not in the public GitHub source.</p></div><div class="badge"><span>LOCAL</span></div></div>
-      <div class="team-stats"><div><span>PLAYERS</span><strong>10</strong></div><div><span>BOYS</span><strong>6</strong></div><div><span>GIRLS</span><strong>4</strong></div><div><span>JERSEYS</span><strong>7 XS / 3 S</strong></div></div>
-      <div class="panel formpanel">
-        <div class="field"><label>Coach names</label><div class="roster-grid one"><input id="coach0" placeholder="Head Coach"><input id="coach1" placeholder="Coach 2"><input id="coach2" placeholder="Coach 3"></div></div>
-        <div class="field"><label>Quick roster import — one player per line</label><textarea id="bulkRoster" rows="5" placeholder="Paste player names here, one per line"></textarea><button class="btn mini" id="importRoster" type="button">IMPORT NAMES</button></div>
+    <div id="view-team" class="view">
+      <div class="topline"><div><h2>Team Select</h2><p>Tap everyone who is at practice today.</p></div><div class="badge"><span id="teamDateLabel">TODAY</span></div></div>
+      <div class="team-stats"><div><span>PRESENT</span><strong id="teamPresentPlayers">0</strong></div><div><span>ROSTER</span><strong>10</strong></div><div><span>COACHES</span><strong id="teamPresentCoaches">0 / 4</strong></div><div><span>GROUPS</span><strong id="teamGroupSizes">—</strong></div></div>
+
+      <section class="section"><div class="sectitle"><h3>Players Here</h3><span>tap to toggle</span></div><div class="panel checkin-panel"><div id="playerCheckin" class="check-grid"></div><div class="check-actions"><button class="btn" id="allPlayers" type="button">ALL HERE</button><button class="btn" id="clearPlayers" type="button">CLEAR</button></div></div></section>
+
+      <section class="section"><div class="sectitle"><h3>Coaches Here</h3><span>Head + 3 assistants</span></div><div class="panel checkin-panel"><div id="coachCheckin" class="check-grid coaches"></div><div class="check-actions"><button class="btn" id="allCoaches" type="button">ALL HERE</button><button class="btn" id="clearCoaches" type="button">CLEAR</button></div></div></section>
+
+      <section class="section"><div class="sectitle"><h3>Roster Setup</h3><span>saved on this device</span></div><div class="panel formpanel">
+        <div class="field"><label>Coach names</label><div class="roster-grid one"><input id="coach0" placeholder="Head Coach"><input id="coach1" placeholder="Assistant 1"><input id="coach2" placeholder="Assistant 2"><input id="coach3" placeholder="Assistant 3"></div></div>
+        <div class="field"><label>Quick roster import — one player per line</label><textarea id="bulkRoster" rows="5" placeholder="Paste the 10 player names here, one per line"></textarea><button class="btn mini" id="importRoster" type="button">IMPORT NAMES</button></div>
         <div class="field"><label>Player roster — up to 10</label><div id="rosterInputs" class="roster-grid"></div></div>
-        <div class="savebar"><button class="btn primary" id="saveRoster">SAVE ROSTER</button><button class="btn" id="shuffleRoster">SHUFFLE GROUPS</button></div>
-        <div class="note">Names and coach assignments are stored in your browser's local storage. They are not committed to GitHub.</div>
-      </div>
-      <section class="section"><div class="sectitle"><h3>Groups</h3><span>4 / 3 / 3</span></div><div id="groupPreview" class="station-grid"></div></section>
+        <div class="savebar"><button class="btn primary" id="saveRoster">SAVE TEAM</button><button class="btn" id="shuffleRoster">SHUFFLE GROUPS</button></div>
+        <div class="note">Player names and attendance stay in this phone's browser storage. They are not committed to the public GitHub source.</div>
+      </div></section>
+
+      <section class="section"><div class="sectitle"><h3>Today's Groups</h3><span id="groupCountLabel">present players</span></div><div id="groupPreview" class="station-grid"></div></section>
     </div>
 
     <div id="view-plan" class="view">
       <div class="topline"><div><h2>Practice Plan</h2><p id="planSubhead">Monday • 5:30–6:15 PM • Field 8</p></div><div class="badge"><span>45 MIN</span></div></div>
       <div id="timeline" class="panel timeline"></div>
-      <section class="section"><div class="panel formpanel"><strong class="small-title">Today’s win</strong><p id="winText" class="note emphasis">Safe swings. Know where first base is. Lots of touches. Very little standing around. Finish with the kids wanting to come back.</p></div></section>
+      <section class="section"><div class="panel formpanel"><strong class="small-title">Today’s win</strong><p id="winText" class="note emphasis">Keep the Fireflies safe and hydrated, get quality baseball reps, then cool them down with the water-balloon pop-fly game.</p></div></section>
     </div>
   </main>
 </div>
@@ -110,8 +122,8 @@
 <nav class="tabs" aria-label="Coach Bot navigation">
   <button class="tab active" data-view="now"><b>◉</b>NOW</button>
   <button class="tab" data-view="stations"><b>↻</b>STATIONS</button>
+  <button class="tab" data-view="team"><b>✓</b>TEAM</button>
   <button class="tab" data-view="schedule"><b>▣</b>SCHEDULE</button>
-  <button class="tab" data-view="roster"><b>👥</b>ROSTER</button>
   <button class="tab" data-view="plan"><b>☰</b>PLAN</button>
 </nav>
 <div id="toast" class="toast">Saved</div>
