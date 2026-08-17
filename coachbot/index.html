@@ -11,6 +11,7 @@
 <link rel="apple-touch-icon" href="assets/fireflies-logo.svg">
 <title>Coach Bot | Hobgood Fireflies</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="team-checkin.css">
 </head>
 <body>
 <div class="app">
@@ -105,7 +106,7 @@
         <div class="field"><label>Quick roster import — one player per line</label><textarea id="bulkRoster" rows="5" placeholder="Paste the 10 player names here, one per line"></textarea><button class="btn mini" id="importRoster" type="button">IMPORT NAMES</button></div>
         <div class="field"><label>Player roster — up to 10</label><div id="rosterInputs" class="roster-grid"></div></div>
         <div class="savebar"><button class="btn primary" id="saveRoster">SAVE TEAM</button><button class="btn" id="shuffleRoster">SHUFFLE GROUPS</button></div>
-        <div class="note">Player names and attendance stay in this phone's browser storage. They are not committed to the public GitHub source.</div>
+        <div class="note">This Coach Bot build is preloaded with the Fireflies' first names and coaching staff. Attendance remains device-local.</div>
       </div></section>
 
       <section class="section"><div class="sectitle"><h3>Today's Groups</h3><span id="groupCountLabel">present players</span></div><div id="groupPreview" class="station-grid"></div></section>
@@ -127,6 +128,7 @@
   <button class="tab" data-view="plan"><b>☰</b>PLAN</button>
 </nav>
 <div id="toast" class="toast">Saved</div>
+<script src="team-data.js"></script>
 <script src="app.js"></script>
 <script src="alerts.js"></script>
 </body>
