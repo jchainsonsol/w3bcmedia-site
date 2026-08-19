@@ -20,37 +20,48 @@ jobs:
         run: |
           node <<'NODE'
           const fs = require('fs');
-          const key = process.env.ODDS_API_KEY;
-          if (!key) throw new Error('Missing repository secret THE_ODDS_API_KEY');
 
-          const wanted = [
-            ['americanfootball_nfl','NFL'],
-            ['americanfootball_ncaaf','NCAAF'],
-            ['baseball_mlb','MLB'],
-            ['basketball_nba','NBA'],
-            ['basketball_wnba','WNBA']
-          ];
-          const base = 'https://api.the-odds-api.com/v4/sports';
-          const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', sports: [], quota: {} };
+          (async () => {
+            const apiKey = process.env.ODDS_API_KEY;
+            if (!apiKey) throw new Error('Missing repository secret THE_ODDS_API_KEY');
 
-          async function getSport(key,label){
-            const url = `${base}/${key}/odds/?apiKey=${encodeURIComponent(process.env.ODDS_API_KEY)}&regions=us&markets=h2h,spreads,totals&oddsFormat=american&dateFormat=iso`;
-            const r = await fetch(url);
-            if (!r.ok) {
-              if (r.status === 422 || r.status === 404) return;
-              throw new Error(`${key}: ${r.status} ${await r.text()}`);
+            const wanted = [
+              ['americanfootball_nfl','NFL'],
+              ['americanfootball_ncaaf','NCAAF'],
+              ['baseball_mlb','MLB'],
+              ['basketball_nba','NBA'],
+              ['basketball_wnba','WNBA']
+            ];
+            const base = 'https://api.the-odds-api.com/v4/sports';
+            const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', sports: [], quota: {} };
+
+            async function getSport(sportKey,label){
+              const url = `${base}/${sportKey}/odds/?apiKey=${encodeURIComponent(apiKey)}&regions=us&markets=h2h,spreads,totals&oddsFormat=american&dateFormat=iso`;
+              const r = await fetch(url);
+              if (!r.ok) {
+                const body = await r.text();
+                if (r.status === 422 || r.status === 404) {
+                  console.log(`Skipping ${label}: ${r.status} ${body}`);
+                  return;
+                }
+                throw new Error(`${sportKey}: ${r.status} ${body}`);
+              }
+              const events = await r.json();
+              out.quota.remaining = r.headers.get('x-requests-remaining');
+              out.quota.used = r.headers.get('x-requests-used');
+              out.quota.last = r.headers.get('x-requests-last');
+              console.log(`${label}: ${events.length} events`);
+              if (events.length) out.sports.push({ key: sportKey, label, events });
             }
-            const events = await r.json();
-            out.quota.remaining = r.headers.get('x-requests-remaining');
-            out.quota.used = r.headers.get('x-requests-used');
-            out.quota.last = r.headers.get('x-requests-last');
-            if (!events.length) return;
-            out.sports.push({ key, label, events });
-          }
 
-          for (const [key,label] of wanted) await getSport(key,label);
-          fs.mkdirSync('data',{recursive:true});
-          fs.writeFileSync('data/odds.json', JSON.stringify(out,null,2));
+            for (const [sportKey,label] of wanted) await getSport(sportKey,label);
+            fs.mkdirSync('data',{recursive:true});
+            fs.writeFileSync('data/odds.json', JSON.stringify(out,null,2));
+            console.log(`Saved ${out.sports.length} active sports to data/odds.json`);
+          })().catch(err => {
+            console.error(err);
+            process.exit(1);
+          });
           NODE
 
       - name: Commit updated odds feed
