@@ -1,0 +1,29 @@
+{
+  "date":"2026-08-19",
+  "source":"Google Alert - Daily Digest",
+  "newsStories":[
+    {"headline":"SEC proposes fit-for-purpose crypto asset rules","points":["The SEC's Regulation Crypto Assets proposal would tailor parts of the securities framework to crypto markets.","The proposal is framed around clearer exemptions and a more purpose-built U.S. market structure.","This is a broader infrastructure story, not simply another token approval headline."],"stats":[],"quote":"Regulation Crypto Assets is an important step toward clear, fit-for-purpose rules.","takeaway":"The regulatory conversation is moving from enforcement toward writing an operating framework for U.S. digital-asset markets."},
+    {"headline":"Tokenized securities push collides with CLARITY priorities","points":["A planned tokenized-securities innovation exemption was delayed as Washington prioritizes the CLARITY Act.","Robinhood CEO Vlad Tenev continues pushing for a U.S. path to tokenized stocks.","The appeal is real-time settlement and potentially 24/7 markets, while U.S. regulation remains the bottleneck."],"stats":[],"quote":"","takeaway":"Tokenization demand is advancing faster than the U.S. rulebook, making regulation part of the infrastructure race."},
+    {"headline":"Institutional tokenization keeps moving from thesis to infrastructure","points":["The digest continues to surface tokenized securities, RWA and institutional adoption stories.","The trend is increasingly about market plumbing, settlement and ownership infrastructure rather than speculative token launches.","That fits the broader move toward traditional assets operating on blockchain rails."],"stats":[],"quote":"","takeaway":"The important story is the financial architecture being rebuilt underneath the market."}
+  ],
+  "ai":{"headline":"AI agents are becoming an operating-system problem, not just a model problem","detail":"IBM focuses on oversight and accountability as agents become more capable. Snowflake focuses on the context/semantic layer needed to give agents accurate business data. A separate CIO story argues that not every workflow needs an agent. W3BC takeaway: the next AI competition is increasingly about trustworthy context, governance and choosing the right jobs for autonomy."},
+  "sports":{"headline":"Sports board: MLB playoff race, NFL and fight-sports headlines","detail":"Today's alert includes the 2026 MLB playoff picture, including the Dodgers, Cubs and Phillies, plus the Brewers' historic 22-0 win. The broader sports feed also includes NFL, golf and fight-sports headlines, giving the desk multiple directions depending on what is moving by airtime."},
+  "ticker":[
+    "SEC proposes fit-for-purpose rules for U.S. crypto asset markets",
+    "Tokenized securities innovation push meets CLARITY Act priorities in Washington",
+    "Robinhood CEO urges U.S. path for tokenized stocks and real-time settlement",
+    "AI agent race shifts toward context, governance and human oversight",
+    "Snowflake highlights semantic context layer for enterprise AI agents",
+    "MLB playoff race heats up as Cubs and Phillies surge",
+    "Brewers make MLB history in a 22-0 win"
+  ],
+  "liveFeed":[
+    {"text":"SEC proposes fit-for-purpose rules for U.S. crypto asset markets","category":"news","priority":"high"},
+    {"text":"Tokenized securities innovation push meets CLARITY Act priorities in Washington","category":"markets","priority":"high"},
+    {"text":"Robinhood CEO urges U.S. path for tokenized stocks and real-time settlement","category":"markets","priority":"high"},
+    {"text":"AI agent race shifts toward context, governance and human oversight","category":"ai","priority":"high"},
+    {"text":"Snowflake highlights semantic context layer for enterprise AI agents","category":"ai","priority":"normal"},
+    {"text":"MLB playoff race heats up as Cubs and Phillies surge","category":"sports","priority":"normal"},
+    {"text":"Brewers make MLB history in a 22-0 win","category":"sports","priority":"normal"}
+  ]
+}
