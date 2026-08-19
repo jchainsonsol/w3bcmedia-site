@@ -1,0 +1,63 @@
+name: Refresh Sportsbook Odds
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch sportsbook odds
+        env:
+          ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const key = process.env.ODDS_API_KEY;
+          if (!key) throw new Error('Missing repository secret THE_ODDS_API_KEY');
+
+          const wanted = [
+            ['americanfootball_nfl','NFL'],
+            ['americanfootball_ncaaf','NCAAF'],
+            ['baseball_mlb','MLB'],
+            ['basketball_nba','NBA'],
+            ['basketball_wnba','WNBA']
+          ];
+          const base = 'https://api.the-odds-api.com/v4/sports';
+          const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', sports: [], quota: {} };
+
+          async function getSport(key,label){
+            const url = `${base}/${key}/odds/?apiKey=${encodeURIComponent(process.env.ODDS_API_KEY)}&regions=us&markets=h2h,spreads,totals&oddsFormat=american&dateFormat=iso`;
+            const r = await fetch(url);
+            if (!r.ok) {
+              if (r.status === 422 || r.status === 404) return;
+              throw new Error(`${key}: ${r.status} ${await r.text()}`);
+            }
+            const events = await r.json();
+            out.quota.remaining = r.headers.get('x-requests-remaining');
+            out.quota.used = r.headers.get('x-requests-used');
+            out.quota.last = r.headers.get('x-requests-last');
+            if (!events.length) return;
+            out.sports.push({ key, label, events });
+          }
+
+          for (const [key,label] of wanted) await getSport(key,label);
+          fs.mkdirSync('data',{recursive:true});
+          fs.writeFileSync('data/odds.json', JSON.stringify(out,null,2));
+          NODE
+
+      - name: Commit updated odds feed
+        run: |
+          git config user.name "w3bc-odds-bot"
+          git config user.email "actions@github.com"
+          git add data/odds.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Update sportsbook odds feed"
+          git push
