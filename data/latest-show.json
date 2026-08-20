@@ -1,0 +1,11 @@
+{
+  "date": "2026-08-20",
+  "version": "2026-08-20-v3",
+  "file": "data/morning-show-2026-08-20.json",
+  "label": "Thursday Aug 20",
+  "expected": {
+    "news": 12,
+    "ai": 7,
+    "sports": 9
+  }
+}
