@@ -1,1 +1,70 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>W3BC Production Control</title><style>*{box-sizing:border-box}html,body{margin:0;background:#07090b;color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{min-height:100vh}.shell{display:grid;grid-template-rows:minmax(600px,1fr) auto;min-height:100vh}.control{width:100%;height:100%;min-height:650px;border:0;display:block;background:#07090b}.audioWrap{border-top:2px solid #22d3e5;background:#07090b;padding:8px}.audio{width:100%;height:390px;border:0;display:block;background:#07090b}@media(max-width:800px){.control{min-height:760px}.audio{height:640px}}</style></head><body><div class="shell"><iframe id="control" class="control" src="show-control.html?v=prod0820"></iframe><div class="audioWrap"><iframe class="audio" src="audio-control.html?v=prod0820"></iframe></div></div><script>(()=>{const KEY='w3bcShowStateV1',VER='w3bc-rundown-v2-20260820';let s={};try{s=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){s={}}if(localStorage.getItem('w3bcRundownVersion')!==VER){const old=Array.isArray(s.segments)?s.segments:[];const take=(kind,name,fallback={})=>{let x=old.find(z=>z.kind===kind&&(!name||String(z.name||'').toLowerCase().includes(name.toLowerCase())));return x?{...x,enabled:x.enabled!==false}:{...fallback,kind,name,enabled:true}};const open=take('camera','open',{name:'Open'});const markets=take('markets',null,{name:'Markets Now',sponsor:'Bitunix'});const news=take('news',null,{name:'News Desk'});const trenches=take('trenches',null,{name:'The Trenches'});const ai=take('ai',null,{name:'AI + Technology'});const interview=take('interview',null,{name:'Interview'});const panel=take('panel','open panel',{name:'Open Panel'});const sports=take('sports',null,{name:'Sports'});const betting=take('betting',null,{name:'Betting Desk',sponsor:'BC.GAME'});const casino={name:'BC Game Casino',kind:'panel',enabled:true,sponsor:'BC.GAME',desc:'Casino play / entertainment close'};let close=old.find(z=>z.kind==='camera'&&String(z.name||'').toLowerCase().includes('close'))||{name:'Close',kind:'camera',enabled:true};s.segments=[open,markets,news,trenches,ai,interview,panel,sports,betting,casino,close];s.current=0;localStorage.setItem(KEY,JSON.stringify(s));localStorage.setItem('w3bcRundownVersion',VER);try{new BroadcastChannel('w3bc-show').postMessage({type:'state',state:s})}catch(e){}}})();</script></body></html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>W3BC Production Control</title>
+<style>
+:root{--c:#22d3e5;--bg:#07090b;--p:#0d1114;--l:#273239;--m:#748188;--g:#42d9a0;--r:#ff6875;--v:#a98cff;--pink:#ff2db9}*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{min-height:100vh}.shell{display:grid;grid-template-rows:minmax(600px,1fr) auto auto;min-height:100vh}.control{width:100%;height:100%;min-height:650px;border:0;display:block;background:var(--bg)}.lightsWrap,.audioWrap{border-top:2px solid var(--c);background:var(--bg);padding:8px}.lights{border:1px solid var(--l);background:var(--p)}.lightsHead{min-height:48px;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer}.lightsTitle{display:flex;align-items:center;gap:10px}.lightsTitle b{font-size:12px;letter-spacing:.09em}.lightsTitle small{color:var(--m);font-size:8px;letter-spacing:.08em;display:block;margin-top:2px}.lightStatus{display:flex;align-items:center;gap:7px;font-size:9px;color:var(--m);font-weight:900}.dot{width:8px;height:8px;border-radius:50%;background:var(--r)}.dot.on{background:var(--g);box-shadow:0 0 12px var(--g)}.lightsBody{display:none;border-top:1px solid var(--l);padding:12px}.lights.open .lightsBody{display:block}.lightGrid{display:grid;grid-template-columns:auto minmax(190px,1fr) minmax(190px,1fr) minmax(240px,1.25fr);gap:14px;align-items:end}.group label{display:block;font-size:8px;font-weight:900;color:var(--m);letter-spacing:.11em;margin-bottom:5px}.row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.lbtn{border:1px solid #34414a;background:#0a0e11;color:#fff;padding:9px 11px;font-size:8px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}.lbtn.primary{background:var(--c);border-color:var(--c);color:#041013}.lbtn.good{border-color:#28624a;color:#8df0bd}.lbtn.danger{border-color:#65313a;color:#ffafb9}.lbtn.preset.active{border-color:var(--c);color:var(--c)}.lbtn:disabled{opacity:.35;cursor:not-allowed}.rangeRow{display:grid;grid-template-columns:1fr 48px;gap:8px;align-items:center}.rangeRow input{width:100%;accent-color:var(--c)}.readout{font-size:12px;font-weight:950;text-align:right}.advanced{margin-top:12px;padding-top:10px;border-top:1px solid #20282d;display:none}.advanced.open{display:grid;grid-template-columns:minmax(190px,1fr) minmax(190px,1fr) auto;gap:14px;align-items:end}.audio{width:100%;height:390px;border:0;display:block;background:var(--bg)}@media(max-width:920px){.lightGrid{grid-template-columns:1fr 1fr}.advanced.open{grid-template-columns:1fr 1fr}.control{min-height:760px}.audio{height:640px}}@media(max-width:560px){.lightGrid,.advanced.open{grid-template-columns:1fr}.lightsHead{align-items:flex-start}.audio{height:640px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <iframe id="control" class="control" src="show-control.html?v=prod0820lights"></iframe>
+
+  <div class="lightsWrap">
+    <section id="lights" class="lights">
+      <div id="lightsHead" class="lightsHead">
+        <div class="lightsTitle"><span style="font-size:20px">💡</span><div><b>STUDIO LIGHTS</b><small>GVM-880RS · DIRECT BLUETOOTH CONTROL</small></div></div>
+        <div class="lightStatus"><span id="lightDot" class="dot"></span><span id="lightStatus">DISCONNECTED</span><span>▾</span></div>
+      </div>
+      <div class="lightsBody">
+        <div class="lightGrid">
+          <div class="group">
+            <label>FIXTURE</label>
+            <div class="row"><button id="connectLight" class="lbtn primary">CONNECT GVM</button><button id="lightOn" class="lbtn good" disabled>ON</button><button id="lightOff" class="lbtn danger" disabled>OFF</button></div>
+          </div>
+          <div class="group">
+            <label>BRIGHTNESS</label>
+            <div class="rangeRow"><input id="brightness" type="range" min="0" max="100" value="55" disabled><span id="brightnessVal" class="readout">55%</span></div>
+          </div>
+          <div class="group">
+            <label>COLOR TEMP</label>
+            <div class="rangeRow"><input id="temperature" type="range" min="3200" max="5600" step="100" value="4500" disabled><span id="temperatureVal" class="readout">4500K</span></div>
+          </div>
+          <div class="group">
+            <label>SHOW PRESETS</label>
+            <div class="row"><button class="lbtn preset" data-preset="live" disabled>LIVE</button><button class="lbtn preset" data-preset="interview" disabled>INTERVIEW</button><button class="lbtn preset" data-preset="warm" disabled>WARM</button><button class="lbtn preset" data-preset="cool" disabled>COOL</button><button id="colorToggle" class="lbtn" disabled>COLOR ▾</button></div>
+          </div>
+        </div>
+        <div id="advanced" class="advanced">
+          <div class="group"><label>HUE</label><div class="rangeRow"><input id="hue" type="range" min="0" max="360" value="185" disabled><span id="hueVal" class="readout">185°</span></div></div>
+          <div class="group"><label>SATURATION</label><div class="rangeRow"><input id="saturation" type="range" min="0" max="100" value="100" disabled><span id="saturationVal" class="readout">100%</span></div></div>
+          <div class="group"><label>W3BC COLORS</label><div class="row"><button class="lbtn preset" data-preset="cyan" disabled>CYAN</button><button class="lbtn preset" data-preset="pink" disabled>PINK</button></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="audioWrap"><iframe class="audio" src="audio-control.html?v=prod0820lights"></iframe></div>
+</div>
+<script>
+(()=>{
+const KEY='w3bcShowStateV1',VER='w3bc-rundown-v2-20260820';let s={};try{s=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){s={}}if(localStorage.getItem('w3bcRundownVersion')!==VER){const old=Array.isArray(s.segments)?s.segments:[];const take=(kind,name,fallback={})=>{let x=old.find(z=>z.kind===kind&&(!name||String(z.name||'').toLowerCase().includes(name.toLowerCase())));return x?{...x,enabled:x.enabled!==false}:{...fallback,kind,name,enabled:true}};const open=take('camera','open',{name:'Open'});const markets=take('markets',null,{name:'Markets Now',sponsor:'Bitunix'});const news=take('news',null,{name:'News Desk'});const trenches=take('trenches',null,{name:'The Trenches'});const ai=take('ai',null,{name:'AI + Technology'});const interview=take('interview',null,{name:'Interview'});const panel=take('panel','open panel',{name:'Open Panel'});const sports=take('sports',null,{name:'Sports'});const betting=take('betting',null,{name:'Betting Desk',sponsor:'BC.GAME'});const casino={name:'BC Game Casino',kind:'panel',enabled:true,sponsor:'BC.GAME',desc:'Casino play / entertainment close'};let close=old.find(z=>z.kind==='camera'&&String(z.name||'').toLowerCase().includes('close'))||{name:'Close',kind:'camera',enabled:true};s.segments=[open,markets,news,trenches,ai,interview,panel,sports,betting,casino,close];s.current=0;localStorage.setItem(KEY,JSON.stringify(s));localStorage.setItem('w3bcRundownVersion',VER);try{new BroadcastChannel('w3bc-show').postMessage({type:'state',state:s})}catch(e){}}
+
+const SERVICE='00010203-0405-0607-0809-0a0b0c0d1910',CHAR='00010203-0405-0607-0809-0a0b0c0d2b10',$=id=>document.getElementById(id);let device=null,ch=null,timer=null;
+function crc16(a){let crc=0;for(const b of a){crc^=b<<8;for(let i=0;i<8;i++)crc=(crc&0x8000)?((crc<<1)^0x1021)&65535:(crc<<1)&65535}return crc}
+function packet(cmd,param){const p=Math.max(0,Math.min(255,Math.round(param))),a=[0x4c,0x54,0x09,0x00,0x30,0x57,0x00,cmd,0x01,p],crc=crc16(a);return new Uint8Array([...a,(crc>>8)&255,crc&255])}
+async function send(cmd,param){if(!ch)return;await ch.writeValueWithoutResponse(packet(cmd,param))}
+function enabled(on){['lightOn','lightOff','brightness','temperature','colorToggle','hue','saturation'].forEach(id=>$(id).disabled=!on);document.querySelectorAll('[data-preset]').forEach(b=>b.disabled=!on);$('connectLight').disabled=on;$('lightDot').classList.toggle('on',on);$('lightStatus').textContent=on?'CONNECTED · BT_LED':'DISCONNECTED'}
+async function connectLight(){try{if(!navigator.bluetooth)throw Error('Open Production Control in Chrome on the Mac.');device=await navigator.bluetooth.requestDevice({filters:[{name:'BT_LED'}],optionalServices:[SERVICE]});device.addEventListener('gattserverdisconnected',()=>{ch=null;enabled(false)});const server=await device.gatt.connect(),service=await server.getPrimaryService(SERVICE);ch=await service.getCharacteristic(CHAR);enabled(true);$('lightStatus').textContent='CONNECTED · BT_LED'}catch(e){$('lightStatus').textContent='CONNECT FAILED';alert(e.message)}}
+function later(fn){clearTimeout(timer);timer=setTimeout(fn,85)}
+function values(b,k){$('brightness').value=b;$('brightnessVal').textContent=b+'%';$('temperature').value=k;$('temperatureVal').textContent=k+'K'}
+async function cct(b,k){values(b,k);await send(0x02,b);await new Promise(r=>setTimeout(r,80));await send(0x03,Math.round(k/100))}
+async function hsi(b,h,sat){$('brightness').value=b;$('brightnessVal').textContent=b+'%';$('hue').value=h;$('hueVal').textContent=h+'°';$('saturation').value=sat;$('saturationVal').textContent=sat+'%';await send(0x02,b);await new Promise(r=>setTimeout(r,70));await send(0x04,Math.round(h/5));await new Promise(r=>setTimeout(r,70));await send(0x05,sat)}
+const presets={live:()=>cct(55,4500),interview:()=>cct(45,4300),warm:()=>cct(40,3600),cool:()=>cct(50,5400),cyan:()=>hsi(45,185,100),pink:()=>hsi(40,330,100)};
+$('lightsHead').onclick=()=>$('lights').classList.toggle('open');$('connectLight').onclick=e=>{e.stopPropagation();connectLight()};$('lightOn').onclick=()=>send(0x00,1);$('lightOff').onclick=()=>send(0x00,0);$('brightness').oninput=e=>{$('brightnessVal').textContent=e.target.value+'%';later(()=>send(0x02,+e.target.value))};$('temperature').oninput=e=>{$('temperatureVal').textContent=e.target.value+'K';later(()=>send(0x03,Math.round(+e.target.value/100)))};$('hue').oninput=e=>{$('hueVal').textContent=e.target.value+'°';later(()=>send(0x04,Math.round(+e.target.value/5)))};$('saturation').oninput=e=>{$('saturationVal').textContent=e.target.value+'%';later(()=>send(0x05,+e.target.value))};$('colorToggle').onclick=()=>$('advanced').classList.toggle('open');document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=async()=>{document.querySelectorAll('[data-preset]').forEach(x=>x.classList.remove('active'));b.classList.add('active');try{await presets[b.dataset.preset]()}catch(e){$('lightStatus').textContent='COMMAND ERROR'}});enabled(false);
+})();
+</script>
+</body>
+</html>
