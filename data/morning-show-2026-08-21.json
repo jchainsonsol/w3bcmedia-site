@@ -1,6 +1,6 @@
 {
   "date":"2026-08-21",
-  "version":"2026-08-21-v1",
+  "version":"2026-08-21-v2",
   "label":"Friday Aug 21",
   "startTime":"12:00 PM ET",
   "source":"Friday News Google Alert + live market verification",
@@ -11,9 +11,9 @@
     {"name":"Markets Now","kind":"markets","enabled":true,"sponsor":"Bitunix"},
     {"name":"News Desk","kind":"news","enabled":true},
     {"name":"AI + Technology","kind":"ai","enabled":true},
+    {"name":"The Trenches","kind":"trenches","enabled":true},
     {"name":"Sports","kind":"sports","enabled":true},
     {"name":"Betting Desk","kind":"betting","enabled":true,"sponsor":"BC.GAME"},
-    {"name":"The Trenches","kind":"trenches","enabled":true},
     {"name":"Close","kind":"camera","enabled":true}
   ],
   "openNotes":[
