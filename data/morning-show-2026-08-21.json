@@ -1,0 +1,98 @@
+{
+  "date":"2026-08-21",
+  "version":"2026-08-21-v1",
+  "label":"Friday Aug 21",
+  "startTime":"12:00 PM ET",
+  "source":"Friday News Google Alert + live market verification",
+  "title":"Bitcoin Near $80K: Crypto Is Moving Again | W3BC LIVE",
+  "description":"LIVE at 12 PM ET. Bitcoin is ripping, Washington is pushing crypto market structure forward, ETF flows are returning, tokenization keeps expanding, and we are checking the trenches live. Today: markets, crypto news, AI, sports, betting, plus $JCHAINS, $GOOD, $WALLET and $M32.",
+  "segments":[
+    {"name":"Open","kind":"camera","enabled":true},
+    {"name":"Markets Now","kind":"markets","enabled":true,"sponsor":"Bitunix"},
+    {"name":"News Desk","kind":"news","enabled":true},
+    {"name":"AI + Technology","kind":"ai","enabled":true},
+    {"name":"Sports","kind":"sports","enabled":true},
+    {"name":"Betting Desk","kind":"betting","enabled":true,"sponsor":"BC.GAME"},
+    {"name":"The Trenches","kind":"trenches","enabled":true},
+    {"name":"Close","kind":"camera","enabled":true}
+  ],
+  "openNotes":[
+    "LIVE MARKET ANCHOR: BTC was approximately $77,600 around 11:29 AM ET. Use the live chart on-air rather than repeating the morning alert's stale 'above $70K' language.",
+    "Bitcoin traded as high as roughly $79.4K this morning and is having its strongest week in more than two years.",
+    "Main drivers to frame: Treasury bond-market intervention and dollar weakness, regulatory momentum around CLARITY/SEC/CFTC, ETF inflows, and short covering.",
+    "Do not reduce today's move to one catalyst. Macro liquidity, regulation, institutional flows and liquidations are all part of it."
+  ],
+  "trenchesPresets":[
+    {"symbol":"$JCHAINS","name":"JCHAINS","chain":"solana","query":"5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump","address":"5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump"},
+    {"symbol":"$GOOD","name":"Good In The Hood","chain":"robinhood","query":"0x5f62c57e5c537887117eef828b7e3ad41c009feb","address":"0x5f62c57e5c537887117eef828b7e3ad41c009feb"},
+    {"symbol":"$WALLET","name":"Robinhood Wallet","chain":"robinhood","query":"0x0339f5459fc690ac85f1782e15782a151b4a9e1b","address":"0x0339f5459fc690ac85f1782e15782a151b4a9e1b"},
+    {"symbol":"$M32","name":"MPP32","chain":"solana","query":"6hKtz8FV7cAQMrbjcBZeTQAcrYep3WCM83164JpJpump","address":"6hKtz8FV7cAQMrbjcBZeTQAcrYep3WCM83164JpJpump"}
+  ],
+  "newsStories":[
+    {"headline":"Bitcoin pushes toward $80K in its strongest week in more than two years","points":["Bitcoin traded in the high-$77,000s late this morning after briefly reaching roughly $79,400.","The move is far beyond the alert digest's earlier 'above $70K' headline; use the live chart for the current number.","Bitcoin is up more than 20% on the week in several major-market reports, with crypto equities and altcoins also participating."],"stats":[["LIVE AREA","~$77.6K at 11:29 ET"],["INTRADAY HIGH","~$79.4K"],["WEEK","20%+ gain"]],"takeaway":"This is now a broad breakout story, not simply Bitcoin reclaiming $70K. The question is whether spot demand can hold after the squeeze-driven acceleration.","source":"Reuters / FT / WSJ / Friday digest"},
+    {"headline":"Washington crypto push adds fuel as CLARITY enters the spotlight","points":["President Trump and crypto executives are pressing Congress to move the CLARITY Act forward.","The proposed framework would establish clearer digital-asset definitions and divide regulatory responsibilities between the SEC and CFTC.","The CFTC chair has said the agency is prepared to move on crypto rules if Congress does not act."],"stats":[],"takeaway":"Markets are responding not just to rhetoric but to the possibility of an actual U.S. market-structure framework.","source":"CNBC / Reuters / Fox Business / Friday digest"},
+    {"headline":"Bitcoin ETF demand returns with hundreds of millions in fresh inflows","points":["The Friday digest reports $517.2 million of net U.S. spot Bitcoin ETF inflows for the Aug. 19 session.","Other market reporting puts more than $1 billion into Bitcoin-linked ETFs over the latest two-day stretch.","That gives the rally a spot-demand component alongside short liquidations."],"stats":[["AUG 19 BTC ETF FLOW","$517.2M"],["RECENT 2-DAY FLOW",">$1B"]],"takeaway":"The cleanest bullish confirmation is sustained spot demand after the forced short covering fades.","source":"Friday digest / WSJ"},
+    {"headline":"Treasury bond intervention and a weaker dollar are becoming part of the Bitcoin story","points":["Treasury's expanded long-term bond buyback plan has become a major macro catalyst.","The dollar has weakened while long-duration yields remain under pressure, pushing investors toward hard-asset and debasement trades.","Bitcoin and gold have both benefited from that macro setup."],"stats":[["30Y TREASURY","~5.27% reported"],["DOLLAR INDEX","~98.8 reported"]],"takeaway":"Today's crypto move cannot be explained by crypto news alone. Bond-market stress and dollar weakness are central to the setup.","source":"Reuters / FT / WSJ"},
+    {"headline":"SEC proposal could reopen token fundraising in a regulated form","points":["The SEC has proposed exemptions designed to give some digital-asset issuers more flexible paths to raise capital.","Coverage is already calling it a possible 'return of the ICO,' but the important distinction is that this would be a regulated exemption framework, not a return to 2017 free-for-all issuance.","The proposal still has to move through the rulemaking process."],"stats":[],"takeaway":"If adopted, this could materially change how U.S. crypto startups finance networks and token ecosystems.","source":"Reuters / Governance Intelligence / Friday digest"},
+    {"headline":"Tokenized stocks reportedly reach roughly $3B across thousands of assets","points":["Crypto Briefing data in the digest puts the tokenized-stock market around $3 billion across 3,374 assets.","XStocks reportedly added $17.3 million in market cap in one week and now lists hundreds of assets.","The trend is expanding beyond pilot programs into competing issuance and distribution platforms."],"stats":[["TOKENIZED STOCKS","~$3B"],["ASSETS","3,374"],["XSTOCKS WEEKLY GROWTH","+$17.3M"]],"takeaway":"Tokenized equities are becoming a market category with multiple issuers, chains and liquidity venues rather than a single proof of concept.","source":"Crypto Briefing / Friday digest"},
+    {"headline":"Onchain RWA value moves past roughly $30B","points":["Finextra Research says tokenized real-world assets have moved beyond pilots, with onchain RWA value above roughly $30 billion in 2026.","Securitize has also launched a tokenized high-yield fund tied to Neuberger Berman's credit platform.","The asset mix is widening from Treasuries into credit, funds and private-market structures."],"stats":[["ONCHAIN RWA VALUE",">~$30B"]],"takeaway":"The RWA story is moving from 'can it be tokenized?' to 'what financial products can operate natively onchain?'.","source":"Finextra / Friday digest"},
+    {"headline":"Stablecoins and tokenized deposits are converging with bank payment infrastructure","points":["J.P. Morgan is highlighting how stablecoins and deposit tokens are reshaping global payments.","Tokenized deposits preserve bank-style permissioning while bringing balances onto programmable ledgers.","Stablecoins and deposit tokens may compete in some use cases but can also serve different regulatory and institutional needs."],"stats":[],"takeaway":"The future of digital dollars may not be one winner; banks, regulated stablecoins and tokenized deposits can coexist across different payment rails.","source":"J.P. Morgan / Friday digest"},
+    {"headline":"Fed and Treasury look increasingly out of sync on market intervention","points":["Reuters and Axios coverage in the digest describes caution from Fed officials around Treasury's debt-management intervention.","The Fed is trying to reduce its market footprint while Treasury has shown more willingness to intervene in long-duration debt markets.","That tension matters for rates, liquidity, the dollar and risk assets."],"stats":[],"takeaway":"Watch the policy mix, not just the Fed funds rate. Treasury debt management is now directly affecting the liquidity narrative.","source":"Reuters / Axios / Friday digest"},
+    {"headline":"BlackRock and institutional products participate in the crypto rebound","points":["The digest reports Bitcoin capturing the majority of a $1.3 billion crypto-fund surge, while BlackRock products remain central to institutional flows.","BlackRock has also reduced the minimum size for certain in-kind IBIT conversions from $25 million to $1 million, according to the digest.","Institutional product plumbing continues improving even after the major 2025-26 drawdown."],"stats":[["CRYPTO FUND SURGE","$1.3B"],["BTC SHARE","77%"]],"takeaway":"Institutional adoption is increasingly visible in product structure, custody, creation/redemption and capital flows — not only price.","source":"Friday digest"}
+  ],
+  "aiStories":[
+    {"headline":"AI platform Clutch says it now reaches 30 million credit-union members","points":["Clutch AI says six of the ten largest U.S. credit unions use its platform.","The reported reach is 30 million members, showing AI adoption moving through mainstream financial institutions.","This is useful evidence that applied AI adoption is happening in traditional finance, not only at frontier-model companies."],"stats":[["MEMBERS REACHED","30M"],["TOP 10 CREDIT UNIONS","6 using platform"]],"takeaway":"The less glamorous AI story may be the most important: deployment inside existing financial institutions at consumer scale."},
+    {"headline":"UK cyber agency focuses on the security risk of autonomous AI agents","points":["The National Cyber Security Centre is publishing guidance around environments where agents operate with significant autonomy.","Autonomous action changes the risk model because software can take consequential steps without a human approving each one.","Identity, permissions, monitoring and containment become core agent infrastructure."],"stats":[],"takeaway":"Agent security is becoming an access-control problem as much as a model-safety problem."},
+    {"headline":"Researchers push back on treating chatbot intelligence as human reasoning","points":["Quanta highlights computer scientist Melanie Mitchell's argument that AI does not think or reason the way humans do.","The distinction matters when businesses assign models tasks that require judgment rather than pattern completion.","Better benchmarks need to test the failure modes hidden by fluent language."],"stats":[],"takeaway":"Fluency is not the same thing as understanding; that distinction matters more as agents receive real authority."},
+    {"headline":"AI capability and consciousness remain very different questions","points":["The Economist coverage in today's digest separates machine intelligence from claims about consciousness.","As models become more convincing conversationally, users may infer mental states that the underlying science does not establish.","This affects product design, regulation and human attachment to AI systems."],"stats":[],"takeaway":"We can debate powerful AI without pretending capability automatically proves consciousness."},
+    {"headline":"OpenAI IPO expectations move toward 2027 or sooner","points":["CNBC reports OpenAI CFO Sarah Friar told employees the company will be public in 2027 or sooner.","The company reportedly filed confidential IPO paperwork in June but has not publicly disclosed detailed plans.","A listing would be one of the defining capital-markets events of the AI cycle."],"stats":[],"takeaway":"The frontier-model race is increasingly becoming a public-capital-markets story, not only a venture-capital story."},
+    {"headline":"Anthropic is reportedly sizing up a potential mega-IPO","points":["Bloomberg reporting in the digest says Anthropic is considering an IPO that could rival the scale of other record technology listings.","The company could move toward a public filing as soon as the end of the month, according to the report.","That would put two frontier AI labs on a path toward public-market scrutiny."],"stats":[],"takeaway":"Public markets may soon have to price frontier AI economics directly: compute costs, revenue growth, margins and model risk."}
+  ],
+  "sportsStories":[
+    {"headline":"Rory McIlroy takes the BMW Championship lead as LIV's future stays uncertain","points":["BBC reports McIlroy back in form and leading the BMW Championship.","At the same time, McIlroy and Scottie Scheffler are discussing a possible route back for LIV golfers if the breakaway circuit does not continue.","The competitive golf story and the business-of-golf story are colliding again."],"stats":[],"takeaway":"A strong Rory weekend gives golf a major on-course story while LIV's future remains the bigger structural question."},
+    {"headline":"NFL fines Cowboys and Saints $500K each after joint-practice fights","points":["NFL.com says both organizations were fined $500,000 after multiple fights during a joint practice.","The league is sending a clear message ahead of the regular season about controlling joint-practice behavior.","It is also a reminder of how quickly preseason intensity can turn into roster and discipline problems."],"stats":[["COWBOYS FINE","$500K"],["SAINTS FINE","$500K"]],"takeaway":"Joint practices are valuable because they simulate game intensity — and risky for exactly the same reason."},
+    {"headline":"Every NFL team has a pressure point entering the 2026 season","points":["PFF's preseason review identifies the biggest concern for every club using roster context and grading data.","This is a useful segment for identifying where expectations may be ahead of actual depth or performance.","It also gives us betting and fantasy angles once real games begin."],"stats":[],"takeaway":"Before picking winners, identify the roster weakness most likely to break a team's season."},
+    {"headline":"MLB wild-card race stays crowded with half the league still in range","points":["The Athletic notes that roughly half of MLB's teams remain within striking distance of a wild-card berth.","Late-season X-factors — bullpen health, rotation depth and individual breakouts — will decide a large part of the field.","The next few weeks should produce meaningful games almost every night."],"stats":[],"takeaway":"The expanded playoff format is doing exactly what it was designed to do: keep more teams relevant deep into August."},
+    {"headline":"Mason Jones' UFC comeback is turning into a career-reset story","points":["BBC profiles Welsh fighter Mason Jones after his second run in the UFC began paying off.","He used a performance bonus from a March fight to buy a house.","The story is a useful look at the economics behind a fighter rebuilding a career rather than just chasing rankings."],"stats":[],"takeaway":"For most fighters, one bonus can be life-changing money — a reminder of the financial stakes behind every performance."},
+    {"headline":"James Harden reportedly returns to Cleveland on a three-year deal","points":["NBA.com reports Harden returning to the Cavaliers on a three-year, $97 million contract.","The 11-time All-Star and 2018 MVP adds another major veteran piece to Cleveland's roster.","The fit, role and playoff impact become the obvious questions."],"stats":[["TERM","3 years"],["VALUE","$97M"]],"takeaway":"The name is huge; the real basketball question is whether the roster fit raises Cleveland's postseason ceiling."},
+    {"headline":"Boxing's next major matchups remain fluid","points":["Today's boxing coverage includes negotiations around Francesca Hennessy vs. undisputed bantamweight champion Dina Thorslund.","DAZN is also debating Sebastian Fundora versus Vergil Ortiz Jr. relative to a potential Jaron Ennis matchup.","The division-level matchmaking story remains as important as any single announcement."],"stats":[],"takeaway":"Boxing continues to have the talent; the question is whether promoters can consistently make the fights fans actually want."}
+  ],
+  "ticker":[
+    "Bitcoin trades in the high-$77Ks after touching roughly $79.4K this morning",
+    "Bitcoin is on pace for its strongest week in more than two years",
+    "White House and crypto executives push Congress toward CLARITY Act action",
+    "Bitcoin ETF demand returns with more than $1B reported over the latest two-day stretch",
+    "Treasury bond-market intervention and dollar weakness add fuel to the crypto rally",
+    "SEC proposal could create new regulated fundraising exemptions for digital-asset issuers",
+    "Tokenized stock market reportedly reaches roughly $3B across 3,374 assets",
+    "Onchain RWA value moves above roughly $30B in 2026",
+    "J.P. Morgan highlights stablecoins and tokenized deposits as emerging payment rails",
+    "Fed and Treasury appear increasingly at odds over market intervention",
+    "OpenAI IPO expectations move toward 2027 or sooner",
+    "Anthropic reportedly explores a potential mega-IPO",
+    "UK cyber agency focuses on autonomous AI-agent risk",
+    "Rory McIlroy leads the BMW Championship",
+    "NFL fines Cowboys and Saints $500K each after joint-practice fights",
+    "MLB wild-card race remains crowded",
+    "James Harden reportedly returns to Cleveland on a 3-year, $97M deal"
+  ],
+  "liveFeed":[
+    {"text":"Bitcoin trades in the high-$77Ks after touching roughly $79.4K this morning","category":"markets","priority":"high"},
+    {"text":"Bitcoin is on pace for its strongest week in more than two years","category":"markets","priority":"high"},
+    {"text":"White House and crypto executives push Congress toward CLARITY Act action","category":"news","priority":"high"},
+    {"text":"Bitcoin ETF demand returns with more than $1B reported over the latest two-day stretch","category":"markets","priority":"high"},
+    {"text":"Treasury bond-market intervention and dollar weakness add fuel to the crypto rally","category":"markets","priority":"high"},
+    {"text":"SEC proposal could create new regulated fundraising exemptions for digital-asset issuers","category":"news","priority":"high"},
+    {"text":"Tokenized stock market reportedly reaches roughly $3B across 3,374 assets","category":"news","priority":"normal"},
+    {"text":"Onchain RWA value moves above roughly $30B in 2026","category":"news","priority":"normal"},
+    {"text":"J.P. Morgan highlights stablecoins and tokenized deposits as emerging payment rails","category":"news","priority":"normal"},
+    {"text":"Fed and Treasury appear increasingly at odds over market intervention","category":"markets","priority":"high"},
+    {"text":"OpenAI IPO expectations move toward 2027 or sooner","category":"ai","priority":"high"},
+    {"text":"Anthropic reportedly explores a potential mega-IPO","category":"ai","priority":"high"},
+    {"text":"UK cyber agency focuses on autonomous AI-agent risk","category":"ai","priority":"normal"},
+    {"text":"Rory McIlroy leads the BMW Championship","category":"sports","priority":"normal"},
+    {"text":"NFL fines Cowboys and Saints $500K each after joint-practice fights","category":"sports","priority":"high"},
+    {"text":"MLB wild-card race remains crowded","category":"sports","priority":"normal"},
+    {"text":"James Harden reportedly returns to Cleveland on a 3-year, $97M deal","category":"sports","priority":"high"}
+  ]
+}
