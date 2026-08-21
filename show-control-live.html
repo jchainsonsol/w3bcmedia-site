@@ -23,7 +23,7 @@
   <main class="workspace">
     <section class="pane left">
       <div class="paneHead"><b>SHOW CONTROL</b><span>RUNDOWN · MARKETS · NEWS · SEGMENTS</span></div>
-      <div class="frameViewport"><iframe id="control" class="control" src="show-control.html?v=prod0820rgb"></iframe></div>
+      <div class="frameViewport"><iframe id="control" class="control" src="about:blank"></iframe></div>
     </section>
 
     <section class="right">
@@ -53,15 +53,16 @@
 
       <section class="pane audioPane">
         <div class="paneHead"><b>AUDIO MIXER</b><span>MUSIC · TALK BED · HOT BUTTONS</span></div>
-        <div class="audioViewport"><iframe class="audio" src="audio-control.html?v=prod0820rgb"></iframe></div>
+        <div class="audioViewport"><iframe id="audioFrame" class="audio" src="about:blank"></iframe></div>
       </section>
     </section>
   </main>
 </div>
 <script>
 (()=>{
-const KEY='w3bcShowStateV1',VER='w3bc-rundown-v2-20260820';let s={};try{s=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){s={}}if(localStorage.getItem('w3bcRundownVersion')!==VER){const old=Array.isArray(s.segments)?s.segments:[];const take=(kind,name,fallback={})=>{let x=old.find(z=>z.kind===kind&&(!name||String(z.name||'').toLowerCase().includes(name.toLowerCase())));return x?{...x,enabled:x.enabled!==false}:{...fallback,kind,name,enabled:true}};const open=take('camera','open',{name:'Open'});const markets=take('markets',null,{name:'Markets Now',sponsor:'Bitunix'});const news=take('news',null,{name:'News Desk'});const trenches=take('trenches',null,{name:'The Trenches'});const ai=take('ai',null,{name:'AI + Technology'});const interview=take('interview',null,{name:'Interview'});const panel=take('panel','open panel',{name:'Open Panel'});const sports=take('sports',null,{name:'Sports'});const betting=take('betting',null,{name:'Betting Desk',sponsor:'BC.GAME'});const casino={name:'BC Game Casino',kind:'panel',enabled:true,sponsor:'BC.GAME',desc:'Casino play / entertainment close'};let close=old.find(z=>z.kind==='camera'&&String(z.name||'').toLowerCase().includes('close'))||{name:'Close',kind:'camera',enabled:true};s.segments=[open,markets,news,trenches,ai,interview,panel,sports,betting,casino,close];s.current=0;localStorage.setItem(KEY,JSON.stringify(s));localStorage.setItem('w3bcRundownVersion',VER);try{new BroadcastChannel('w3bc-show').postMessage({type:'state',state:s})}catch(e){}}
 const SERVICE='00010203-0405-0607-0809-0a0b0c0d1910',CHAR='00010203-0405-0607-0809-0a0b0c0d2b10',$=id=>document.getElementById(id);let device=null,ch=null,timer=null;
+$('control').src='show-control.html?v='+Date.now();
+$('audioFrame').src='audio-control.html?v='+Date.now();
 function crc16(a){let crc=0;for(const b of a){crc^=b<<8;for(let i=0;i<8;i++)crc=(crc&0x8000)?((crc<<1)^0x1021)&65535:(crc<<1)&65535}return crc}
 function packet(cmd,param){const p=Math.max(0,Math.min(255,Math.round(param))),a=[0x4c,0x54,0x09,0x00,0x30,0x57,0x00,cmd,0x01,p],crc=crc16(a);return new Uint8Array([...a,(crc>>8)&255,crc&255])}
 async function send(cmd,param){if(!ch)return;await ch.writeValueWithoutResponse(packet(cmd,param))}
