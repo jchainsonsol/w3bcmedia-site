@@ -33,7 +33,9 @@ jobs:
               ['basketball_wnba','WNBA']
             ];
             const base = 'https://api.the-odds-api.com/v4/sports';
-            const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', sports: [], quota: {} };
+            const now = Date.now();
+            const horizon = now + (8 * 24 * 60 * 60 * 1000);
+            const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', window: 'upcoming-8-days', sports: [], quota: {} };
 
             async function getSport(sportKey,label){
               const url = `${base}/${sportKey}/odds/?apiKey=${encodeURIComponent(apiKey)}&regions=us&markets=h2h,spreads,totals&oddsFormat=american&dateFormat=iso`;
@@ -46,11 +48,15 @@ jobs:
                 }
                 throw new Error(`${sportKey}: ${r.status} ${body}`);
               }
-              const events = await r.json();
+              const rawEvents = await r.json();
+              const events = rawEvents.filter(ev => {
+                const t = Date.parse(ev.commence_time);
+                return Number.isFinite(t) && t > now && t <= horizon;
+              }).sort((a,b)=>Date.parse(a.commence_time)-Date.parse(b.commence_time));
               out.quota.remaining = r.headers.get('x-requests-remaining');
               out.quota.used = r.headers.get('x-requests-used');
               out.quota.last = r.headers.get('x-requests-last');
-              console.log(`${label}: ${events.length} events`);
+              console.log(`${label}: ${rawEvents.length} returned, ${events.length} upcoming`);
               if (events.length) out.sports.push({ key: sportKey, label, events });
             }
 
