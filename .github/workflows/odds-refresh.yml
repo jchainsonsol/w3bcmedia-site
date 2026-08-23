@@ -34,8 +34,9 @@ jobs:
             ];
             const base = 'https://api.the-odds-api.com/v4/sports';
             const now = Date.now();
+            const liveLookback = now - (12 * 60 * 60 * 1000);
             const horizon = now + (96 * 60 * 60 * 1000);
-            const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', window: 'next-96-hours', sports: [], quota: {} };
+            const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', execution: 'BC.GAME', window: 'live-plus-next-96-hours', sports: [], quota: {} };
 
             async function getSport(sportKey,label){
               const url = `${base}/${sportKey}/odds/?apiKey=${encodeURIComponent(apiKey)}&regions=us&markets=h2h,spreads,totals&oddsFormat=american&dateFormat=iso`;
@@ -51,12 +52,13 @@ jobs:
               const rawEvents = await r.json();
               const events = rawEvents.filter(ev => {
                 const t = Date.parse(ev.commence_time);
-                return Number.isFinite(t) && t > now && t <= horizon;
-              }).sort((a,b)=>Date.parse(a.commence_time)-Date.parse(b.commence_time));
+                return Number.isFinite(t) && t >= liveLookback && t <= horizon;
+              }).map(ev => ({...ev, w3bc_status: Date.parse(ev.commence_time) <= now ? 'LIVE_OR_STARTED' : 'PREGAME'}))
+                .sort((a,b)=>Date.parse(a.commence_time)-Date.parse(b.commence_time));
               out.quota.remaining = r.headers.get('x-requests-remaining');
               out.quota.used = r.headers.get('x-requests-used');
               out.quota.last = r.headers.get('x-requests-last');
-              console.log(`${label}: ${rawEvents.length} returned, ${events.length} within 96 hours`);
+              console.log(`${label}: ${rawEvents.length} returned, ${events.length} live/upcoming retained`);
               if (events.length) out.sports.push({ key: sportKey, label, events });
             }
 
