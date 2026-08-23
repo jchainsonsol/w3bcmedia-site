@@ -1,1 +1,242 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>W3BC Markets Terminal</title><style>:root{--c:#22d3e5;--l:#273139}*{box-sizing:border-box}html,body{margin:0;height:100%;background:#05080a;color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body{display:grid;grid-template-rows:64px 44px 1fr}.head{border-bottom:1px solid var(--l);display:flex;align-items:center;justify-content:space-between;padding:0 18px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:58px;height:44px;object-fit:contain}.brand b{letter-spacing:.12em}.small{font-size:8px;color:#718087;letter-spacing:.12em}.toolbar{border-bottom:1px solid var(--l);display:flex;align-items:center;gap:6px;padding:0 12px;background:#080c0e}.b{border:1px solid #344149;background:#090d0f;color:#fff;padding:7px 9px;font-size:9px;font-weight:800;cursor:pointer}.b.active{border-color:var(--c);color:var(--c)}.drawControls{margin-left:auto;display:flex;align-items:center;gap:6px}.drawControls label{font-size:8px;color:#718087}.drawControls input[type=color]{width:30px;height:28px;padding:1px;border:1px solid #344149;background:#090d0f}.work{display:grid;grid-template-columns:48px 1fr 260px;min-height:0}.tools{border-right:1px solid var(--l);display:flex;flex-direction:column;align-items:center;padding-top:8px;gap:6px}.tool{width:34px;height:34px;border:1px solid #303b42;background:#080c0e;color:#9aa5ab;display:grid;place-items:center;cursor:pointer;font-weight:900}.tool:hover,.tool.active{border-color:var(--c);color:var(--c);background:rgba(34,211,229,.08)}.chart{position:relative;overflow:hidden;background:linear-gradient(rgba(34,211,229,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,229,.035) 1px,transparent 1px);background-size:70px 70px;touch-action:none}.chart svg{position:absolute;inset:4%;width:92%;height:92%;pointer-events:none}.drawCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:5;cursor:crosshair}.water{position:absolute;left:25px;top:22px;z-index:2;pointer-events:none}.water b{font-size:24px}.water span{display:block;color:#7f8b92;font-size:10px;margin-top:3px}.side{border-left:1px solid var(--l);background:#080c0e;padding:14px}.side h3{font-size:12px;margin:0 0 12px}.level{border-top:1px solid #222b30;padding:10px 0;display:flex;justify-content:space-between;font-size:10px}.level span{color:#7f8b92}.level b{color:var(--c)}.note{width:100%;min-height:90px;background:#05080a;border:1px solid #303b42;color:#fff;padding:9px;font-size:10px;resize:vertical}.foot{margin-top:15px;color:#69767d;font-size:9px;line-height:1.5}.drawState{margin-top:14px;border-top:1px solid #222b30;padding-top:10px;font-size:9px;color:#718087}.drawState b{color:var(--c)}</style></head><body><header class="head"><div class="brand"><img src="assets/w3bc-logo-white.png"><div><b>W3BC MARKETS TERMINAL</b><div class="small">CHARTING WORKSPACE · STREAM READY</div></div></div><div class="small">V2 · DRAWING ENABLED</div></header><div class="toolbar"><div id="symbols"></div><span style="width:12px"></span><div id="times"></div><div class="drawControls"><label>MARKER</label><input id="markerColor" type="color" value="#22d3e5"><button id="undoBtn" class="b">UNDO</button><button id="clearBtn" class="b">CLEAR</button></div></div><main class="work"><aside class="tools"><button class="tool" data-tool="crosshair" title="Crosshair">＋</button><button class="tool active" data-tool="marker" title="Marker">✎</button><button class="tool" data-tool="eraser" title="Eraser">⌫</button><button class="tool" data-tool="trend" title="Trendline">╱</button><button class="tool" data-tool="horizontal" title="Horizontal">─</button><button class="tool" data-tool="vertical" title="Vertical">│</button><button class="tool" data-tool="rectangle" title="Rectangle">□</button><button class="tool" data-tool="text" title="Text">T</button></aside><section id="chart" class="chart"><div class="water"><b id="sym"></b><span id="tf"></span></div><svg id="svg" viewBox="0 0 1100 650" preserveAspectRatio="none"></svg><canvas id="drawCanvas" class="drawCanvas"></canvas></section><aside class="side"><h3>W3BC LEVELS</h3><div class="level"><span>Resistance</span><b>—</b></div><div class="level"><span>Support</span><b>—</b></div><div class="level"><span>Target 1</span><b>—</b></div><div class="level"><span>Target 2</span><b>—</b></div><h3 style="margin-top:20px">ON-AIR NOTES</h3><textarea class="note" placeholder="Thesis, levels, catalyst…"></textarea><div class="drawState">DRAW TOOL · <b id="toolName">MARKER</b><br>Marker drawings save per symbol + timeframe in this browser.</div><div class="foot">Marker and eraser are live. Trendline and other primitives remain next-step tools.</div></aside></main><script>const KEY='w3bcShowStateV1',ch=new BroadcastChannel('w3bc-show');let s=JSON.parse(localStorage.getItem(KEY)||'null')||{symbol:'BTCUSD',timeframe:'15m'};let activeTool='marker';const canvas=document.getElementById('drawCanvas'),ctx=canvas.getContext('2d'),chart=document.getElementById('chart');let drawing=false,currentStroke=null,strokes=[];function drawKey(){return'w3bcMarketDrawings:'+s.symbol+':'+s.timeframe}function saveDrawings(){localStorage.setItem(drawKey(),JSON.stringify(strokes))}function loadDrawings(){try{strokes=JSON.parse(localStorage.getItem(drawKey())||'[]')}catch(e){strokes=[]}renderDrawings()}function resizeCanvas(){const r=chart.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr);canvas.style.width=r.width+'px';canvas.style.height=r.height+'px';ctx.setTransform(dpr,0,0,dpr,0,0);renderDrawings()}function renderDrawings(){const r=chart.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);ctx.lineCap='round';ctx.lineJoin='round';for(const stroke of strokes){if(!stroke.points?.length)continue;ctx.globalCompositeOperation=stroke.tool==='eraser'?'destination-out':'source-over';ctx.strokeStyle=stroke.color||'#22d3e5';ctx.lineWidth=stroke.tool==='eraser'?22:4;ctx.beginPath();stroke.points.forEach((p,i)=>{const x=p.x*r.width,y=p.y*r.height;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)});ctx.stroke()}ctx.globalCompositeOperation='source-over'}function point(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width,y:(e.clientY-r.top)/r.height}}function pointerDown(e){if(!['marker','eraser'].includes(activeTool))return;drawing=true;canvas.setPointerCapture(e.pointerId);currentStroke={tool:activeTool,color:markerColor.value,points:[point(e)]};strokes.push(currentStroke);renderDrawings()}function pointerMove(e){if(!drawing||!currentStroke)return;currentStroke.points.push(point(e));renderDrawings()}function pointerUp(e){if(!drawing)return;drawing=false;currentStroke=null;saveDrawings();try{canvas.releasePointerCapture(e.pointerId)}catch(_){} }canvas.addEventListener('pointerdown',pointerDown);canvas.addEventListener('pointermove',pointerMove);canvas.addEventListener('pointerup',pointerUp);canvas.addEventListener('pointercancel',pointerUp);document.querySelectorAll('[data-tool]').forEach(btn=>btn.onclick=()=>{activeTool=btn.dataset.tool;document.querySelectorAll('[data-tool]').forEach(x=>x.classList.toggle('active',x===btn));toolName.textContent=activeTool.toUpperCase();canvas.style.cursor=activeTool==='eraser'?'cell':activeTool==='marker'?'crosshair':'default'});undoBtn.onclick=()=>{strokes.pop();saveDrawings();renderDrawings()};clearBtn.onclick=()=>{if(confirm('Clear all drawings for '+s.symbol+' '+s.timeframe+'?')){strokes=[];saveDrawings();renderDrawings()}};function save(){localStorage.setItem(KEY,JSON.stringify(s));ch.postMessage({type:'state',state:s});paint();loadDrawings()}function paint(){sym.textContent=s.symbol;tf.textContent=s.timeframe+' · W3BC MARKETS NOW';symbols.innerHTML=['BTCUSD','ETHUSD','SOLUSD','SPX','NDX','GOLD'].map(x=>`<button class="b ${x===s.symbol?'active':''}" onclick="s.symbol='${x}';save()">${x}</button>`).join(' ');times.innerHTML=['1m','5m','15m','1h','4h','1D'].map(x=>`<button class="b ${x===s.timeframe?'active':''}" onclick="s.timeframe='${x}';save()">${x}</button>`).join(' ');let out='<g stroke="#202a30" stroke-width="1">';for(let y=70;y<650;y+=70)out+=`<line x1="0" y1="${y}" x2="1100" y2="${y}"/>`;out+='</g>';for(let i=0;i<44;i++){let x=30+i*24,o=330+Math.sin(i*.55)*105+(i<20?50:-20),c=o+(Math.sin(i*1.7)*45),h=Math.min(o,c)-30,l=Math.max(o,c)+30,up=c<o,col=up?'#22d3e5':'#68757d';out+=`<line x1="${x}" y1="${h}" x2="${x}" y2="${l}" stroke="${col}"/><rect x="${x-6}" y="${Math.min(o,c)}" width="12" height="${Math.max(7,Math.abs(c-o))}" fill="${col}"/>`}out+='<path d="M20 470 C120 420 190 480 290 360 S450 400 560 290 S710 320 800 220 S970 250 1080 130" fill="none" stroke="#8cedf5" stroke-width="3"/>';svg.innerHTML=out}window.addEventListener('resize',resizeCanvas);paint();loadDrawings();requestAnimationFrame(resizeCanvas);</script></body></html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>W3BC Markets Terminal</title>
+<style>
+:root{--c:#22d3e5;--l:#273139;--muted:#718087;--panel:#080c0e;--bg:#05080a;--ema:#f1b84b;--smma:#d978ff;--up:#22d3e5;--down:#68757d}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{display:grid;grid-template-rows:64px auto 1fr}
+.head{border-bottom:1px solid var(--l);display:flex;align-items:center;justify-content:space-between;padding:0 18px}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:58px;height:44px;object-fit:contain}.brand b{letter-spacing:.12em}
+.small{font-size:8px;color:var(--muted);letter-spacing:.12em}
+.status{display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:#647078}.dot.live{background:#42e39b;box-shadow:0 0 10px rgba(66,227,155,.55)}
+.toolbar{border-bottom:1px solid var(--l);display:flex;align-items:center;gap:6px;padding:7px 12px;background:var(--panel);flex-wrap:wrap}
+.group{display:flex;gap:5px;align-items:center}.sep{width:1px;height:24px;background:#273139;margin:0 4px}
+.b{border:1px solid #344149;background:#090d0f;color:#fff;padding:7px 9px;font-size:9px;font-weight:800;cursor:pointer}
+.b:hover,.b.active{border-color:var(--c);color:var(--c)}
+.drawControls{margin-left:auto;display:flex;align-items:center;gap:6px}.drawControls label{font-size:8px;color:var(--muted)}
+.drawControls input[type=color]{width:30px;height:28px;padding:1px;border:1px solid #344149;background:#090d0f}
+.work{display:grid;grid-template-columns:48px minmax(0,1fr) 286px;min-height:0}
+.tools{border-right:1px solid var(--l);display:flex;flex-direction:column;align-items:center;padding-top:8px;gap:6px}
+.tool{width:34px;height:34px;border:1px solid #303b42;background:var(--panel);color:#9aa5ab;display:grid;place-items:center;cursor:pointer;font-weight:900}
+.tool:hover,.tool.active{border-color:var(--c);color:var(--c);background:rgba(34,211,229,.08)}
+.chart{position:relative;overflow:hidden;background:linear-gradient(rgba(34,211,229,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,229,.035) 1px,transparent 1px);background-size:70px 70px;touch-action:none}
+.chart svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.drawCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:5;cursor:crosshair}
+.water{position:absolute;left:25px;top:18px;z-index:2;pointer-events:none}.water b{font-size:24px}.water span{display:block;color:#7f8b92;font-size:10px;margin-top:3px}
+.legend{position:absolute;left:25px;top:70px;z-index:2;display:flex;gap:12px;font-size:9px;pointer-events:none}.legend span{display:flex;align-items:center;gap:5px;color:#9aa5ab}
+.swatch{width:14px;height:2px;background:currentColor}.legend .smma{color:var(--smma)}.legend .ema{color:var(--ema)}
+.priceBadge{position:absolute;right:14px;top:14px;z-index:3;background:#091014;border:1px solid #2f3c43;padding:8px 10px;text-align:right;pointer-events:none}.priceBadge b{font-size:17px}.priceBadge span{display:block;color:var(--muted);font-size:8px;margin-top:2px}
+.side{border-left:1px solid var(--l);background:var(--panel);padding:14px;overflow:auto}
+.side h3{font-size:11px;margin:0 0 10px;letter-spacing:.08em}.side h4{font-size:9px;margin:16px 0 6px;color:#aab5ba;letter-spacing:.08em}
+.level{border-top:1px solid #222b30;padding:9px 0;display:flex;justify-content:space-between;gap:12px;font-size:9px}.level span{color:#7f8b92}.level b{color:var(--c);text-align:right}
+.note{width:100%;min-height:76px;background:var(--bg);border:1px solid #303b42;color:#fff;padding:9px;font-size:10px;resize:vertical}
+.foot{margin-top:12px;color:#69767d;font-size:9px;line-height:1.55}.drawState{margin-top:12px;border-top:1px solid #222b30;padding-top:10px;font-size:9px;color:var(--muted)}.drawState b{color:var(--c)}
+.badge{display:inline-block;border:1px solid #344149;padding:4px 6px;font-size:8px;font-weight:800;margin:2px 2px 2px 0}.badge.good{border-color:#246b52;color:#5ce1a5}.badge.warn{border-color:#7a6233;color:#f1c46d}
+.toggle{display:flex;gap:5px}.error{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;background:#150b0d;border:1px solid #63313a;padding:12px 15px;font-size:10px;display:none;max-width:520px}
+.loading{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;font-size:10px;color:#9ba7ad;letter-spacing:.12em;display:none}
+@media(max-width:900px){.work{grid-template-columns:44px 1fr}.side{display:none}.drawControls{margin-left:0}.brand b{font-size:12px}}
+</style>
+</head>
+<body>
+<header class="head">
+  <div class="brand"><img src="assets/w3bc-logo-white.png"><div><b>W3BC MARKETS TERMINAL</b><div class="small">BITUNIX MARKET DATA · STREAM READY</div></div></div>
+  <div class="status"><span id="feedDot" class="dot"></span><div class="small" id="feedStatus">CONNECTING</div></div>
+</header>
+<div class="toolbar">
+  <div class="toggle">
+    <button id="cryptoMode" class="b active" onclick="setMode('crypto')">CRYPTO</button>
+    <button id="stockMode" class="b" onclick="setMode('stocks')">STOCK PERPS / xSTOCKS</button>
+  </div>
+  <span class="sep"></span>
+  <div id="symbols" class="group"></div>
+  <span class="sep"></span>
+  <div id="times" class="group"></div>
+  <div class="drawControls">
+    <button id="vrvpBtn" class="b active">VRVP</button>
+    <button id="smmaBtn" class="b active">21 SMMA</button>
+    <button id="emaBtn" class="b active">200 EMA</button>
+    <label>DRAW</label><input id="markerColor" type="color" value="#22d3e5">
+    <button id="undoBtn" class="b">UNDO</button><button id="clearBtn" class="b">CLEAR</button>
+  </div>
+</div>
+<main class="work">
+  <aside class="tools">
+    <button class="tool" data-tool="crosshair" title="Crosshair">＋</button>
+    <button class="tool active" data-tool="trend" title="Straight trendline">╱</button>
+    <button class="tool" data-tool="marker" title="Freehand marker">✎</button>
+    <button class="tool" data-tool="eraser" title="Eraser">⌫</button>
+    <button class="tool" data-tool="horizontal" title="Horizontal line">─</button>
+  </aside>
+  <section id="chart" class="chart">
+    <div class="water"><b id="sym"></b><span id="tf"></span></div>
+    <div class="legend"><span class="smma"><i class="swatch"></i>21 SMMA</span><span class="ema"><i class="swatch"></i>200 EMA</span></div>
+    <div class="priceBadge"><b id="lastPrice">—</b><span id="sourceLabel">BITUNIX</span></div>
+    <div id="loading" class="loading">LOADING BITUNIX CANDLES…</div>
+    <div id="error" class="error"></div>
+    <svg id="svg" viewBox="0 0 1200 700" preserveAspectRatio="none"></svg>
+    <canvas id="drawCanvas" class="drawCanvas"></canvas>
+  </section>
+  <aside class="side">
+    <h3>MARKET DATA</h3>
+    <div class="level"><span>Source</span><b id="source">Bitunix Futures</b></div>
+    <div class="level"><span>Last</span><b id="sideLast">—</b></div>
+    <div class="level"><span>21 SMMA</span><b id="smmaValue">—</b></div>
+    <div class="level"><span>200 EMA</span><b id="emaValue">—</b></div>
+    <div class="level"><span>VRVP POC</span><b id="pocValue">—</b></div>
+    <h4>VISIBLE RANGE PROFILE</h4>
+    <div class="foot">Profile uses visible Bitunix candle volume distributed across each candle's high-low range. POC marks the highest estimated volume-at-price bin.</div>
+    <div id="assetMeta" style="margin-top:10px"></div>
+    <h3 style="margin-top:18px">ON-AIR NOTES</h3>
+    <textarea class="note" placeholder="Thesis, levels, catalyst…"></textarea>
+    <div class="drawState">DRAW TOOL · <b id="toolName">TREND</b><br>Lines save per symbol + timeframe in this browser.</div>
+    <div class="foot">Straight-line drawing, VRVP, 21 SMMA and 200 EMA are active. Bitunix is the primary candle source.</div>
+  </aside>
+</main>
+<script>
+const KEY='w3bcShowStateV1', ch=new BroadcastChannel('w3bc-show');
+const FUTURES='https://fapi.bitunix.com/api/v1/futures/market/kline';
+const cryptoSymbols=[
+  {label:'BTC',symbol:'BTCUSDT'},{label:'ETH',symbol:'ETHUSDT'},{label:'SOL',symbol:'SOLUSDT'},{label:'LINK',symbol:'LINKUSDT'}
+];
+const stockSymbols=[
+  {label:'AAPL',symbol:'AAPLUSDT',xstock:'AAPLx',name:'Apple'},
+  {label:'NVDA',symbol:'NVDAUSDT',xstock:'NVDAx',name:'NVIDIA'},
+  {label:'TSLA',symbol:'TSLAUSDT',xstock:'TSLAx',name:'Tesla'},
+  {label:'COIN',symbol:'COINUSDT',xstock:'COINx',name:'Coinbase'},
+  {label:'HOOD',symbol:'HOODUSDT',xstock:'HOODx',name:'Robinhood'},
+  {label:'QQQ',symbol:'QQQUSDT',xstock:'QQQx',name:'Invesco QQQ'}
+];
+let s=JSON.parse(localStorage.getItem(KEY)||'null')||{symbol:'BTCUSDT',timeframe:'15m'};
+if(!String(s.symbol).endsWith('USDT')) s.symbol='BTCUSDT';
+let mode=stockSymbols.some(x=>x.symbol===s.symbol)?'stocks':'crypto';
+let activeTool='trend', drawing=false,currentStroke=null,strokes=[],candles=[],showVRVP=true,showSMMA=true,showEMA=true,loadSeq=0;
+const canvas=document.getElementById('drawCanvas'),ctx=canvas.getContext('2d'),chart=document.getElementById('chart');
+
+function fmt(v){if(!Number.isFinite(v))return'—';if(Math.abs(v)>=1000)return v.toLocaleString(undefined,{maximumFractionDigits:2});if(Math.abs(v)>=1)return v.toLocaleString(undefined,{maximumFractionDigits:4});return v.toLocaleString(undefined,{maximumFractionDigits:8})}
+function drawKey(){return'w3bcMarketDrawings:'+s.symbol+':'+s.timeframe}
+function saveDrawings(){localStorage.setItem(drawKey(),JSON.stringify(strokes))}
+function loadDrawings(){try{strokes=JSON.parse(localStorage.getItem(drawKey())||'[]')}catch(e){strokes=[]}renderDrawings()}
+function resizeCanvas(){const r=chart.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr);canvas.style.width=r.width+'px';canvas.style.height=r.height+'px';ctx.setTransform(dpr,0,0,dpr,0,0);renderDrawings()}
+function point(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)/r.width,y:(e.clientY-r.top)/r.height}}
+function renderDrawings(){
+  const r=chart.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);ctx.lineCap='round';ctx.lineJoin='round';
+  for(const stroke of strokes){
+    if(!stroke.points?.length)continue;
+    ctx.globalCompositeOperation=stroke.tool==='eraser'?'destination-out':'source-over';
+    ctx.strokeStyle=stroke.color||'#22d3e5';ctx.lineWidth=stroke.tool==='eraser'?22:3;ctx.beginPath();
+    if(['trend','horizontal'].includes(stroke.tool)&&stroke.points.length>=2){
+      const a=stroke.points[0],b=stroke.points[stroke.points.length-1];
+      ctx.moveTo(a.x*r.width,a.y*r.height);
+      if(stroke.tool==='horizontal')ctx.lineTo(b.x*r.width,a.y*r.height); else ctx.lineTo(b.x*r.width,b.y*r.height);
+    }else{
+      stroke.points.forEach((p,i)=>{const x=p.x*r.width,y=p.y*r.height;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});
+    }
+    ctx.stroke();
+  } ctx.globalCompositeOperation='source-over';
+}
+function pointerDown(e){
+  if(!['marker','eraser','trend','horizontal'].includes(activeTool))return;
+  drawing=true;canvas.setPointerCapture(e.pointerId);
+  const p=point(e);currentStroke={tool:activeTool,color:markerColor.value,points:[p,p]};
+  strokes.push(currentStroke);renderDrawings();
+}
+function pointerMove(e){
+  if(!drawing||!currentStroke)return;
+  const p=point(e);
+  if(['trend','horizontal'].includes(currentStroke.tool)) currentStroke.points[currentStroke.points.length-1]=p;
+  else currentStroke.points.push(p);
+  renderDrawings();
+}
+function pointerUp(e){if(!drawing)return;pointerMove(e);drawing=false;currentStroke=null;saveDrawings();try{canvas.releasePointerCapture(e.pointerId)}catch(_){}}
+canvas.addEventListener('pointerdown',pointerDown);canvas.addEventListener('pointermove',pointerMove);canvas.addEventListener('pointerup',pointerUp);canvas.addEventListener('pointercancel',pointerUp);
+document.querySelectorAll('[data-tool]').forEach(btn=>btn.onclick=()=>{activeTool=btn.dataset.tool;document.querySelectorAll('[data-tool]').forEach(x=>x.classList.toggle('active',x===btn));toolName.textContent=activeTool.toUpperCase();canvas.style.cursor=activeTool==='eraser'?'cell':activeTool==='crosshair'?'crosshair':'crosshair'});
+undoBtn.onclick=()=>{strokes.pop();saveDrawings();renderDrawings()};
+clearBtn.onclick=()=>{if(confirm('Clear all drawings for '+s.symbol+' '+s.timeframe+'?')){strokes=[];saveDrawings();renderDrawings()}};
+vrvpBtn.onclick=()=>{showVRVP=!showVRVP;vrvpBtn.classList.toggle('active',showVRVP);renderChart()};
+smmaBtn.onclick=()=>{showSMMA=!showSMMA;smmaBtn.classList.toggle('active',showSMMA);renderChart()};
+emaBtn.onclick=()=>{showEMA=!showEMA;emaBtn.classList.toggle('active',showEMA);renderChart()};
+
+function setMode(m){
+  mode=m;cryptoMode.classList.toggle('active',m==='crypto');stockMode.classList.toggle('active',m==='stocks');
+  const list=m==='crypto'?cryptoSymbols:stockSymbols;if(!list.some(x=>x.symbol===s.symbol))s.symbol=list[0].symbol;
+  save();
+}
+function save(){localStorage.setItem(KEY,JSON.stringify(s));ch.postMessage({type:'state',state:s});paintControls();loadDrawings();loadMarket()}
+function paintControls(){
+  sym.textContent=s.symbol.replace('USDT','/USDT');tf.textContent=s.timeframe+' · BITUNIX '+(mode==='stocks'?'STOCK PERP':'PERPETUAL');
+  cryptoMode.classList.toggle('active',mode==='crypto');stockMode.classList.toggle('active',mode==='stocks');
+  const list=mode==='crypto'?cryptoSymbols:stockSymbols;
+  symbols.innerHTML=list.map(x=>`<button class="b ${x.symbol===s.symbol?'active':''}" onclick="s.symbol='${x.symbol}';save()">${x.label}</button>`).join('');
+  times.innerHTML=['1m','5m','15m','1h','4h','1d'].map(x=>`<button class="b ${x===s.timeframe?'active':''}" onclick="s.timeframe='${x}';save()">${x}</button>`).join('');
+  const item=stockSymbols.find(x=>x.symbol===s.symbol);
+  assetMeta.innerHTML=item?`<span class="badge good">BITUNIX ${item.symbol}</span><span class="badge">xSTOCK ${item.xstock}</span><div class="foot">${item.name}: Bitunix Stock Perp is the live price feed here; ${item.xstock} is the corresponding xStocks tokenized-equity symbol, not the same instrument.</div>`:`<span class="badge good">BITUNIX ${s.symbol}</span>`;
+}
+
+async function fetchPage(symbol,interval,endTime){
+  const u=new URL(FUTURES);u.searchParams.set('symbol',symbol);u.searchParams.set('interval',interval);u.searchParams.set('limit','200');u.searchParams.set('type','LAST_PRICE');if(endTime)u.searchParams.set('endTime',String(endTime));
+  const res=await fetch(u.toString(),{cache:'no-store'});if(!res.ok)throw new Error('Bitunix HTTP '+res.status);
+  const j=await res.json();if(j.code!==0||!Array.isArray(j.data))throw new Error(j.msg||'Bitunix returned no candle data');return j.data;
+}
+async function loadMarket(){
+  const seq=++loadSeq;loading.style.display='block';error.style.display='none';feedDot.classList.remove('live');feedStatus.textContent='CONNECTING';
+  try{
+    const p1=await fetchPage(s.symbol,s.timeframe);
+    const earliest=Math.min(...p1.map(x=>Number(x.time)).filter(Number.isFinite));
+    let p2=[];if(Number.isFinite(earliest))try{p2=await fetchPage(s.symbol,s.timeframe,earliest-1)}catch(_){}
+    if(seq!==loadSeq)return;
+    const byTime=new Map([...p2,...p1].map(x=>[Number(x.time),x]));
+    candles=[...byTime.entries()].sort((a,b)=>a[0]-b[0]).map(([time,x])=>({time,open:+x.open,high:+x.high,low:+x.low,close:+x.close,volume:+(x.quoteVol||x.baseVol||0)})).filter(x=>[x.open,x.high,x.low,x.close].every(Number.isFinite));
+    if(candles.length<5)throw new Error('Not enough Bitunix candles for '+s.symbol);
+    feedDot.classList.add('live');feedStatus.textContent='BITUNIX LIVE';source.textContent=mode==='stocks'?'Bitunix Stock Perp':'Bitunix Futures';
+    renderChart();
+  }catch(e){
+    if(seq!==loadSeq)return;error.textContent='BITUNIX DATA ERROR · '+e.message;error.style.display='block';feedStatus.textContent='FEED ERROR';candles=[];renderChart();
+  }finally{if(seq===loadSeq)loading.style.display='none'}
+}
+
+function smma(values,n){
+  const out=Array(values.length).fill(null);if(values.length<n)return out;
+  let sum=0;for(let i=0;i<n;i++)sum+=values[i];let prev=sum/n;out[n-1]=prev;
+  for(let i=n;i<values.length;i++){prev=(prev*(n-1)+values[i])/n;out[i]=prev}return out;
+}
+function ema(values,n){
+  const out=Array(values.length).fill(null);if(values.length<n)return out;
+  let sum=0;for(let i=0;i<n;i++)sum+=values[i];let prev=sum/n;out[n-1]=prev;const a=2/(n+1);
+  for(let i=n;i<values.length;i++){prev=(values[i]-prev)*a+prev;out[i]=prev}return out;
+}
+function profile(data,bins=28){
+  const lo=Math.min(...data.map(x=>x.low)),hi=Math.max(...data.map(x=>x.high)),step=(hi-lo)/bins||1,vol=Array(bins).fill(0);
+  data.forEach(c=>{const a=Math.max(0,Math.floor((c.low-lo)/step)),b=Math.min(bins-1,Math.floor((c.high-lo)/step));const count=Math.max(1,b-a+1),share=(Number.isFinite(c.volume)?c.volume:0)/count;for(let i=a;i<=b;i++)vol[i]+=share});
+  let poc=0;for(let i=1;i<bins;i++)if(vol[i]>vol[poc])poc=i;return{lo,hi,step,vol,poc,pocPrice:lo+(poc+.5)*step,max:Math.max(...vol,1)};
+}
+function renderChart(){
+  if(!candles.length){svg.innerHTML='';lastPrice.textContent=sideLast.textContent=smmaValue.textContent=emaValue.textContent=pocValue.textContent='—';return}
+  const W=1200,H=700,pad={l:24,r:78,t:74,b:30};const view=candles.slice(-180),closes=candles.map(x=>x.close),S=smma(closes,21),E=ema(closes,200),start=candles.length-view.length;
+  const lows=view.map(x=>x.low),highs=view.map(x=>x.high);let min=Math.min(...lows),max=Math.max(...highs);
+  const svals=S.slice(start).filter(Number.isFinite),evals=E.slice(start).filter(Number.isFinite);if(svals.length){min=Math.min(min,...svals);max=Math.max(max,...svals)}if(evals.length){min=Math.min(min,...evals);max=Math.max(max,...evals)}
+  const extra=(max-min)*.06||1;min-=extra;max+=extra;
+  const x=i=>pad.l+i*(W-pad.l-pad.r)/Math.max(1,view.length-1),y=v=>pad.t+(max-v)/(max-min)*(H-pad.t-pad.b),cw=Math.max(2,(W-pad.l-pad.r)/view.length*.58);
+  let out='<g stroke="#202a30" stroke-width="1">';
+  for(let i=0;i<8;i++){const yy=pad.t+i*(H-pad.t-pad.b)/7,price=max-i*(max-min)/7;out+=`<line x1="${pad.l}" y1="${yy}" x2="${W-pad.r}" y2="${yy}"/><text x="${W-pad.r+8}" y="${yy+3}" fill="#69767d" stroke="none" font-size="9">${fmt(price)}</text>`}out+='</g>';
+  view.forEach((c,i)=>{const xx=x(i),yo=y(c.open),yc=y(c.close),yh=y(c.high),yl=y(c.low),up=c.close>=c.open,col=up?'#22d3e5':'#68757d';out+=`<line x1="${xx}" y1="${yh}" x2="${xx}" y2="${yl}" stroke="${col}" stroke-width="1"/><rect x="${xx-cw/2}" y="${Math.min(yo,yc)}" width="${cw}" height="${Math.max(1.5,Math.abs(yc-yo))}" fill="${col}"/>`});
+  function path(vals,color,width){let d='',started=false;vals.forEach((v,i)=>{if(!Number.isFinite(v))return;d+=(started?' L ':'M ')+x(i)+' '+y(v);started=true});if(started)out+=`<path d="${d}" fill="none" stroke="${color}" stroke-width="${width}" vector-effect="non-scaling-stroke"/>`}
+  if(showSMMA)path(S.slice(start),'#d978ff',2.2);if(showEMA)path(E.slice(start),'#f1b84b',2.2);
+  const prof=profile(view);pocValue.textContent=fmt(prof.pocPrice);
+  if(showVRVP){
+    const base=W-pad.r-6,maxWidth=145,binH=(H-pad.t-pad.b)/prof.vol.length;
+    prof.vol.forEach((v,i)=>{const width=v/prof.max*maxWidth,price=prof.lo+(i+.5)*prof.step,yy=y(price)-binH/2;out+=`<rect x="${base-width}" y="${yy}" width="${width}" height="${Math.max(2,binH-1)}" fill="${i===prof.poc?'rgba(241,184,75,.55)':'rgba(34,211,229,.18)'}"/>`});
+    out+=`<line x1="${pad.l}" y1="${y(prof.pocPrice)}" x2="${W-pad.r}" y2="${y(prof.pocPrice)}" stroke="#f1b84b" stroke-width="1" stroke-dasharray="5 5" opacity=".8"/>`;
+  }
+  const last=view[view.length-1].close;lastPrice.textContent=sideLast.textContent=fmt(last);sourceLabel.textContent='BITUNIX '+(mode==='stocks'?'STOCK PERP':'PERP');
+  const sv=[...S].reverse().find(Number.isFinite),ev=[...E].reverse().find(Number.isFinite);smmaValue.textContent=fmt(sv);emaValue.textContent=fmt(ev);
+  svg.innerHTML=out;
+}
+window.addEventListener('resize',resizeCanvas);
+paintControls();loadDrawings();requestAnimationFrame(resizeCanvas);loadMarket();
+</script>
+</body>
+</html>
