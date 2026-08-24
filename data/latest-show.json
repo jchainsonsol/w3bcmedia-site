@@ -1,11 +1,11 @@
 {
-  "date": "2026-08-21",
-  "version": "2026-08-21-v2",
-  "file": "data/morning-show-2026-08-21.json",
-  "label": "Friday Aug 21",
+  "date": "2026-08-24",
+  "version": "2026-08-24-v1",
+  "file": "data/morning-show-2026-08-24.json",
+  "label": "Monday Aug 24",
   "expected": {
     "news": 10,
-    "ai": 6,
-    "sports": 7
+    "ai": 4,
+    "sports": 6
   }
 }
