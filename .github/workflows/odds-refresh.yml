@@ -32,21 +32,27 @@ jobs:
               ['basketball_nba','NBA'],
               ['basketball_wnba','WNBA']
             ];
+            const propMarkets = [
+              'player_pass_yds',
+              'player_rush_yds',
+              'player_receptions',
+              'player_reception_yds',
+              'player_anytime_td'
+            ];
             const base = 'https://api.the-odds-api.com/v4/sports';
             const now = Date.now();
             const liveLookback = now - (12 * 60 * 60 * 1000);
             const horizon = now + (96 * 60 * 60 * 1000);
-            const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', execution: 'BC.GAME', window: 'live-plus-next-96-hours', sports: [], quota: {} };
+            let previous = {};
+            try { previous = JSON.parse(fs.readFileSync('data/odds.json','utf8')); } catch (_) {}
+            const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', execution: 'BC.GAME', window: 'live-plus-next-96-hours', sports: [], props: previous.props || [], propsUpdatedAt: previous.propsUpdatedAt || null, quota: {} };
 
             async function getSport(sportKey,label){
               const url = `${base}/${sportKey}/odds/?apiKey=${encodeURIComponent(apiKey)}&regions=us&markets=h2h,spreads,totals&oddsFormat=american&dateFormat=iso`;
               const r = await fetch(url);
               if (!r.ok) {
                 const body = await r.text();
-                if (r.status === 422 || r.status === 404) {
-                  console.log(`Skipping ${label}: ${r.status} ${body}`);
-                  return;
-                }
+                if (r.status === 422 || r.status === 404) { console.log(`Skipping ${label}: ${r.status} ${body}`); return; }
                 throw new Error(`${sportKey}: ${r.status} ${body}`);
               }
               const rawEvents = await r.json();
@@ -63,13 +69,32 @@ jobs:
             }
 
             for (const [sportKey,label] of wanted) await getSport(sportKey,label);
+
+            const shouldRefreshProps = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch' || new Date().getUTCHours() % 6 === 0;
+            if (shouldRefreshProps) {
+              const nfl = out.sports.find(s => s.key === 'americanfootball_nfl');
+              const games = (nfl?.events || []).filter(e => Date.parse(e.commence_time) > now).slice(0,8);
+              const props = [];
+              for (const ev of games) {
+                const url = `${base}/americanfootball_nfl/events/${ev.id}/odds?apiKey=${encodeURIComponent(apiKey)}&regions=us&markets=${propMarkets.join(',')}&oddsFormat=american&dateFormat=iso`;
+                const r = await fetch(url);
+                if (!r.ok) { console.log(`Props skip ${ev.id}: ${r.status}`); continue; }
+                const j = await r.json();
+                props.push({eventId:ev.id,commence_time:ev.commence_time,away_team:ev.away_team,home_team:ev.home_team,bookmakers:j.bookmakers||[]});
+                out.quota.remaining = r.headers.get('x-requests-remaining') || out.quota.remaining;
+                out.quota.used = r.headers.get('x-requests-used') || out.quota.used;
+              }
+              out.props = props;
+              out.propsUpdatedAt = new Date().toISOString();
+              console.log(`Saved props for ${props.length} NFL games`);
+            } else {
+              console.log(`Keeping cached NFL props from ${out.propsUpdatedAt || 'none'}`);
+            }
+
             fs.mkdirSync('data',{recursive:true});
             fs.writeFileSync('data/odds.json', JSON.stringify(out,null,2));
             console.log(`Saved ${out.sports.length} active sports to data/odds.json`);
-          })().catch(err => {
-            console.error(err);
-            process.exit(1);
-          });
+          })().catch(err => { console.error(err); process.exit(1); });
           NODE
 
       - name: Commit updated odds feed
