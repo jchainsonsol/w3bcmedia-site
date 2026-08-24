@@ -1,0 +1,75 @@
+{
+  "date":"2026-08-24",
+  "version":"2026-08-24-v1",
+  "label":"Monday Aug 24",
+  "startTime":"LIVE",
+  "source":"Google Alert Daily Digest received Aug 24, 2026",
+  "title":"ETF Money Is Back + Solana RWA Hits $4B | W3BC LIVE",
+  "description":"Monday W3BC LIVE: institutional crypto demand returns, Bitcoin pushes toward $80K, the SEC's Regulation Crypto framework takes shape, Solana RWA value crosses $4B, tokenized stocks expand, AI-agent security moves into focus, plus NFL preseason, MLB, UFC, boxing and the Betting Desk.",
+  "segments":[
+    {"name":"Open","kind":"camera","enabled":true},
+    {"name":"Markets Now","kind":"markets","enabled":true,"sponsor":"Bitunix"},
+    {"name":"News Desk","kind":"news","enabled":true},
+    {"name":"AI + Technology","kind":"ai","enabled":true},
+    {"name":"The Trenches","kind":"trenches","enabled":true},
+    {"name":"Sports","kind":"sports","enabled":true},
+    {"name":"Betting Desk","kind":"betting","enabled":true,"sponsor":"BC.GAME"},
+    {"name":"Close","kind":"camera","enabled":true}
+  ],
+  "openNotes":[
+    "Lead with the institutional-flow story: the digest says Bitcoin and Ethereum ETFs posted their biggest week of 2026 / a 10-month high in combined demand.",
+    "Second anchor is infrastructure adoption: Solana RWA value reportedly crossed $4B and tokenized equities are a major contributor.",
+    "Regulation Crypto is a proposal, not final law. Keep that distinction explicit on air.",
+    "Use the live Markets screen for current BTC/ETH/SOL prices; the digest references Bitcoin near $80K but is not a live price feed."
+  ],
+  "trenchesPresets":[
+    {"symbol":"$JCHAINS","name":"JCHAINS","chain":"solana","query":"5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump","address":"5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump"},
+    {"symbol":"$GOOD","name":"Good In The Hood","chain":"robinhood","query":"0x5f62c57e5c537887117eef828b7e3ad41c009feb","address":"0x5f62c57e5c537887117eef828b7e3ad41c009feb"},
+    {"symbol":"$WALLET","name":"Robinhood Wallet","chain":"robinhood","query":"0x0339f5459fc690ac85f1782e15782a151b4a9e1b","address":"0x0339f5459fc690ac85f1782e15782a151b4a9e1b"},
+    {"symbol":"$M32","name":"MPP32","chain":"solana","query":"6hKtz8FV7cAQMrbjcBZeTQAcrYep3WCM83164JpJpump","address":"6hKtz8FV7cAQMrbjcBZeTQAcrYep3WCM83164JpJpump"}
+  ],
+  "newsStories":[
+    {"headline":"Institutional crypto demand roars back as ETF inflows hit a 10-month high","points":["CryptoRank says Bitcoin and Ethereum ETF inflows reached their highest level in roughly 10 months.","CryptoSlate calls it the biggest combined Bitcoin and Ethereum ETF week of 2026.","The key question is whether spot institutional demand persists after the latest price acceleration."],"stats":[["ETF DEMAND","10-month high"],["2026","Biggest BTC + ETH ETF week"]],"takeaway":"This rally has a meaningful institutional-flow component, not only leverage and retail momentum.","source":"CryptoRank / CryptoSlate / Aug 24 digest"},
+    {"headline":"BlackRock products remain central as Bitcoin pushes toward $80K","points":["Forbes says BlackRock's IBIT took in roughly $1.3B during the latest wave.","Finbold reports BlackRock crypto products accumulated more than $1.8B across Bitcoin and Ethereum over the week.","The digest frames Bitcoin near $80K; use the live chart for the actual on-air price."],"stats":[["IBIT WAVE","~$1.3B"],["BLACKROCK BTC+ETH","$1.8B+ reported"]],"takeaway":"Institutional access products are becoming a direct transmission mechanism between TradFi liquidity and crypto prices.","source":"Forbes / Finbold / Aug 24 digest"},
+    {"headline":"SEC's Regulation Crypto proposal could reshape U.S. token fundraising","points":["The SEC published a proposed Regulation Crypto framework last week.","Coverage says the proposal includes tailored registration exemptions for some digital-asset offerings.","This remains proposed rulemaking and should not be described as final law."],"stats":[],"takeaway":"The bigger story is a possible regulated path for token fundraising rather than a return to unrestricted 2017-style ICOs.","source":"CoinDesk / Mondaq / Motley Fool / Aug 24 digest"},
+    {"headline":"Solana RWA value reportedly crosses $4B as tokenized equities surge","points":["Multiple items in today's digest report Solana's RWA ecosystem exceeding $4B for the first time.","Crypto Briefing says that compares with roughly $1.4B in January.","Tokenized equities are cited as one of the fastest-growing pieces of the network's RWA activity."],"stats":[["SOLANA RWA","$4B+"],["JANUARY","~$1.4B"]],"takeaway":"Solana is increasingly competing as financial-market infrastructure, not merely a consumer-token chain.","source":"Crypto Briefing / Altcoin Buzz / U.Today / Aug 24 digest"},
+    {"headline":"Solana leads tokenized-stock DeFi deposits with roughly $75M","points":["Crypto Briefing reports Solana as the leading chain for tokenized-stock deployment inside DeFi.","Another digest item puts deposits around $75.4M and about 64.5% of the tracked market.","This gives us a concrete bridge between the tokenized-stock narrative and onchain collateral/liquidity use."],"stats":[["DEPOSITS","~$75.4M"],["TRACKED SHARE","~64.5%"]],"takeaway":"The important evolution is tokenized stocks becoming usable DeFi assets rather than static wrappers.","source":"Crypto Briefing / Pluang / Aug 24 digest"},
+    {"headline":"JPMorgan tokenized Treasury products approach $885M","points":["Crypto Briefing says J.P. Morgan's JLTXX and MONY tokenized Treasury products rose from roughly $300M to $885M since late May.","The broader tokenized Treasury category continues expanding rapidly.","The institutional tokenization race now includes major banks alongside crypto-native issuers."],"stats":[["JPM TOKENIZED T-BILLS","~$885M"],["LATE MAY","~$300M"]],"takeaway":"Tokenization is moving from pilots to products holding serious institutional capital.","source":"Crypto Briefing / Aug 24 digest"},
+    {"headline":"Stablecoin-funded card spending tops $1B in tracked activity","points":["Fidelity reports crypto-card spending above $1B in tracked transactions.","Dollar-backed stablecoins funded 70% of more than 10M tracked transactions, according to the digest summary.","The adoption story is shifting from trading liquidity toward everyday payment rails."],"stats":[["TRACKED SPEND","$1B+"],["TRANSACTIONS","10M+"],["STABLECOIN SHARE","70%"]],"takeaway":"Stablecoins become more strategically important when they stop being merely exchange settlement assets.","source":"Fidelity Investments / Aug 24 digest"},
+    {"headline":"India tests tokenized bonds with wholesale CBDC settlement","points":["Finimize reports an Indian bond-market tokenization pilot involving REC.","Buyers would settle using wholesale CBDC wallets from banks and hold tokenized bonds.","China also expanded its digital-yuan operator roster by eight banks, according to today's digest."],"stats":[["CHINA DIGITAL YUAN","+8 operator banks"]],"takeaway":"Outside the U.S., tokenization and CBDC infrastructure are increasingly being tested together at the settlement layer.","source":"Finimize / CoinGeek / Aug 24 digest"},
+    {"headline":"Treasury moves help revive Bitcoin's debasement-trade narrative","points":["Yahoo Finance says Bitcoin had its best week in more than three years as Treasury policy became part of the catalyst mix.","Fortune says a surprise bond buyback helped trigger a squeeze that liquidated more than $4B of bearish crypto bets.","The digest connects debt-market intervention, dollar concerns and Bitcoin's hard-asset narrative."],"stats":[["BEARISH LIQUIDATIONS",">$4B reported"]],"takeaway":"Macro liquidity and Treasury policy are now part of the Bitcoin conversation alongside ETFs and regulation.","source":"Yahoo Finance / Fortune / Aug 24 digest"},
+    {"headline":"Tokenization's next phase is utility, collateral and programmable finance","points":["CryptoSlate argues tokenization is moving beyond issuance toward collateral, lending and programmable financial use.","The core measurement becomes how much liquidity and collateral can move between venues without selling the underlying asset.","This is the logical next chapter after proving that securities and funds can be issued onchain."],"stats":[],"takeaway":"Issuance gets headlines; composability and usable liquidity determine whether tokenized assets become real financial infrastructure.","source":"CryptoSlate / Aug 24 digest"}
+  ],
+  "aiStories":[
+    {"headline":"AI agents enter a new security phase as persistent cyberattacks become a concern","points":["The Guardian reports an OpenAI leader warning about persistent AI-enabled cyberattacks.","The digest notes that agent safety controls can be bypassed and that autonomous agents lack human common sense.","Organizations are being pushed toward tighter permissions and limits on what agents can access or execute."],"stats":[],"takeaway":"The more authority we give agents, the more identity, permissions and containment matter."},
+    {"headline":"Enterprise agents are only as reliable as the documents behind them","points":["VentureBeat highlights a synchronization problem across documents, code, embeddings, indexes and agent context.","When those sources update independently, agents can operate on stale or contradictory business information.","Reliable enterprise AI therefore requires data governance as much as model quality."],"stats":[],"takeaway":"Agent reliability is increasingly an information-pipeline problem, not just an LLM problem."},
+    {"headline":"AI debt concerns grow as corporate borrowing expands","points":["Reuters says a surge in U.S. corporate AI debt is testing investor limits and raising fatigue concerns.","The Guardian separately pushes back on the idea that this automatically amounts to an Enron-style debt bomb.","The useful question is whether AI infrastructure investment can produce enough cash flow to justify increasingly large financing needs."],"stats":[],"takeaway":"AI capex remains bullish for infrastructure demand, but financing quality and returns now matter more."},
+    {"headline":"AI cyber fears are becoming a mainstream policy debate","points":["The Economist argues fears of AI-driven catastrophe may be overstated in cybersecurity.","Live Science focuses on recent AI-linked hacking headlines.","The gap between capability, hype and actual operational risk is becoming a useful debate in its own right."],"stats":[],"takeaway":"Avoid both extremes: AI creates real cyber leverage, but every cyber incident is not evidence of autonomous machine catastrophe."}
+  ],
+  "sportsStories":[
+    {"headline":"NFL preseason Week 2 wraps and roster decisions move to center stage","points":["Today's digest says preseason Week 2 concluded Sunday Aug. 23.","CBS Sports coverage is already grading the biggest winners and losers from the weekend.","The next phase is roster evaluation and the final preseason slate, so Betting Desk must distinguish preseason from regular season."],"stats":[],"takeaway":"Preseason results matter less than what they reveal about depth charts, quarterback rooms and roster battles."},
+    {"headline":"BMW Championship playoff drama decides the Tour Championship field","points":["Golf coverage focuses on the BMW Championship at Bellerive in St. Louis.","The top 30 advance to the PGA Tour playoff finale.","Patrick Cantlay, Robert MacIntyre and Gary Woodland are among the names highlighted around the qualification picture."],"stats":[["TOUR CHAMPIONSHIP","Top 30 qualify"],["WINNER PAYOUT","$3.6M"]],"takeaway":"The BMW is as much about surviving into the top 30 as winning the tournament."},
+    {"headline":"MLB power rankings get a new No. 1 as the playoff race heats up","points":["MLB.com says a new team has reached No. 1 in its power rankings for the first time this season.","The digest highlights elite recent pitching as a major driver.","The Cubs also beat Seattle 19-2 on Aug. 23, while Mariners rookie Kade Anderson impressed in his MLB debut in a separate game story."],"stats":[["CUBS AUG 23","19 runs"]],"takeaway":"Late August is where rotation depth and bullpen quality start separating real contenders from hot teams."},
+    {"headline":"Teofimo Lopez becomes a three-division champion","points":["BBC and Sky Sports report Teofimo Lopez beating Rolando Romero for the WBA welterweight title.","The win gives Lopez a championship across three divisions.","Attention now shifts to his next matchup and whether a Catterall fight materializes."],"stats":[["LOPEZ","3-division champion"]],"takeaway":"Lopez has reinserted himself into the center of boxing's welterweight conversation."},
+    {"headline":"UFC Sacramento fallout and Cyborg's next move lead MMA news","points":["MMA Mania is grading the winners and loser from UFC Sacramento.","BBC reports Cris Cyborg is not retiring after her 30th win and called out Claressa Shields and Kayla Harrison.","Cyborg being a free agent makes the business side of those potential fights especially interesting."],"stats":[["CYBORG","30 wins"]],"takeaway":"The biggest MMA crossover fight may depend as much on promotion and contracts as competitive matchmaking."},
+    {"headline":"Klay Thompson reportedly lands with Miami after clearing waivers","points":["ESPN says Klay Thompson is joining the Miami Heat after clearing waivers.","The four-time champion adds shooting and championship experience to Miami.","The immediate question is how much of his old two-way impact remains and how Miami deploys him."],"stats":[["CHAMPIONSHIPS","4"]],"takeaway":"Miami is betting that experience and shooting can still materially raise its postseason ceiling."}
+  ],
+  "bettingNotes":[
+    "NFL: only display events from the verified current preseason/regular-season feed; every card must carry PRESEASON or REGULAR SEASON.",
+    "Do not manufacture player props from the news digest. Only show props if the live multi-book odds feed validates the event and market.",
+    "Golf: BMW Championship is the relevant event in today's digest; verify any live/future market before recommending a wager.",
+    "MLB: use current same-day schedule and live odds, not yesterday's Cubs/Mariners result.",
+    "BC.GAME remains the execution destination; compare line/price before calling a play."
+  ],
+  "crawl":[
+    "Bitcoin and Ethereum ETF demand reaches a 10-month high",
+    "BlackRock crypto products remain central as Bitcoin pushes toward $80K",
+    "SEC Regulation Crypto proposal could reshape token fundraising",
+    "Solana RWA value crosses $4B as tokenized equities surge",
+    "JPMorgan tokenized Treasury products approach $885M",
+    "Stablecoin-funded card spending tops $1B in tracked activity",
+    "AI-agent security and persistent cyber threats move into focus",
+    "NFL preseason Week 2 wraps as roster decisions take center stage",
+    "Teofimo Lopez claims the WBA welterweight title"
+  ]
+}
