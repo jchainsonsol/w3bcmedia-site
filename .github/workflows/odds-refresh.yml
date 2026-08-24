@@ -2,6 +2,9 @@ name: Refresh Sportsbook Odds
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/odds-refresh.yml'
   schedule:
     - cron: '7 * * * *'
 
@@ -42,10 +45,10 @@ jobs:
             const base = 'https://api.the-odds-api.com/v4/sports';
             const now = Date.now();
             const liveLookback = now - (12 * 60 * 60 * 1000);
-            const horizon = now + (96 * 60 * 60 * 1000);
+            const horizon = now + (168 * 60 * 60 * 1000);
             let previous = {};
             try { previous = JSON.parse(fs.readFileSync('data/odds.json','utf8')); } catch (_) {}
-            const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', execution: 'BC.GAME', window: 'live-plus-next-96-hours', sports: [], props: previous.props || [], propsUpdatedAt: previous.propsUpdatedAt || null, quota: {} };
+            const out = { updatedAt: new Date().toISOString(), source: 'The Odds API', execution: 'BC.GAME', window: 'live-plus-next-7-days', sports: [], props: previous.props || [], propsUpdatedAt: previous.propsUpdatedAt || null, quota: {} };
 
             async function getSport(sportKey,label){
               const url = `${base}/${sportKey}/odds/?apiKey=${encodeURIComponent(apiKey)}&regions=us&markets=h2h,spreads,totals&oddsFormat=american&dateFormat=iso`;
@@ -70,7 +73,7 @@ jobs:
 
             for (const [sportKey,label] of wanted) await getSport(sportKey,label);
 
-            const shouldRefreshProps = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch' || new Date().getUTCHours() % 6 === 0;
+            const shouldRefreshProps = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch' || process.env.GITHUB_EVENT_NAME === 'push' || new Date().getUTCHours() % 6 === 0;
             if (shouldRefreshProps) {
               const nfl = out.sports.find(s => s.key === 'americanfootball_nfl');
               const games = (nfl?.events || []).filter(e => Date.parse(e.commence_time) > now).slice(0,8);
