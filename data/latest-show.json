@@ -1,11 +1,11 @@
 {
-  "date": "2026-08-24",
-  "version": "2026-08-24-v1",
-  "file": "data/morning-show-2026-08-24.json",
-  "label": "Monday Aug 24",
+  "date": "2026-08-25",
+  "version": "2026-08-25-v1",
+  "file": "data/morning-show-2026-08-25.json",
+  "label": "Tuesday Aug 25 · Morning Macro",
   "expected": {
-    "news": 10,
-    "ai": 4,
-    "sports": 6
+    "news": 8,
+    "ai": 2,
+    "sports": 2
   }
 }
