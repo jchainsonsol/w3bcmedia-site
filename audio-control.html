@@ -1,1 +1,148 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>W3BC Audio Mixer</title><style>:root{--c:#22d3e5;--bg:#07090b;--p:#0d1114;--l:#273239;--m:#748188;--g:#42d9a0;--y:#ffd166;--r:#ff6c76}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f4f6f7;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.panel{border:1px solid var(--l);background:var(--p)}.ph{padding:11px 13px;border-bottom:1px solid var(--l);display:flex;justify-content:space-between;align-items:center}.ph b{font-size:13px;letter-spacing:.05em}.ph span{font-size:8px;color:var(--m);letter-spacing:.1em}.body{padding:12px}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}.deck{border:1px solid #253139;background:#090d10;padding:10px}.deck h3{font-size:10px;letter-spacing:.1em;color:var(--c);margin:0 0 8px}.row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.btn{border:1px solid #35424a;background:#0a0e11;color:#fff;padding:8px 10px;font-size:8px;font-weight:900;letter-spacing:.06em;cursor:pointer}.btn.primary{background:var(--c);border-color:var(--c);color:#041013}.btn.green{border-color:#2e735d;color:var(--g)}.btn.warn{border-color:#665a27;color:var(--y)}.btn.stop{border-color:#65363b;color:var(--r)}select{width:100%;background:#070b0e;border:1px solid #35424a;color:#fff;padding:9px;font-size:10px;margin-bottom:8px}input[type=range]{width:100%;accent-color:var(--c)}.slider{display:grid;grid-template-columns:82px 1fr 48px;gap:8px;align-items:center;margin-top:9px}.slider label{font-size:8px;color:var(--m);font-weight:900;letter-spacing:.07em}.val{text-align:right;font-size:10px;font-weight:900}.now{font-size:9px;color:#8a989f;margin-top:8px;min-height:14px}.hot{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}.status{color:var(--g)}.note{font-size:8px;color:#6f7c83;line-height:1.4;margin-top:8px}.bedLive{display:inline-block;width:7px;height:7px;border-radius:50%;background:#465158;margin-right:5px}.bedLive.on{background:var(--g);box-shadow:0 0 8px rgba(66,217,160,.6)}@media(max-width:750px){.grid{grid-template-columns:1fr}.slider{grid-template-columns:68px 1fr 42px}.btn{padding:8px 8px}}</style></head><body><section class="panel"><div class="ph"><b>W3BC AUDIO MIXER</b><span><i class="status">●</i> SILVER BULL RADIO LIBRARY</span></div><div class="body"><div class="grid"><div class="deck"><h3>MUSIC DECK</h3><select id="musicSelect"><option>Loading music library…</option></select><div class="row"><button class="btn primary" id="playMusic">▶ PLAY</button><button class="btn" id="pauseMusic">Ⅱ PAUSE</button><button class="btn stop" id="stopMusic">■ STOP</button><button class="btn" id="nextMusic">NEXT →</button></div><div class="slider"><label>MUSIC VOL</label><input id="musicVol" type="range" min="0" max="100" step="1" value="65"><div class="val" id="musicVal">65%</div></div><div class="now" id="musicNow">Music ready.</div></div><div class="deck"><h3><span id="bedDot" class="bedLive"></span>TALK BED · SUNSET GATE</h3><div class="row"><button class="btn green" id="bedOn">▶ BED ON</button><button class="btn" id="bedPause">Ⅱ PAUSE</button><button class="btn warn" id="bedFade">FADE OUT</button><button class="btn stop" id="bedStop">■ STOP</button></div><div class="slider"><label>BED VOL</label><input id="bedVol" type="range" min="0" max="10" step="0.25" value="2.5"><div class="val" id="bedVal">2.5%</div></div><div class="row" style="margin-top:8px"><button class="btn" data-bed="1.5">LOW 1.5%</button><button class="btn" data-bed="2.5">TALK 2.5%</button><button class="btn" data-bed="5">UP 5%</button></div><div class="now" id="bedNow">Talk bed ready.</div></div></div><div class="deck" style="margin-top:10px"><h3>HOT BUTTONS · OPEN / IDs / SPONSORS</h3><div class="hot"><button class="btn primary" data-sfx="audio/welcome-to-the-bullpen.mp3">WELCOME TO THE BULLPEN</button><button class="btn" data-sfx="audio/station-id-1.mp3">STATION ID 1</button><button class="btn" data-sfx="audio/station-id-2.mp3">STATION ID 2</button><button class="btn warn" data-sfx="audio/commercials/commercial-bcgame.MP3">BC GAME SPOT</button><button class="btn" data-sfx="audio/commercials/commercial-bitunix.MP3">BITUNIX SPOT</button><button class="btn stop" id="stopSfx">STOP HOT AUDIO</button></div><div class="slider"><label>HOT VOL</label><input id="sfxVol" type="range" min="0" max="100" step="1" value="80"><div class="val" id="sfxVal">80%</div></div><div class="now" id="sfxNow">Hot buttons ready.</div><div class="note">Audio plays from this Control browser. Keep OBS Desktop Audio/Application Audio Capture pointed at this browser/device so the stream hears it.</div></div></div></section><audio id="musicAudio" preload="metadata"></audio><audio id="bedAudio" preload="metadata" loop src="https://jchainsonsol.github.io/Silver-Bull-Radio/audio/beds/sunset-gate.mp3"></audio><audio id="sfxAudio" preload="metadata"></audio><script>(()=>{const BASE='https://jchainsonsol.github.io/Silver-Bull-Radio/',music=document.getElementById('musicAudio'),bed=document.getElementById('bedAudio'),sfx=document.getElementById('sfxAudio'),sel=document.getElementById('musicSelect');let library=[];const $=id=>document.getElementById(id);function pct(n){return Number(n).toFixed(2).replace(/\.00$/,'').replace(/0$/,'')+'%'}function safePlay(a){const p=a.play();if(p&&p.catch)p.catch(e=>{console.warn(e)})}async function loadLibrary(){try{const r=await fetch(BASE+'data/music.json?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();library=j.items||[];sel.innerHTML=library.map((x,i)=>`<option value="${i}">${x.title}</option>`).join('');$('musicNow').textContent=library.length+' tracks loaded.'}catch(e){library=[{title:'Bullish Vibes',file:'audio/music/Bullish Vibes.mp3'},{title:'Tokenized Empire',file:'audio/music/Tokenized Empire.mp3'},{title:'Proof of Hustle',file:'audio/music/Proof of Hustle.mp3'},{title:'Stablecoin Woman',file:'audio/music/Stablecoin Woman.mp3'}];sel.innerHTML=library.map((x,i)=>`<option value="${i}">${x.title}</option>`).join('');$('musicNow').textContent='Fallback library loaded.'}}function startMusic(){const x=library[+sel.value];if(!x)return;if(!music.src||decodeURI(music.src).indexOf(x.file)===-1){music.src=BASE+x.file;music.currentTime=0}safePlay(music);$('musicNow').textContent='NOW PLAYING · '+x.title}function stop(a){a.pause();try{a.currentTime=0}catch(e){}}function setBed(v,save=true){v=Math.max(0,Math.min(10,Number(v)||0));$('bedVol').value=v;$('bedVal').textContent=pct(v);bed.volume=v/100;if(save)localStorage.setItem('w3bcBedVolumePct',String(v))}function fadeBed(ms=1300){const start=bed.volume,t0=performance.now();function step(t){const p=Math.min(1,(t-t0)/ms);bed.volume=start*(1-p);$('bedVal').textContent=pct(bed.volume*100);$('bedVol').value=bed.volume*100;if(p<1)requestAnimationFrame(step);else{stop(bed);setBed(Number(localStorage.getItem('w3bcBedVolumePct')||2.5),false);$('bedNow').textContent='Bed faded out.';$('bedDot').classList.remove('on')}}requestAnimationFrame(step)}$('playMusic').onclick=startMusic;$('pauseMusic').onclick=()=>{music.pause();$('musicNow').textContent='Music paused.'};$('stopMusic').onclick=()=>{stop(music);$('musicNow').textContent='Music stopped.'};$('nextMusic').onclick=()=>{if(!library.length)return;sel.value=(+sel.value+1)%library.length;startMusic()};$('musicVol').oninput=e=>{music.volume=e.target.value/100;$('musicVal').textContent=e.target.value+'%';localStorage.setItem('w3bcMusicVolumePct',e.target.value)};music.onended=()=>{$('musicNow').textContent='Track ended.'};$('bedOn').onclick=()=>{setBed($('bedVol').value,false);safePlay(bed);$('bedDot').classList.add('on');$('bedNow').textContent='Talk bed LIVE.'};$('bedPause').onclick=()=>{bed.pause();$('bedDot').classList.remove('on');$('bedNow').textContent='Bed paused.'};$('bedFade').onclick=()=>fadeBed();$('bedStop').onclick=()=>{stop(bed);$('bedDot').classList.remove('on');$('bedNow').textContent='Bed stopped.'};$('bedVol').oninput=e=>{setBed(e.target.value);$('bedNow').textContent='Talk bed '+pct(e.target.value)};document.querySelectorAll('[data-bed]').forEach(b=>b.onclick=()=>{setBed(b.dataset.bed);$('bedNow').textContent='Talk bed '+pct(b.dataset.bed)});document.querySelectorAll('[data-sfx]').forEach(b=>b.onclick=()=>{sfx.src=BASE+b.dataset.sfx;sfx.currentTime=0;safePlay(sfx);$('sfxNow').textContent='PLAYING · '+b.textContent.trim()});$('stopSfx').onclick=()=>{stop(sfx);$('sfxNow').textContent='Hot audio stopped.'};$('sfxVol').oninput=e=>{sfx.volume=e.target.value/100;$('sfxVal').textContent=e.target.value+'%';localStorage.setItem('w3bcHotVolumePct',e.target.value)};sfx.onended=()=>{$('sfxNow').textContent='Hot audio ready.'};const mv=Number(localStorage.getItem('w3bcMusicVolumePct')||65),bv=Number(localStorage.getItem('w3bcBedVolumePct')||localStorage.getItem('sbrBedVolumePct')||2.5),sv=Number(localStorage.getItem('w3bcHotVolumePct')||80);$('musicVol').value=mv;$('musicVal').textContent=mv+'%';music.volume=mv/100;setBed(bv,false);$('sfxVol').value=sv;$('sfxVal').textContent=sv+'%';sfx.volume=sv/100;loadLibrary()})();</script></body></html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>W3BC Audio Mixer</title>
+<style>
+:root{--c:#22d3e5;--bg:#07090b;--p:#0d1114;--l:#273239;--m:#748188;--g:#42d9a0;--y:#ffd166;--r:#ff6c76}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f4f6f7;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.panel{border:1px solid var(--l);background:var(--p)}.ph{padding:11px 13px;border-bottom:1px solid var(--l);display:flex;justify-content:space-between;align-items:center}.ph b{font-size:13px;letter-spacing:.05em}.ph span{font-size:8px;color:var(--m);letter-spacing:.1em}.body{padding:12px}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}.deck{border:1px solid #253139;background:#090d10;padding:10px}.deck h3{font-size:10px;letter-spacing:.1em;color:var(--c);margin:0 0 8px}.row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.btn{border:1px solid #35424a;background:#0a0e11;color:#fff;padding:8px 10px;font-size:8px;font-weight:900;letter-spacing:.06em;cursor:pointer}.btn:hover{border-color:#61737d}.btn.primary{background:var(--c);border-color:var(--c);color:#041013}.btn.green{border-color:#2e735d;color:var(--g)}.btn.warn{border-color:#665a27;color:var(--y)}.btn.stop{border-color:#65363b;color:var(--r)}.btn.blockActive{background:#123b31;border-color:var(--g);color:#fff;box-shadow:0 0 12px rgba(66,217,160,.18)}select{width:100%;background:#070b0e;border:1px solid #35424a;color:#fff;padding:9px;font-size:10px;margin-bottom:8px}input[type=range]{width:100%;accent-color:var(--c)}.slider{display:grid;grid-template-columns:82px 1fr 48px;gap:8px;align-items:center;margin-top:9px}.slider label{font-size:8px;color:var(--m);font-weight:900;letter-spacing:.07em}.val{text-align:right;font-size:10px;font-weight:900}.now{font-size:9px;color:#8a989f;margin-top:8px;min-height:14px}.hot{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}.blockGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px}.status{color:var(--g)}.note{font-size:8px;color:#6f7c83;line-height:1.4;margin-top:8px}.bedLive{display:inline-block;width:7px;height:7px;border-radius:50%;background:#465158;margin-right:5px}.bedLive.on{background:var(--g);box-shadow:0 0 8px rgba(66,217,160,.6)}.blockStatus{margin-top:9px;padding:8px;border:1px solid #26343b;background:#070b0e;display:grid;grid-template-columns:1fr auto;gap:8px}.blockStatus b{font-size:9px;color:var(--g);letter-spacing:.06em}.blockStatus span{font-size:9px;color:#9aa8ae}.queue{font-size:8px;color:#718087;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@media(max-width:750px){.grid{grid-template-columns:1fr}.slider{grid-template-columns:68px 1fr 42px}.btn{padding:8px 8px}.blockGrid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<section class="panel">
+<div class="ph"><b>W3BC AUDIO MIXER</b><span><i class="status">●</i> SILVER BULL RADIO LIBRARY</span></div>
+<div class="body">
+<div class="grid">
+<div class="deck">
+<h3>MUSIC DECK</h3>
+<select id="musicSelect"><option>Loading music library…</option></select>
+<div class="row">
+<button class="btn primary" id="playMusic">▶ PLAY</button>
+<button class="btn" id="pauseMusic">Ⅱ PAUSE</button>
+<button class="btn stop" id="stopMusic">■ STOP</button>
+<button class="btn" id="nextMusic">NEXT →</button>
+</div>
+<div class="slider"><label>MUSIC VOL</label><input id="musicVol" type="range" min="0" max="100" step="1" value="65"><div class="val" id="musicVal">65%</div></div>
+<div class="now" id="musicNow">Music ready.</div>
+
+<h3 style="margin-top:13px">MUSIC BLOCKS · AUTO PLAY</h3>
+<div class="blockGrid">
+<button class="btn green" data-hours="1">▶ 1 HOUR</button>
+<button class="btn green" data-hours="2">▶ 2 HOURS</button>
+<button class="btn green" data-hours="4">▶ 4 HOURS</button>
+<button class="btn green" data-hours="8">▶ 8 HOURS</button>
+<button class="btn stop" id="stopBlock">STOP BLOCK</button>
+</div>
+<div class="blockStatus"><b id="blockStatus">AUTO BLOCK OFF</b><span id="blockRemaining">—</span></div>
+<div class="queue" id="queueNow">Select an hour block to build a shuffled no-repeat music queue.</div>
+<div class="note">Hour blocks keep advancing through the music library automatically. Tracks are shuffled before each cycle so you can let the station run unattended for long stretches.</div>
+</div>
+
+<div class="deck">
+<h3><span id="bedDot" class="bedLive"></span>TALK BED · SUNSET GATE</h3>
+<div class="row"><button class="btn green" id="bedOn">▶ BED ON</button><button class="btn" id="bedPause">Ⅱ PAUSE</button><button class="btn warn" id="bedFade">FADE OUT</button><button class="btn stop" id="bedStop">■ STOP</button></div>
+<div class="slider"><label>BED VOL</label><input id="bedVol" type="range" min="0" max="10" step="0.25" value="2.5"><div class="val" id="bedVal">2.5%</div></div>
+<div class="row" style="margin-top:8px"><button class="btn" data-bed="1.5">LOW 1.5%</button><button class="btn" data-bed="2.5">TALK 2.5%</button><button class="btn" data-bed="5">UP 5%</button></div>
+<div class="now" id="bedNow">Talk bed ready.</div>
+</div>
+</div>
+
+<div class="deck" style="margin-top:10px">
+<h3>HOT BUTTONS · OPEN / IDs / SPONSORS</h3>
+<div class="hot">
+<button class="btn primary" data-sfx="audio/welcome-to-the-bullpen.mp3">WELCOME TO THE BULLPEN</button>
+<button class="btn" data-sfx="audio/station-id-1.mp3">STATION ID 1</button>
+<button class="btn" data-sfx="audio/station-id-2.mp3">STATION ID 2</button>
+<button class="btn warn" data-sfx="audio/commercials/commercial-bcgame.MP3">BC GAME SPOT</button>
+<button class="btn" data-sfx="audio/commercials/commercial-bitunix.MP3">BITUNIX SPOT</button>
+<button class="btn stop" id="stopSfx">STOP HOT AUDIO</button>
+</div>
+<div class="slider"><label>HOT VOL</label><input id="sfxVol" type="range" min="0" max="100" step="1" value="80"><div class="val" id="sfxVal">80%</div></div>
+<div class="now" id="sfxNow">Hot buttons ready.</div>
+<div class="note">Audio plays from this Control browser. Keep OBS Desktop Audio/Application Audio Capture pointed at this browser/device so the stream hears it.</div>
+</div>
+</div>
+</section>
+<audio id="musicAudio" preload="metadata"></audio>
+<audio id="bedAudio" preload="metadata" loop src="https://jchainsonsol.github.io/Silver-Bull-Radio/audio/beds/sunset-gate.mp3"></audio>
+<audio id="sfxAudio" preload="metadata"></audio>
+<script>
+(()=>{
+const BASE='https://jchainsonsol.github.io/Silver-Bull-Radio/';
+const music=document.getElementById('musicAudio'),bed=document.getElementById('bedAudio'),sfx=document.getElementById('sfxAudio'),sel=document.getElementById('musicSelect');
+let library=[];
+let block={active:false,endAt:0,queue:[],played:0,timer:null,hours:0};
+const $=id=>document.getElementById(id);
+function pct(n){return Number(n).toFixed(2).replace(/\.00$/,'').replace(/0$/,'')+'%'}
+function safePlay(a){const p=a.play();if(p&&p.catch)p.catch(e=>console.warn(e))}
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function fmtMs(ms){if(ms<=0)return '0:00';const total=Math.ceil(ms/1000),h=Math.floor(total/3600),m=Math.floor((total%3600)/60),s=total%60;return h?`${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`:`${m}:${String(s).padStart(2,'0')}`}
+async function loadLibrary(){
+ try{const r=await fetch(BASE+'data/music.json?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);const j=await r.json();library=j.items||[];sel.innerHTML=library.map((x,i)=>`<option value="${i}">${x.title}</option>`).join('');$('musicNow').textContent=library.length+' tracks loaded.'}
+ catch(e){library=[{title:'Bullish Vibes',file:'audio/music/Bullish Vibes.mp3'},{title:'Tokenized Empire',file:'audio/music/Tokenized Empire.mp3'},{title:'Proof of Hustle',file:'audio/music/Proof of Hustle.mp3'},{title:'Stablecoin Woman',file:'audio/music/Stablecoin Woman.mp3'}];sel.innerHTML=library.map((x,i)=>`<option value="${i}">${x.title}</option>`).join('');$('musicNow').textContent='Fallback library loaded.'}
+}
+function playIndex(i,fromBlock=false){
+ const x=library[i];if(!x)return;
+ sel.value=String(i);
+ music.src=BASE+x.file;music.currentTime=0;safePlay(music);
+ $('musicNow').textContent='NOW PLAYING · '+x.title;
+ if(fromBlock)updateQueueText(x.title);
+}
+function startMusic(){playIndex(+sel.value,false)}
+function stop(a){a.pause();try{a.currentTime=0}catch(e){}}
+function refillBlockQueue(){block.queue=shuffle(library.map((_,i)=>i))}
+function nextBlockTrack(){
+ if(!block.active)return;
+ if(Date.now()>=block.endAt){finishBlock();return}
+ if(!block.queue.length)refillBlockQueue();
+ const i=block.queue.shift();block.played++;playIndex(i,true)
+}
+function startBlock(hours){
+ if(!library.length){$('blockStatus').textContent='WAITING FOR MUSIC LIBRARY';return}
+ block.active=true;block.hours=hours;block.endAt=Date.now()+hours*3600000;block.played=0;refillBlockQueue();
+ document.querySelectorAll('[data-hours]').forEach(b=>b.classList.toggle('blockActive',Number(b.dataset.hours)===hours));
+ $('blockStatus').textContent=`${hours} HOUR AUTO BLOCK LIVE`;
+ tickBlock();nextBlockTrack()
+}
+function finishBlock(){
+ block.active=false;clearInterval(block.timer);block.timer=null;block.queue=[];
+ document.querySelectorAll('[data-hours]').forEach(b=>b.classList.remove('blockActive'));
+ $('blockStatus').textContent='AUTO BLOCK COMPLETE';$('blockRemaining').textContent='0:00';$('queueNow').textContent=`Block complete · ${block.played} tracks played.`;
+ stop(music)
+}
+function cancelBlock(stopAudio=true){
+ block.active=false;clearInterval(block.timer);block.timer=null;block.queue=[];
+ document.querySelectorAll('[data-hours]').forEach(b=>b.classList.remove('blockActive'));
+ $('blockStatus').textContent='AUTO BLOCK OFF';$('blockRemaining').textContent='—';$('queueNow').textContent='Select an hour block to build a shuffled no-repeat music queue.';
+ if(stopAudio)stop(music)
+}
+function tickBlock(){clearInterval(block.timer);const paint=()=>{if(!block.active)return;const left=block.endAt-Date.now();$('blockRemaining').textContent=fmtMs(left)+' LEFT';if(left<=0)finishBlock()};paint();block.timer=setInterval(paint,1000)}
+function updateQueueText(current){const next=block.queue.slice(0,3).map(i=>library[i]?.title).filter(Boolean).join('  →  ');$('queueNow').textContent=`NOW · ${current}${next?'   |   NEXT · '+next:''}`}
+function setBed(v,save=true){v=Math.max(0,Math.min(10,Number(v)||0));$('bedVol').value=v;$('bedVal').textContent=pct(v);bed.volume=v/100;if(save)localStorage.setItem('w3bcBedVolumePct',String(v))}
+function fadeBed(ms=1300){const start=bed.volume,t0=performance.now();function step(t){const p=Math.min(1,(t-t0)/ms);bed.volume=start*(1-p);$('bedVal').textContent=pct(bed.volume*100);$('bedVol').value=bed.volume*100;if(p<1)requestAnimationFrame(step);else{stop(bed);setBed(Number(localStorage.getItem('w3bcBedVolumePct')||2.5),false);$('bedNow').textContent='Bed faded out.';$('bedDot').classList.remove('on')}}requestAnimationFrame(step)}
+$('playMusic').onclick=()=>{if(block.active)cancelBlock(false);startMusic()};
+$('pauseMusic').onclick=()=>{music.pause();$('musicNow').textContent='Music paused.'};
+$('stopMusic').onclick=()=>{if(block.active)cancelBlock(false);stop(music);$('musicNow').textContent='Music stopped.'};
+$('nextMusic').onclick=()=>{if(block.active){nextBlockTrack();return}if(!library.length)return;sel.value=(+sel.value+1)%library.length;startMusic()};
+$('musicVol').oninput=e=>{music.volume=e.target.value/100;$('musicVal').textContent=e.target.value+'%';localStorage.setItem('w3bcMusicVolumePct',e.target.value)};
+music.onended=()=>{if(block.active)nextBlockTrack();else $('musicNow').textContent='Track ended.'};
+document.querySelectorAll('[data-hours]').forEach(b=>b.onclick=()=>startBlock(Number(b.dataset.hours)));
+$('stopBlock').onclick=()=>cancelBlock(true);
+$('bedOn').onclick=()=>{setBed($('bedVol').value,false);safePlay(bed);$('bedDot').classList.add('on');$('bedNow').textContent='Talk bed LIVE.'};
+$('bedPause').onclick=()=>{bed.pause();$('bedDot').classList.remove('on');$('bedNow').textContent='Bed paused.'};
+$('bedFade').onclick=()=>fadeBed();
+$('bedStop').onclick=()=>{stop(bed);$('bedDot').classList.remove('on');$('bedNow').textContent='Bed stopped.'};
+$('bedVol').oninput=e=>{setBed(e.target.value);$('bedNow').textContent='Talk bed '+pct(e.target.value)};
+document.querySelectorAll('[data-bed]').forEach(b=>b.onclick=()=>{setBed(b.dataset.bed);$('bedNow').textContent='Talk bed '+pct(b.dataset.bed)});
+document.querySelectorAll('[data-sfx]').forEach(b=>b.onclick=()=>{sfx.src=BASE+b.dataset.sfx;sfx.currentTime=0;safePlay(sfx);$('sfxNow').textContent='PLAYING · '+b.textContent.trim()});
+$('stopSfx').onclick=()=>{stop(sfx);$('sfxNow').textContent='Hot audio stopped.'};
+$('sfxVol').oninput=e=>{sfx.volume=e.target.value/100;$('sfxVal').textContent=e.target.value+'%';localStorage.setItem('w3bcHotVolumePct',e.target.value)};
+sfx.onended=()=>{$('sfxNow').textContent='Hot audio ready.'};
+const mv=Number(localStorage.getItem('w3bcMusicVolumePct')||65),bv=Number(localStorage.getItem('w3bcBedVolumePct')||localStorage.getItem('sbrBedVolumePct')||2.5),sv=Number(localStorage.getItem('w3bcHotVolumePct')||80);
+$('musicVol').value=mv;$('musicVal').textContent=mv+'%';music.volume=mv/100;setBed(bv,false);$('sfxVol').value=sv;$('sfxVal').textContent=sv+'%';sfx.volume=sv/100;
+loadLibrary();
+})();
+</script>
+</body>
+</html>
