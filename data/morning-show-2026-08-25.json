@@ -1,0 +1,67 @@
+{
+  "date":"2026-08-25",
+  "version":"2026-08-25-v1",
+  "label":"Tuesday Aug 25",
+  "startTime":"MORNING MACRO",
+  "source":"Google Alert Daily Digest received Aug 25, 2026 + verified current headlines",
+  "title":"Bitcoin Breaks $80K + Stocks Go Onchain | W3BC Morning Macro",
+  "description":"Tuesday Morning Macro: Bitcoin breaks $80K, ETF money keeps flowing, Treasury and the Fed collide ahead of Jackson Hole, Coinbase puts tokenized stocks on Base, Chainlink becomes key oracle infrastructure, Solana RWA tops $4B, and AI infrastructure faces its next major test.",
+  "segments":[
+    {"name":"Morning Macro Open","kind":"camera","enabled":true},
+    {"name":"Markets Now","kind":"markets","enabled":true,"sponsor":"Bitunix"},
+    {"name":"Top Stories","kind":"news","enabled":true},
+    {"name":"AI + Technology","kind":"ai","enabled":true},
+    {"name":"Sports Quick Hit","kind":"sports","enabled":true},
+    {"name":"The Trenches","kind":"trenches","enabled":true},
+    {"name":"Close","kind":"camera","enabled":true}
+  ],
+  "openNotes":[
+    "Morning Macro is back. Keep the main video fast: roughly 60-90 seconds for the top stories, then cut individual story clips if desired.",
+    "Lead with Bitcoin above $80K. The uploaded digest flags the rally, ETF inflows and improving risk appetite; Reuters confirms BTC moved above $80K Tuesday to a three-month high.",
+    "The macro connection matters: Treasury bond-market intervention, dollar/debasement concerns and Kevin Warsh's upcoming Jackson Hole speech are all part of the same market story.",
+    "Tokenized stocks are the structural adoption story: Coinbase tokenized equities are live on Base and the digest says Chainlink is providing pricing/oracle infrastructure.",
+    "Use live Markets screen for current prices rather than quoting a stale digest price."
+  ],
+  "trenchesPresets":[
+    {"symbol":"$JCHAINS","name":"JCHAINS","chain":"solana","query":"5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump","address":"5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump"},
+    {"symbol":"$GOOD","name":"Good In The Hood","chain":"robinhood","query":"0x5f62c57e5c537887117eef828b7e3ad41c009feb","address":"0x5f62c57e5c537887117eef828b7e3ad41c009feb"},
+    {"symbol":"$WALLET","name":"Robinhood Wallet","chain":"robinhood","query":"0x0339f5459fc690ac85f1782e15782a151b4a9e1b","address":"0x0339f5459fc690ac85f1782e15782a151b4a9e1b"}
+  ],
+  "newsStories":[
+    {"headline":"Bitcoin breaks $80,000 as the crypto rally accelerates","points":["Tuesday's digest says crypto extended its strongest three-day rally since 2023 and Bitcoin pushed through the $80K area.","Reuters confirms Bitcoin moved above $80,000 to a three-month high Tuesday, with a softer dollar and debasement concerns helping momentum.","This is no longer just a crypto-native move: macro policy, ETF demand and risk appetite are converging."],"stats":[["BITCOIN","$80K+"],["LEVEL","3-month high"]],"takeaway":"The important story is why Bitcoin is moving: institutional flows plus a macro hard-asset trade.","source":"Reuters / CNBC / Aug 25 digest"},
+    {"headline":"Bitcoin ETFs post a seventh straight day of inflows","points":["The digest says spot Bitcoin ETFs took in about $337.56M on Aug. 24, extending the inflow streak to seven straight days.","Another digest item says BlackRock's IBIT accounted for about $209M of the Aug. 24 Bitcoin ETF inflow.","Sustained ETF demand gives the rally a stronger spot-flow foundation than a purely leveraged move."],"stats":[["AUG 24 BTC ETF","~$337.6M"],["IBIT","~$209M"],["STREAK","7 days"]],"takeaway":"Watch ETF flows as the confirmation signal for whether the breakout has staying power.","source":"CoinDesk / Yahoo Finance / Aug 25 digest"},
+    {"headline":"Treasury intervention and Jackson Hole become the macro center of gravity","points":["The digest highlights bond-market anxiety ahead of Fed Chair Kevin Warsh's first Jackson Hole speech.","Treasury actions aimed at long-term yields are feeding the dollar-debasement narrative that is helping Bitcoin and other hard assets.","Markets now need Warsh to clarify how the Fed views inflation, yields and the policy path."],"stats":[],"takeaway":"Crypto's rally is increasingly connected to the credibility of U.S. fiscal and monetary policy.","source":"Reuters / Aug 25 digest"},
+    {"headline":"Coinbase tokenized stocks go live on Base","points":["The digest reports Coinbase tokenized U.S. equities launching on Base, including names such as Apple, Nvidia, Meta and Alphabet.","Coinbase says the tokens are backed 1:1 by underlying shares and can be held in self-custody and used across DeFi where eligible.","The product is offered internationally under Regulation S and is not available to U.S. persons."],"stats":[["MODEL","1:1 share-backed"],["MARKET","24/7 onchain"]],"takeaway":"Stocks are becoming programmable assets rather than assets trapped inside a brokerage account.","source":"Coinbase / Base / Aug 25 digest"},
+    {"headline":"Chainlink powers pricing for Coinbase's tokenized-stock push","points":["Today's digest says Coinbase selected Chainlink to deliver continuous pricing for its tokenized stocks.","That puts oracle infrastructure directly inside a major exchange's bridge between traditional equities and DeFi.","Reliable pricing becomes essential once tokenized shares can be traded, lent or used as collateral around the clock."],"stats":[],"takeaway":"This is the Chainlink thesis in practice: tokenized capital markets require trusted data infrastructure.","source":"Chainlink / PR Newswire / Aug 25 digest"},
+    {"headline":"Solana's RWA ecosystem tops $4 billion","points":["The digest reports Solana's real-world-asset ecosystem surpassing $4B in total value.","One summary cites roughly $263M of RWA inflows over the 30 days ending Aug. 19.","The network's role is expanding from consumer crypto into tokenized financial assets."],"stats":[["SOLANA RWA","$4B+"],["30D INFLOWS","~$263M reported"]],"takeaway":"The chain competition is increasingly about who becomes infrastructure for real financial assets.","source":"Yahoo Finance / Aug 25 digest"},
+    {"headline":"SEC's proposed Regulation Crypto framework stays in focus","points":["Legal coverage in the digest continues analyzing the SEC's proposed Regulation Crypto Assets framework.","The proposal is aimed at creating a more tailored path for digital-asset offerings and disclosures.","It remains proposed rulemaking, not final law."],"stats":[],"takeaway":"A defined fundraising framework could be one of the biggest structural changes for U.S. token projects, but the details still matter.","source":"Mayer Brown / Stinson / Davis Polk / Aug 25 digest"},
+    {"headline":"Onchain markets are pushing finance toward 24/7 trading","points":["The digest highlights a Bloomberg feature on blockchain markets expanding into traditionally closed asset classes.","Tokenized equities, Treasuries and other instruments increasingly make continuous trading technically possible.","The bigger shift is not crypto replacing finance; it is financial market infrastructure becoming crypto-native."],"stats":[],"takeaway":"The end state looks less like a separate crypto market and more like global capital markets running onchain.","source":"Bloomberg / Aug 25 digest"}
+  ],
+  "aiStories":[
+    {"headline":"Nvidia earnings and AI financing are the next major risk test","points":["Markets are watching Nvidia's Aug. 26 earnings as a read on the durability of the AI infrastructure boom.","Reuters says rising long-term yields are increasing the cost of financing enormous AI buildouts.","The market now needs revenue and cash-flow growth to justify the scale of AI capex."],"stats":[["NVDA EARNINGS","Aug 26"]],"takeaway":"AI remains a growth engine, but capital efficiency is becoming just as important as raw demand."},
+    {"headline":"AI agents expose enterprise security and governance gaps","points":["Forbes argues agents often reveal existing permission and governance weaknesses rather than inventing entirely new security problems.","Nvidia says agentic workloads are expanding inference into multi-step workflows that use tools and coordinate subagents.","AWS is also pushing standards for agent resource discovery as organizations deploy more agents."],"stats":[],"takeaway":"Agent infrastructure is maturing from demos into systems that need identity, permissions, discovery and governance."}
+  ],
+  "sportsStories":[
+    {"headline":"NFL roster cuts become the story as the regular season approaches","points":["NFL.com's tracker is following team-by-team moves ahead of the Aug. 30 53-man roster deadline.","Depth-chart battles and final roster decisions now matter more than preseason scores.","This is the useful window for identifying role changes before regular-season betting markets fully adjust."],"stats":[["ROSTER DEADLINE","Aug 30"]],"takeaway":"Follow personnel and opportunity, not preseason records."},
+    {"headline":"Tour Championship field heads to East Lake","points":["The PGA Tour's First Look turns attention to the Tour Championship at East Lake.","The BMW Championship finalized the playoff picture and the remaining field now moves to the season finale.","For betting content, verify current tournament markets before posting any plays."],"stats":[],"takeaway":"Golf moves immediately from BMW fallout into the Tour Championship."}
+  ],
+  "ticker":[
+    "BITCOIN BREAKS $80K · THREE-MONTH HIGH",
+    "BITCOIN ETF INFLOW STREAK REACHES SEVEN DAYS",
+    "JACKSON HOLE: MARKETS WAIT FOR FED CHAIR KEVIN WARSH",
+    "COINBASE TOKENIZED STOCKS GO LIVE ON BASE",
+    "CHAINLINK PROVIDES PRICING INFRASTRUCTURE FOR TOKENIZED STOCKS",
+    "SOLANA RWA ECOSYSTEM TOPS $4 BILLION",
+    "SEC REGULATION CRYPTO PROPOSAL REMAINS IN FOCUS",
+    "NVIDIA EARNINGS AUG 26: NEXT TEST FOR AI BOOM"
+  ],
+  "liveFeed":[
+    {"text":"Bitcoin breaks $80K as ETF flows and macro hard-asset demand converge","category":"markets","priority":"high"},
+    {"text":"Spot Bitcoin ETF inflows extend to a seventh straight day","category":"crypto","priority":"high"},
+    {"text":"Fed Chair Kevin Warsh heads toward a closely watched Jackson Hole speech","category":"macro","priority":"high"},
+    {"text":"Coinbase tokenized stocks are live on Base for eligible international users","category":"tokenization","priority":"high"},
+    {"text":"Chainlink selected for continuous pricing of Coinbase tokenized stocks","category":"chainlink","priority":"high"},
+    {"text":"Solana RWA ecosystem reportedly surpasses $4B","category":"rwa","priority":"normal"},
+    {"text":"Nvidia reports Aug. 26 as markets test the AI infrastructure thesis","category":"ai","priority":"normal"}
+  ]
+}
