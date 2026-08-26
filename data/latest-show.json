@@ -1,11 +1,11 @@
 {
-  "date": "2026-08-25",
-  "version": "2026-08-25-v1",
-  "file": "data/morning-show-2026-08-25.json",
-  "label": "Tuesday Aug 25 · Morning Macro",
+  "date": "2026-08-26",
+  "version": "2026-08-26-v1",
+  "file": "data/morning-show-2026-08-26.json",
+  "label": "Wednesday Aug 26 · W3BC LIVE",
   "expected": {
-    "news": 8,
+    "news": 9,
     "ai": 2,
-    "sports": 2
+    "sports": 4
   }
 }
