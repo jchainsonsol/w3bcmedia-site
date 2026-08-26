@@ -1,0 +1,77 @@
+{
+  "date":"2026-08-26",
+  "version":"2026-08-26-v1",
+  "label":"Wednesday Aug 26",
+  "startTime":"12:00 PM ET",
+  "source":"Google Alert Daily Digest received Aug 26, 2026",
+  "title":"Crypto Greed Surges + Wall Street Moves Deeper Onchain | W3BC LIVE",
+  "description":"Wednesday W3BC LIVE: crypto sentiment flips hard into greed, Bitcoin pauses near $80K after a three-month high, BlackRock expects more institutional inflows, Coinbase and Bitwise push tokenized stocks deeper into onchain finance, Japan explores instant blockchain settlement, stablecoin payments keep scaling, plus AI agents, NFL, UFC Shanghai, MLB and the Betting Desk.",
+  "segments":[
+    {"name":"Open","kind":"camera","enabled":true},
+    {"name":"Markets Now","kind":"markets","enabled":true,"sponsor":"Bitunix"},
+    {"name":"News Desk","kind":"news","enabled":true},
+    {"name":"AI + Technology","kind":"ai","enabled":true},
+    {"name":"The Trenches","kind":"trenches","enabled":true},
+    {"name":"Sports","kind":"sports","enabled":true},
+    {"name":"Betting Desk","kind":"betting","enabled":true,"sponsor":"BC.GAME"},
+    {"name":"Close","kind":"camera","enabled":true}
+  ],
+  "openNotes":[
+    "Lead with sentiment: Fear & Greed jumped from 27 on Aug. 12 to 74 Tuesday before easing to 65. The shift is fast and worth framing as bullish but increasingly crowded.",
+    "Bitcoin briefly hit $81K Tuesday and then dipped below $80K. Use the live chart for current price rather than quoting the digest as live data.",
+    "The structural adoption story today is bigger than price: tokenized stocks, automated token portfolios, blockchain settlement in Japan, stablecoin payments and institutional RWA credit all moved forward.",
+    "Keep Regulation Crypto Assets framed as proposed SEC rulemaking, not final law."
+  ],
+  "trenchesPresets":[
+    {"symbol":"$JCHAINS","name":"JCHAINS","chain":"solana","query":"5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump","address":"5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump"},
+    {"symbol":"$GOOD","name":"Good In The Hood","chain":"robinhood","query":"0x5f62c57e5c537887117eef828b7e3ad41c009feb","address":"0x5f62c57e5c537887117eef828b7e3ad41c009feb"},
+    {"symbol":"$WALLET","name":"Robinhood Wallet","chain":"robinhood","query":"0x0339f5459fc690ac85f1782e15782a151b4a9e1b","address":"0x0339f5459fc690ac85f1782e15782a151b4a9e1b"}
+  ],
+  "newsStories":[
+    {"headline":"Crypto sentiment snaps from fear to greed as Bitcoin pauses near $80K","points":["CoinDesk says the Crypto Fear & Greed Index surged from 27 on Aug. 12 to 74 on Tuesday before easing to 65.","Bitcoin briefly reached $81K Tuesday after hitting a three-month high around $80K, then pulled back below that level.","The setup is still bullish, but sentiment is no longer washed out and positioning risk is rising."],"stats":[["FEAR & GREED","27 → 74 → 65"],["BTC HIGH","~$81K"]],"takeaway":"Momentum is strong, but the market is moving from opportunity toward crowding.","source":"CoinDesk / Bloomberg / Yahoo Finance / Aug 26 digest"},
+    {"headline":"BlackRock expects continued multi-billion-dollar Bitcoin inflows","points":["Today's digest says BlackRock expects continued multi-billion-dollar inflows into Bitcoin following the spot ETF adoption wave.","The broader trend is Bitcoin wealth moving deeper into mainstream financial machinery through ETFs and in-kind creation mechanisms.","Institutional demand is increasingly part of Bitcoin's market structure rather than a temporary catalyst."],"stats":[],"takeaway":"Bitcoin is becoming easier for traditional capital to own, move and integrate into portfolios.","source":"CryptoRank / Bloomberg / Yahoo Finance / Aug 26 digest"},
+    {"headline":"Coinbase tokenized stocks move from launch story to market infrastructure story","points":["The digest continues tracking Coinbase tokenized U.S. stocks on Base, including Apple, Nvidia, Meta and Alphabet exposure.","Coverage now focuses on the ownership structure and connection to DeFi rather than the launch alone.","The important shift is tokenized equities becoming assets that can move across an onchain financial system."],"stats":[],"takeaway":"The story is no longer whether stocks can be tokenized; it is what can be built once they are onchain.","source":"Ledger Insights / Altcoin Buzz / Cointribune / Aug 26 digest"},
+    {"headline":"Bitwise launches automated portfolios for tokenized stocks","points":["Bloomberg and Bitwise coverage in the digest says Bitwise is offering automated model portfolios built around tokenized stocks.","The products are powered by Coinbase tokenized stocks and Glider, according to Bitwise's own listing.","That brings portfolio construction and automated allocation into the tokenized-equity stack."],"stats":[],"takeaway":"Tokenized stocks are starting to get the same portfolio tooling traditional ETFs and managed products already have.","source":"Bloomberg / Bitwise / Aug 26 digest"},
+    {"headline":"Japan eyes blockchain for instant stock and government-bond settlement","points":["Reuters reports Japan is exploring blockchain-based instant settlement for stocks and Japanese government bonds.","The goal is to compress settlement times and modernize market infrastructure.","This is another example of blockchain adoption moving into core capital-market plumbing rather than remaining a crypto-side experiment."],"stats":[],"takeaway":"Settlement is one of the strongest real-world use cases for tokenized market infrastructure.","source":"Reuters / Aug 26 digest"},
+    {"headline":"Institutional RWA adoption expands beyond Treasuries into high-yield credit","points":["Pharos is expanding onchain access to institutional U.S. high-yield credit, according to today's digest.","The first RWA phase centered on Treasuries, money-market products and stablecoins; the next phase is moving into broader credit markets.","Mantle also reports RWA TVL growth from $22M to $257M in a year."],"stats":[["MANTLE RWA TVL","$22M → $257M"]],"takeaway":"RWA tokenization is broadening from safe collateral into actual credit-market exposure.","source":"Markets Insider / PR Newswire / Aug 26 digest"},
+    {"headline":"Stablecoin payments continue shifting from crypto utility to payment infrastructure","points":["Reuters coverage in the digest says stablecoin card spending is forecast to reach $50B annually by 2028.","New GENIUS Act implementation rules are also moving toward the next regulatory phase.","The combination of payments growth and regulatory clarity is pushing stablecoins closer to mainstream financial rails."],"stats":[["FORECAST CARD SPEND","$50B/year by 2028"]],"takeaway":"Stablecoins increasingly look like payment infrastructure, not just trading liquidity.","source":"Reuters / Aug 26 digest"},
+    {"headline":"SEC Regulation Crypto Assets remains a major structural policy story","points":["The SEC's proposed Regulation Crypto Assets framework continues drawing legal analysis.","The proposal is designed to create a tailored offering regime for digital assets.","It remains proposed rulemaking, so the details and final form are still unresolved."],"stats":[],"takeaway":"A credible federal issuance framework could materially change how U.S. crypto projects raise capital.","source":"Mondaq / Aug 26 digest"},
+    {"headline":"Solana faces the next test: institutional adoption versus actual value capture","points":["Today's institutional-adoption alert highlights Solana's growth across tokenized assets, payments and regulated investment products.","The open question is whether rising institutional usage translates into sustainable value capture for the network and token.","That distinction matters as RWA and payments activity grows."],"stats":[],"takeaway":"Adoption is bullish, but investors still need to ask who captures the economics.","source":"BlockTelegraph / Aug 26 digest"}
+  ],
+  "aiStories":[
+    {"headline":"AI agents are scaling fast — and security concerns are getting more practical","points":["CNET frames AI-agent risk less as science fiction and more as permission, access and control problems.","Stanford HAI is examining conflicts of interest and the idea of imposing a duty of loyalty on agent developers and deployers.","The more agents act independently, the more governance becomes part of the product itself."],"stats":[],"takeaway":"The next AI-agent debate is about trust, incentives and permissions, not just model intelligence."},
+    {"headline":"CFOs are now measuring AI agents by actual return on investment","points":["BCG says finance leaders are moving from experimentation toward funding and scaling agentic AI with measurable business returns.","One example in the digest cites automation of more than 90% of FP&A work in nine months.","The enterprise market is shifting from 'can AI do this?' to 'does deploying AI improve margins and productivity?'"],"stats":[["FP&A AUTOMATION","90%+ in cited example"]],"takeaway":"Agent adoption becomes durable when it shows up in operating leverage, not demos."}
+  ],
+  "sportsStories":[
+    {"headline":"NFL focus shifts from preseason hype to real 2026 expectations","points":["ESPN is looking at teams most likely to decline in 2026, while The Athletic has published win-total projections for all 32 teams.","The regular season opens Sept. 9 with Seattle in the digest's referenced opener.","For Betting Desk, this is the transition point from preseason roster evaluation into season-long win totals and Week 1 markets."],"stats":[["NFL OPENING WEEK","Sept. 9"]],"takeaway":"Now is the time to separate preseason noise from actual regular-season pricing."},
+    {"headline":"UFC Shanghai: Umar Nurmagomedov vs. Song Yadong headlines Aug. 29","points":["UFC.com says Umar Nurmagomedov meets Song Yadong in the Shanghai main event on Aug. 29.","Song says the fight could put him in position for a title shot.","This is the cleanest upcoming combat-sports event in today's digest for the Sports and Betting Desk sections."],"stats":[["UFC SHANGHAI","Aug. 29"]],"takeaway":"This is the UFC event we should be building betting research around today."},
+    {"headline":"Tour Championship approaches as PGA Tour announces future playoff changes","points":["The Tour Championship starts this week at East Lake.","The PGA Tour also announced a move to match play for the Tour Championship beginning in 2028, a change Rory McIlroy welcomed.","The current event and the future format change give us both immediate and broader golf angles."],"stats":[["FORMAT CHANGE","Match play from 2028"]],"takeaway":"Use current Tour Championship markets for betting; keep the 2028 format change as the news angle."},
+    {"headline":"MLB starts looking toward the offseason even as the stretch run continues","points":["MLB.com is already ranking the top 10 upcoming free agents.","The playoff push remains active, but roster and offseason-market stories are beginning to overlap with the pennant race.","For betting, use the actual Aug. 26 schedule rather than digest stories from Aug. 25."],"stats":[],"takeaway":"News value and betting value are diverging; live schedule data should drive the wagering section."}
+  ],
+  "bettingNotes":[
+    "NFL: transition research from preseason into Week 1 and season win totals, but only display verified current markets.",
+    "UFC: prioritize UFC Shanghai on Aug. 29, especially Umar Nurmagomedov vs Song Yadong, if BC.GAME has live markets.",
+    "Golf: Tour Championship is the relevant current event; verify active markets before presenting a play.",
+    "MLB: pull today's actual Aug. 26 schedule and odds. Do not use stale Aug. 25 DFS references as current betting data.",
+    "Never render a bet card if event, date, opponent or market validation fails."
+  ],
+  "ticker":[
+    "CRYPTO FEAR & GREED SURGES FROM 27 TO 74 BEFORE EASING TO 65",
+    "BITCOIN PAUSES NEAR $80K AFTER BRIEFLY HITTING $81K",
+    "BLACKROCK EXPECTS CONTINUED MULTI-BILLION-DOLLAR BITCOIN INFLOWS",
+    "BITWISE LAUNCHES AUTOMATED PORTFOLIOS FOR TOKENIZED STOCKS",
+    "JAPAN EXPLORES INSTANT BLOCKCHAIN SETTLEMENT FOR STOCKS AND BONDS",
+    "STABLECOIN CARD SPENDING FORECAST TO REACH $50B A YEAR BY 2028",
+    "SOLANA INSTITUTIONAL ADOPTION ACCELERATES ACROSS RWA AND PAYMENTS",
+    "UFC SHANGHAI: UMAR NURMAGOMEDOV VS SONG YADONG AUG. 29"
+  ],
+  "liveFeed":[
+    {"text":"Crypto Fear & Greed surges as Bitcoin pauses near $80K","category":"markets","priority":"high"},
+    {"text":"BlackRock expects continued multi-billion-dollar Bitcoin inflows","category":"crypto","priority":"high"},
+    {"text":"Bitwise adds automated portfolios to the tokenized-stock stack","category":"tokenization","priority":"high"},
+    {"text":"Japan explores blockchain settlement for stocks and government bonds","category":"tokenization","priority":"high"},
+    {"text":"Stablecoin card spending forecast to hit $50B annually by 2028","category":"stablecoins","priority":"normal"},
+    {"text":"AI-agent adoption pushes governance and ROI into focus","category":"ai","priority":"normal"},
+    {"text":"UFC Shanghai headlines Aug. 29 with Umar Nurmagomedov vs Song Yadong","category":"sports","priority":"normal"}
+  ]
+}
