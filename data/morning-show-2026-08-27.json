@@ -1,0 +1,360 @@
+{
+  "date": "2026-08-27",
+  "version": "2026-08-27-v1",
+  "label": "Thursday Aug 27",
+  "startTime": "12:00 PM ET",
+  "source": "Google Alert Daily Digest received Aug 27, 2026",
+  "title": "Bitcoin Reclaims $80K, ETF Money Surges & Wall Street Moves Deeper Onchain | W3BC LIVE",
+  "description": "Thursday W3BC LIVE: Bitcoin pushes back above $80K as U.S. spot Bitcoin ETF inflows reach eight straight days, BlackRock argues the macro case for Bitcoin is strengthening, tokenized deposits raise a $700B banking question, Coinbase taps Chainlink for tokenized stocks on Base, RWA markets expand, plus AI-agent risk, NFL changes, UFC Shanghai, MLB and the Betting Desk.",
+  "segments": [
+    {
+      "name": "Open",
+      "kind": "camera",
+      "enabled": true
+    },
+    {
+      "name": "Markets Now",
+      "kind": "markets",
+      "enabled": true,
+      "sponsor": "Bitunix"
+    },
+    {
+      "name": "News Desk",
+      "kind": "news",
+      "enabled": true
+    },
+    {
+      "name": "AI + Technology",
+      "kind": "ai",
+      "enabled": true
+    },
+    {
+      "name": "The Trenches",
+      "kind": "trenches",
+      "enabled": true
+    },
+    {
+      "name": "Sports",
+      "kind": "sports",
+      "enabled": true
+    },
+    {
+      "name": "Betting Desk",
+      "kind": "betting",
+      "enabled": true,
+      "sponsor": "BC.GAME"
+    },
+    {
+      "name": "Close",
+      "kind": "camera",
+      "enabled": true
+    }
+  ],
+  "openNotes": [
+    "Lead with Bitcoin reclaiming $80K and eight straight days of U.S. spot Bitcoin ETF inflows totaling $2.8B since the streak began.",
+    "BlackRock's Robbie Mitchnick says fiscal concerns are strengthening the case for alternative stores of value such as Bitcoin and gold.",
+    "The strongest structural story is tokenization: Dallas Fed economists warn tokenized deposits could materially alter bank funding, while Coinbase selected Chainlink for tokenized stocks on Base.",
+    "Use live market screens for current prices; the digest headlines are story leads, not a live quote feed."
+  ],
+  "trenchesPresets": [
+    {
+      "symbol": "$JCHAINS",
+      "name": "JCHAINS",
+      "chain": "solana",
+      "query": "5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump",
+      "address": "5qzX8fkFtVu7XbopVuHrCYFC2w1YsVAryN3WJeq1pump"
+    },
+    {
+      "symbol": "$GOOD",
+      "name": "Good In The Hood",
+      "chain": "robinhood",
+      "query": "0x5f62c57e5c537887117eef828b7e3ad41c009feb",
+      "address": "0x5f62c57e5c537887117eef828b7e3ad41c009feb"
+    },
+    {
+      "symbol": "$WALLET",
+      "name": "Robinhood Wallet",
+      "chain": "robinhood",
+      "query": "0x0339f5459fc690ac85f1782e15782a151b4a9e1b",
+      "address": "0x0339f5459fc690ac85f1782e15782a151b4a9e1b"
+    }
+  ],
+  "newsStories": [
+    {
+      "headline": "Bitcoin climbs back above $80K as ETF inflow streak reaches eight days",
+      "points": [
+        "CoinDesk's digest headline says U.S. spot Bitcoin funds have taken in $2.8B since the current inflow streak began.",
+        "The streak has reached eight straight days, with Ether ETFs also drawing daily inflows.",
+        "Use the live Markets chart for the current BTC print rather than treating the digest headline as a live price."
+      ],
+      "stats": [
+        [
+          "BTC ETF INFLOWS",
+          "$2.8B"
+        ],
+        [
+          "STREAK",
+          "8 days"
+        ]
+      ],
+      "takeaway": "The rally has institutional flow behind it, not just improving crypto sentiment.",
+      "source": "CoinDesk / Aug 27 digest"
+    },
+    {
+      "headline": "BlackRock says Bitcoin's macro case is getting stronger",
+      "points": [
+        "CNBC's digest item features BlackRock digital-assets head Robbie Mitchnick discussing Bitcoin's comeback and institutional adoption.",
+        "A second CNBC item says rising U.S. fiscal concerns are driving demand for alternative stores of value such as Bitcoin and gold.",
+        "That frames Bitcoin increasingly as a macro allocation story, not only a crypto trade."
+      ],
+      "stats": [],
+      "takeaway": "Institutional Bitcoin adoption is increasingly being discussed through the same macro lens as gold.",
+      "source": "CNBC / Aug 27 digest"
+    },
+    {
+      "headline": "Fed inflation pressure is back in focus",
+      "points": [
+        "Reuters says Fed Governor Susan Collins believes U.S. rates may need to rise soon unless incoming data show inflation continuing to decline.",
+        "CNBC reports core PCE rose 3.3% annually in July.",
+        "Higher-for-longer or renewed hike risk matters directly to liquidity-sensitive assets including crypto and growth stocks."
+      ],
+      "stats": [
+        [
+          "CORE PCE",
+          "3.3% YoY"
+        ]
+      ],
+      "takeaway": "Crypto has strong momentum, but macro liquidity is not giving markets a free pass.",
+      "source": "Reuters / CNBC / Aug 27 digest"
+    },
+    {
+      "headline": "Dallas Fed economists flag a $700B tokenized-deposit question for banks",
+      "points": [
+        "CoinDesk's digest headline says tokenized deposits could reduce U.S. banks' lending capacity by about $700B under an assumed increase in depositor rate sensitivity.",
+        "PYMNTS summarizes the concern as potential bank rate wars if tokenization makes it easier for depositors to move money toward higher yields.",
+        "This is an important counterpoint to the idea that every form of tokenization is automatically positive for incumbent banks."
+      ],
+      "stats": [
+        [
+          "EST. LENDING CAPACITY IMPACT",
+          "~$700B"
+        ]
+      ],
+      "takeaway": "Tokenization can improve financial mobility while simultaneously disrupting traditional bank funding economics.",
+      "source": "CoinDesk / PYMNTS / Aug 27 digest"
+    },
+    {
+      "headline": "Coinbase taps Chainlink to power tokenized stocks on Base",
+      "points": [
+        "The digest reports Coinbase selected Chainlink as oracle infrastructure for its tokenized-stock offering on Base.",
+        "Reliable market data is critical if tokenized equities are going to interact safely with onchain applications.",
+        "This connects a major exchange, a major oracle network and tokenized U.S. equities in one infrastructure stack."
+      ],
+      "stats": [],
+      "takeaway": "Tokenized stocks are becoming an infrastructure story, not merely a wrapper around equities.",
+      "source": "Yahoo Finance / Aug 27 digest"
+    },
+    {
+      "headline": "Japan continues toward blockchain settlement for stocks and government bonds",
+      "points": [
+        "The digest says Japan plans to proceed with national blockchain-based settlement infrastructure for tokenized stocks and Japanese government bonds.",
+        "Finextra notes the settlement side could involve wholesale central-bank digital currency concepts for interbank settlement.",
+        "This keeps Japan at the center of the institutional tokenization story."
+      ],
+      "stats": [],
+      "takeaway": "Blockchain settlement is moving from pilot language toward national market-infrastructure planning.",
+      "source": "Yahoo Finance / Finextra / Aug 27 digest"
+    },
+    {
+      "headline": "RWA markets keep expanding across Treasuries and long-tail issuers",
+      "points": [
+        "Crypto Briefing says long-tail RWA issuers have reached roughly $9.6B in market cap, with J.P. Morgan-linked funds nearing $885M combined.",
+        "Another digest item says BlackRock's BUIDL added $52.1M in market cap in 24 hours, with tokenized Treasury products collectively around $15B–$16B onchain.",
+        "RWA deposits on DeFi platforms were also reported at $7.4B in Q2 2026."
+      ],
+      "stats": [
+        [
+          "LONG-TAIL RWA",
+          "$9.6B"
+        ],
+        [
+          "TOKENIZED TREASURIES",
+          "$15B–$16B"
+        ],
+        [
+          "DEFI RWA DEPOSITS",
+          "$7.4B"
+        ]
+      ],
+      "takeaway": "Tokenization is broadening beyond one flagship fund into an increasingly diverse onchain asset market.",
+      "source": "Crypto Briefing / Gadgets 360 / Aug 27 digest"
+    },
+    {
+      "headline": "Banks that fought stablecoins are considering their own digital money rails",
+      "points": [
+        "The Wall Street Journal digest headline says banks that resisted stablecoins are now considering launching their own.",
+        "The distinction matters: stablecoins are blockchain tokens pegged to fiat, while tokenized deposits represent conventional bank deposits on digital rails.",
+        "The competitive response from banks is evidence that blockchain-based money movement is becoming strategically relevant."
+      ],
+      "stats": [],
+      "takeaway": "The debate is shifting from whether banks engage with blockchain money to which model they use.",
+      "source": "Wall Street Journal / Aug 27 digest"
+    }
+  ],
+  "aiStories": [
+    {
+      "headline": "Meta's push to replace staff with AI agents reportedly ran into disruptive failures",
+      "points": [
+        "Reuters reporting surfaced in the digest under a story about Meta's plan to replace staff with AI.",
+        "Ars Technica summarizes the agents as making large-scale disruptive actions.",
+        "The useful angle is operational: autonomous agents can create real business risk when permissions and guardrails are weak."
+      ],
+      "stats": [],
+      "takeaway": "Agent capability is accelerating faster than many companies' control systems.",
+      "source": "Reuters / Ars Technica / Aug 27 digest"
+    },
+    {
+      "headline": "Bill Gates warns there is no plan for the upheaval AI could cause",
+      "points": [
+        "CNBC, CNN and Fortune all surface Gates' warnings about AI's effects on employment and society.",
+        "The coverage includes concerns spanning jobs, child development, crime and inequality.",
+        "This adds to a growing shift in the AI conversation from capability toward economic and social transition."
+      ],
+      "stats": [],
+      "takeaway": "The AI story is increasingly about managing disruption, not proving the technology works.",
+      "source": "CNBC / CNN / Fortune / Aug 27 digest"
+    }
+  ],
+  "sportsStories": [
+    {
+      "headline": "NFL ends the traditional Pro Bowl game and elevates selection itself",
+      "points": [
+        "NFL.com says the league will no longer stage an AFC vs. NFC Pro Bowl game.",
+        "The Guardian reports the league is also moving away from the all-star game and skills-competition model.",
+        "Pro Bowl selection will carry greater emphasis as the honor itself."
+      ],
+      "stats": [],
+      "takeaway": "The NFL is stripping away an event that had lost relevance while preserving the recognition.",
+      "source": "NFL.com / The Guardian / Aug 27 digest"
+    },
+    {
+      "headline": "NFL introduces a new suspension rule for the 2026 season",
+      "points": [
+        "CBS Sports reports the league and NFLPA have introduced a rule tied to repeated player-safety violations.",
+        "The digest indicates three violations can trigger the new disciplinary mechanism.",
+        "This is a regular-season policy story worth flagging as the season approaches."
+      ],
+      "stats": [
+        [
+          "TRIGGER",
+          "3 violations"
+        ]
+      ],
+      "takeaway": "Player-safety enforcement is becoming more systematic, with repeat behavior carrying clearer consequences.",
+      "source": "CBS Sports / Aug 27 digest"
+    },
+    {
+      "headline": "UFC Shanghai is the weekend fight card to watch",
+      "points": [
+        "UFC.com's digest listing has UFC Shanghai with Nurmagomedov vs. Song as the featured matchup.",
+        "Prelims are listed for 12 a.m. PT.",
+        "Use the current UFC card and verified BC.GAME markets for any Betting Desk recommendations."
+      ],
+      "stats": [
+        [
+          "EVENT",
+          "UFC Shanghai"
+        ]
+      ],
+      "takeaway": "This remains the cleanest combat-sports target for the weekend Betting Desk.",
+      "source": "UFC.com / Aug 27 digest"
+    },
+    {
+      "headline": "MLB stretch run continues after a busy Aug. 26 slate",
+      "points": [
+        "MLB's FastCast highlighted Yordan Alvarez's go-ahead triple against the Yankees and Jarren Duran's go-ahead grand slam.",
+        "The digest also highlights Kyle Schwarber's 40th home run.",
+        "For wagering, today's Aug. 27 schedule must be pulled live rather than inferred from yesterday's recap."
+      ],
+      "stats": [
+        [
+          "SCHWARBER HR",
+          "40"
+        ]
+      ],
+      "takeaway": "Use yesterday's highlights for Sports; use today's verified schedule for Betting Desk.",
+      "source": "MLB.com / Aug 27 digest"
+    },
+    {
+      "headline": "LIV Golf reportedly lays off most staff amid investment uncertainty",
+      "points": [
+        "Sky Sports says LIV Golf laid off the majority of staff as discussions continue over fresh investment.",
+        "The digest says Saudi Arabia's PIF funding ended at the conclusion of the 2026 season.",
+        "Additional golf coverage raises uncertainty around whether some captains remain with the league."
+      ],
+      "stats": [],
+      "takeaway": "This is a significant business-of-sports story if we want a golf segment beyond tournament results.",
+      "source": "Sky Sports / Golfmagic / Aug 27 digest"
+    }
+  ],
+  "bettingNotes": [
+    "NFL: verify the current 2026 schedule and distinguish preseason from regular season before rendering any bet card.",
+    "UFC: prioritize verified UFC Shanghai markets for Nurmagomedov vs Song and the rest of the Aug. 29 card.",
+    "MLB: use the actual Aug. 27 schedule and current odds; yesterday's digest is recap material only.",
+    "Golf: do not turn LIV Golf business news into a betting recommendation.",
+    "Odds provider quota issues must never cause invented or stale bets to appear as current."
+  ],
+  "ticker": [
+    "BITCOIN CLIMBS BACK ABOVE $80K AS ETF INFLOW STREAK REACHES EIGHT DAYS",
+    "U.S. SPOT BITCOIN FUNDS TAKE IN $2.8B DURING CURRENT INFLOW RUN",
+    "BLACKROCK SAYS BITCOIN'S MACRO CASE IS STRENGTHENING",
+    "CORE PCE RUNS AT 3.3% AS FED RATE PRESSURE RETURNS",
+    "DALLAS FED ECONOMISTS FLAG $700B BANK-LENDING RISK FROM TOKENIZED DEPOSITS",
+    "COINBASE TAPS CHAINLINK FOR TOKENIZED STOCKS ON BASE",
+    "TOKENIZED TREASURY MARKET REACHES ROUGHLY $15B–$16B ONCHAIN",
+    "NFL ENDS TRADITIONAL PRO BOWL GAME",
+    "UFC SHANGHAI: NURMAGOMEDOV VS SONG"
+  ],
+  "liveFeed": [
+    {
+      "text": "Bitcoin climbs above $80K as spot ETF inflows reach eight straight days",
+      "category": "markets",
+      "priority": "high"
+    },
+    {
+      "text": "BlackRock says Bitcoin's macro case is strengthening",
+      "category": "crypto",
+      "priority": "high"
+    },
+    {
+      "text": "Core PCE at 3.3% keeps Fed rate risk in focus",
+      "category": "macro",
+      "priority": "high"
+    },
+    {
+      "text": "Dallas Fed economists flag potential $700B bank impact from tokenized deposits",
+      "category": "tokenization",
+      "priority": "high"
+    },
+    {
+      "text": "Coinbase taps Chainlink for tokenized stocks on Base",
+      "category": "tokenization",
+      "priority": "high"
+    },
+    {
+      "text": "RWA and tokenized Treasury markets continue expanding",
+      "category": "rwa",
+      "priority": "normal"
+    },
+    {
+      "text": "Meta AI-agent failures sharpen enterprise guardrail debate",
+      "category": "ai",
+      "priority": "normal"
+    },
+    {
+      "text": "NFL ends traditional Pro Bowl game",
+      "category": "sports",
+      "priority": "normal"
+    }
+  ]
+}
