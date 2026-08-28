@@ -6,6 +6,14 @@ canvas{position:absolute;inset:0;display:block;width:100%;height:100%;background
 .controls{position:fixed;inset:0;pointer-events:none}.b{position:absolute;pointer-events:auto;width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:#0d111bbb;border:2px solid #ffffff55;color:#fff;font:900 29px system-ui;user-select:none;-webkit-user-select:none;backdrop-filter:blur(7px)}.b.on{transform:scale(.94);background:#7b2535dd}
 #l{left:max(22px,env(safe-area-inset-left));bottom:max(38px,env(safe-area-inset-bottom))}#r{left:max(126px,calc(env(safe-area-inset-left) + 104px));bottom:max(38px,env(safe-area-inset-bottom))}#j{right:max(26px,env(safe-area-inset-right));bottom:max(48px,env(safe-area-inset-bottom));width:108px;height:108px;border-color:#ff526caa;font-size:20px}
 .tag{position:absolute;left:50%;bottom:max(10px,env(safe-area-inset-bottom));transform:translateX(-50%);font:800 9px monospace;letter-spacing:.14em;color:#c7a9b1;opacity:.72}
+</style><style>
+/* CYBERPUNK UI v1 */
+:root{--cy:#19e6ff;--ng:#42ff9b;--pk:#ff2e88;--ink:#03070d;--glass:rgba(3,10,18,.78)}
+body:before{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;background:repeating-linear-gradient(180deg,rgba(255,255,255,.018) 0 1px,transparent 1px 5px);mix-blend-mode:screen;opacity:.45}
+.controls .btn,.controls .b{border-radius:16px!important;background:linear-gradient(145deg,rgba(5,15,25,.88),rgba(3,7,13,.72))!important;border:1px solid var(--cy)!important;box-shadow:0 0 0 2px rgba(25,230,255,.08),inset 0 0 24px rgba(25,230,255,.07),0 0 18px rgba(25,230,255,.12)!important;color:#eefcff!important;clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px)}
+.controls #jump,.controls #j{border-color:var(--ng)!important;box-shadow:0 0 0 2px rgba(66,255,155,.08),inset 0 0 26px rgba(66,255,155,.08),0 0 20px rgba(66,255,155,.14)!important;color:var(--ng)!important}
+.controls .on{background:rgba(25,230,255,.22)!important;transform:scale(.95)}
+.tag,#status{color:var(--cy)!important;text-shadow:0 0 10px rgba(25,230,255,.6)}
 </style></head><body><div id="wrap"><canvas id="g" width="720" height="1280"></canvas></div><div class="controls"><div class="b" id="l">◀</div><div class="b" id="r">▶</div><div class="b" id="j">JUMP</div><div class="tag">WORLD 1-2 · BEAR MARKET</div></div>
 <script>(()=>{const c=document.getElementById('g'),x=c.getContext('2d'),W=720,H=1280,T=64,G=2200,LW=76*T,Y=390;let keys={},touch={l:0,r:0,j:0},last=0,jl=0,time=0,state='play',checkpoint=120;const atlas=new Image();atlas.src='assets/a_wide_pixel_art_game_asset_sheet_on_a_black_trans.png';let ready=0;atlas.onload=()=>ready=1;
 addEventListener('keydown',e=>keys[e.code]=1);addEventListener('keyup',e=>keys[e.code]=0);
