@@ -1,0 +1,220 @@
+{
+  "date": "2026-08-28",
+  "version": "2026-08-28-v1",
+  "label": "Friday Aug 28",
+  "startTime": "12:00 PM ET",
+  "source": "Google Alert Daily Digest received Aug 28, 2026",
+  "title": "Bitcoin Near $78K, SEC Crypto Shake-Up & Schwab Expands Crypto | W3BC LIVE",
+  "description": "Friday W3BC LIVE: Bitcoin steadies near $78K as markets await Fed Chair Kevin Warsh at Jackson Hole, the SEC advances a crypto-custody overhaul and proposed Regulation Crypto Assets framework, Charles Schwab plans to add SOL, AVAX and LINK, tokenized equities push RWA market cap above $30B, plus AI agents with wallets, NFL roster cuts, MLB, UFC and the Betting Desk.",
+  "segments": [
+    {
+      "name": "Open",
+      "kind": "camera",
+      "enabled": true
+    },
+    {
+      "name": "Markets Now",
+      "kind": "markets",
+      "enabled": true,
+      "sponsor": "Bitunix"
+    },
+    {
+      "name": "News Desk",
+      "kind": "news",
+      "enabled": true
+    },
+    {
+      "name": "AI + Technology",
+      "kind": "ai",
+      "enabled": true
+    },
+    {
+      "name": "The Trenches",
+      "kind": "trenches",
+      "enabled": true
+    },
+    {
+      "name": "Sports",
+      "kind": "sports",
+      "enabled": true
+    },
+    {
+      "name": "Betting Desk",
+      "kind": "betting",
+      "enabled": true,
+      "sponsor": "BC.GAME"
+    },
+    {
+      "name": "Close",
+      "kind": "camera",
+      "enabled": true
+    }
+  ],
+  "openNotes": [
+    "Bitcoin is near $78K in the digest; use the live Markets screen for the actual on-air price.",
+    "Today's macro catalyst is Fed Chair Kevin Warsh's Jackson Hole speech and the question of what conditions would change rates.",
+    "Institutional adoption has two strong fresh angles: the SEC custody overhaul and Charles Schwab expanding Schwab Crypto to SOL, AVAX and LINK.",
+    "Tokenized equities are leading RWA inflows, with active RWA market cap reported above $30B."
+  ],
+  "newsStories": [
+    {
+      "headline": "Bitcoin steadies near $78K ahead of Jackson Hole",
+      "points": [
+        "The digest says Bitcoin is trading near $78K after losing $80K despite eight consecutive U.S. spot ETF inflow sessions totaling about $2.8B.",
+        "Markets are focused on Fed Chair Kevin Warsh's Jackson Hole speech Friday for clues on rate policy.",
+        "Use live market data for the current BTC print."
+      ],
+      "takeaway": "ETF demand remains strong, but macro policy is still controlling the near-term risk backdrop.",
+      "source": "Yahoo Finance / CoinDesk / CNBC / Aug 28 digest"
+    },
+    {
+      "headline": "SEC crypto custody overhaul advances",
+      "points": [
+        "The digest says the SEC is preparing changes to crypto custody rules for investment advisers.",
+        "The regulatory shift is framed around modern institutional adoption and greater flexibility.",
+        "This matters because custody rules are a gatekeeper for larger pools of traditional capital."
+      ],
+      "takeaway": "Better-defined custody rules could remove another institutional friction point.",
+      "source": "Bitcoin Foundation / Yahoo Finance / Aug 28 digest"
+    },
+    {
+      "headline": "Charles Schwab plans to expand Schwab Crypto",
+      "points": [
+        "Schwab says it plans to add Solana, Avalanche and Chainlink to the digital assets available in Schwab Crypto accounts.",
+        "The expansion puts additional major crypto assets directly in front of traditional brokerage clients."
+      ],
+      "takeaway": "Crypto access keeps moving deeper into mainstream brokerage infrastructure.",
+      "source": "Charles Schwab / Aug 28 digest"
+    },
+    {
+      "headline": "SEC proposes standalone Regulation Crypto Assets framework",
+      "points": [
+        "The digest cites the SEC's Aug. 18 proposal for Regulation Crypto Assets, described as its first standalone crypto offering framework.",
+        "The proposal would create new exemptions from Securities Act registration plus tailored disclosure and reporting requirements."
+      ],
+      "takeaway": "The U.S. is moving from enforcement-era ambiguity toward purpose-built issuance rules.",
+      "source": "Mintz / Pillsbury / Gibson Dunn / Aug 28 digest"
+    },
+    {
+      "headline": "Tokenized equities lead RWA inflows",
+      "points": [
+        "CoinDesk reports active RWA market cap has surpassed $30B, with tokenized equities leading inflows.",
+        "CryptoRank reports RWA spot trading volume up 220% from Q2 2025 to Q2 2026 and RWA deposits rising from $2.3B to $7.4B."
+      ],
+      "takeaway": "RWA growth is increasingly showing up in both asset value and actual trading activity.",
+      "source": "CoinDesk / CryptoRank / Aug 28 digest"
+    },
+    {
+      "headline": "Bitfinex Securities raises $50M for tokenized nickel push",
+      "points": [
+        "CoinDesk reports Bitfinex Securities raised $50M as it moves to offer tokenized nickel exposure.",
+        "The story broadens tokenization beyond stocks, Treasuries and real estate into industrial commodities."
+      ],
+      "takeaway": "The tokenization thesis is spreading across asset classes.",
+      "source": "CoinDesk / Aug 28 digest"
+    },
+    {
+      "headline": "Stablecoin rules and bank competition keep developing",
+      "points": [
+        "The digest says Treasury has proposed GENIUS Act rules governing payment-stablecoin issuance and sales.",
+        "It also repeats the emerging bank response: institutions that fought stablecoins are considering their own blockchain-based money products."
+      ],
+      "takeaway": "Stablecoins are becoming a regulated payments and banking competition story.",
+      "source": "National Law Review / WSJ / Aug 28 digest"
+    }
+  ],
+  "aiStories": [
+    {
+      "headline": "AI agents are getting wallets",
+      "points": [
+        "TNW highlights infrastructure emerging around AI agents, digital wallets and micropayments.",
+        "The important question is what changes when software agents can hold value and transact autonomously."
+      ],
+      "takeaway": "The agent economy becomes materially different once agents can control money.",
+      "source": "TNW / Aug 28 digest"
+    },
+    {
+      "headline": "Anthropic launches tool for AI-controlled scientific experiments",
+      "points": [
+        "The Financial Times digest item says Anthropic's Model Hardware Standard enables AI agents to autonomously operate programmable devices used in experiments.",
+        "This moves agent capability beyond software workflows and into physical systems."
+      ],
+      "takeaway": "AI agents are crossing from digital automation into real-world machine operation.",
+      "source": "Financial Times / Aug 28 digest"
+    },
+    {
+      "headline": "Bill Gates pushes for global action on AI risks",
+      "points": [
+        "Reuters reports Gates wants to discuss international AI-risk mitigation efforts with China's Xi Jinping.",
+        "The debate continues shifting from model capability toward governance and societal impact."
+      ],
+      "takeaway": "AI governance is becoming an international coordination problem.",
+      "source": "Reuters / Aug 28 digest"
+    }
+  ],
+  "sportsStories": [
+    {
+      "headline": "NFL roster cut weekend is here",
+      "points": [
+        "CBS Sports flags 20 veterans who could be among roster-cut casualties as teams trim to 53 players.",
+        "This is one of the final major personnel checkpoints before the regular season."
+      ],
+      "takeaway": "Watch roster cuts for depth-chart changes that can affect early-season markets.",
+      "source": "CBS Sports / Aug 28 digest"
+    },
+    {
+      "headline": "NFL preseason Week 3 continues",
+      "points": [
+        "NFL.com published takeaways from Thursday's Week 3 preseason games.",
+        "Keep preseason and regular-season schedules clearly separated in the Betting Desk."
+      ],
+      "takeaway": "Preseason information matters, but don't confuse these games with regular-season matchups.",
+      "source": "NFL.com / Aug 28 digest"
+    },
+    {
+      "headline": "Tom Aspinall rejects UFC exit rumors",
+      "points": [
+        "The UFC heavyweight champion says reports that he is leaving the organization are false while he recovers from an eye injury."
+      ],
+      "takeaway": "Aspinall remains with UFC; the story is about his recovery and future return.",
+      "source": "BBC / DAZN / Aug 28 digest"
+    },
+    {
+      "headline": "MLB CBA negotiations focus on roster stability",
+      "points": [
+        "MLB.com says the league presented proposals to the MLBPA aimed at creating more roster stability.",
+        "Use today's live MLB schedule for any betting recommendations rather than the digest's prior-day game links."
+      ],
+      "takeaway": "The CBA story belongs in Sports; live games belong in Betting Desk.",
+      "source": "MLB.com / Aug 28 digest"
+    },
+    {
+      "headline": "FedExCup finale underway at East Lake",
+      "points": [
+        "Min Woo Lee opened with a bogey-free 62 and eight birdies.",
+        "Scottie Scheffler and Rory McIlroy are among the players chasing at East Lake."
+      ],
+      "takeaway": "A clean live golf storyline for the Sports segment.",
+      "source": "Sky Sports / Aug 28 digest"
+    }
+  ],
+  "bettingNotes": [
+    "Do not show a bet unless the line and event are current and verified.",
+    "NFL: clearly label PRESEASON vs REGULAR SEASON; roster cuts are happening this weekend.",
+    "MLB: pull the actual Aug. 28 schedule and current lines live.",
+    "Golf: FedExCup finale is active; verify tournament markets before recommending anything.",
+    "UFC: do not infer a current fight market from the Aspinall news story.",
+    "Current odds-feed quota issue remains a data-pipeline problem; do not substitute stale Aug. 20 lines."
+  ],
+  "ticker": [
+    "BITCOIN STEADIES NEAR $78K AHEAD OF JACKSON HOLE",
+    "FED CHAIR KEVIN WARSH SET FOR KEY JACKSON HOLE SPEECH",
+    "SEC CRYPTO CUSTODY OVERHAUL ADVANCES",
+    "CHARLES SCHWAB PLANS TO ADD SOL, AVAX AND LINK",
+    "TOKENIZED EQUITIES LEAD RWA INFLOWS AS ACTIVE MARKET CAP TOPS $30B",
+    "SEC PROPOSES STANDALONE REGULATION CRYPTO ASSETS FRAMEWORK",
+    "AI AGENTS ARE GETTING WALLETS",
+    "NFL TEAMS PREPARE FOR 53-MAN ROSTER CUTS",
+    "FEDEXCUP FINALE UNDERWAY AT EAST LAKE"
+  ]
+}
