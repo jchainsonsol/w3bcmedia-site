@@ -1,6 +1,6 @@
 {
   "date": "2026-08-28",
-  "version": "2026-08-28-v2",
+  "version": "2026-08-28-v3",
   "label": "Friday Aug 28",
   "startTime": "12:00 PM ET",
   "source": "Google Alert Daily Digest received Aug 28, 2026",
@@ -51,23 +51,25 @@
     }
   ],
   "openNotes": [
-    "PRE-SHOW MARKET READ: flat/indecisive, not a major risk-off move. Use the live Markets screen for exact prices on air.",
-    "Warsh's Jackson Hole message is hawkish on inflation: price pressures remain too high and the Fed has 'work to do' unless they ease.",
-    "Pre-show screen: BTC about $79.43K, ETH about $2.51K, total crypto market cap about $2.67T, Fear & Greed 81 Extreme Greed, ETF flows +$440.70M.",
-    "Key angle: despite the Fed warning, markets are not panicking. The market is digesting the message.",
-    "Then pivot into SEC custody, Schwab adding SOL/AVAX/LINK, and RWA/tokenization stories."
+    "JACKSON HOLE IS OVER: do not frame Story 1 as waiting for Warsh's speech.",
+    "Lead with the reaction: Warsh remains focused on inflation and says the Fed has work to do unless price pressures ease, yet risk markets have not decisively sold off.",
+    "Use the live Markets screen for exact on-air prices. Supplied post-speech snapshot: BTC ~$79.43K, ETH ~$2.51K, total crypto market cap ~$2.67T.",
+    "Supplied snapshot: Fear & Greed 81 Extreme Greed and ETF flows +$440.70M.",
+    "Key question: is the muted reaction genuine resilience or simply a delayed response?"
   ],
   "newsStories": [
     {
-      "headline": "Fed warns on inflation — Bitcoin barely flinches",
+      "headline": "Warsh delivers hawkish inflation message — markets barely flinch",
       "points": [
-        "Warsh says inflation remains too high and the Fed will have 'work to do' unless price pressures ease.",
-        "On the pre-show CoinMarketCap screen, BTC is about $79,429.80 (-1.28% 24h but +0.59% 1h) and ETH about $2,506.96 (-0.44% 24h but +0.68% 1h).",
-        "Total crypto market cap is about $2.67T (-1.05%), Fear & Greed is 81 Extreme Greed, and the dashboard shows ETF flows of +$440.70M.",
-        "Read this as flat/indecisive digestion rather than a decisive bullish or bearish break; use live prices on air."
+        "Jackson Hole is over. Warsh made inflation the Fed's predominant focus and warned there is still work to do unless price pressures ease.",
+        "The key shift is no longer anticipation of the speech; it is the market reaction after the speech.",
+        "On the supplied post-speech market screen, BTC is about $79,429.80, ETH about $2,506.96 and total crypto market cap about $2.67T.",
+        "The supplied screen shows BTC -1.28% over 24h but +0.59% over 1h, while ETH is -0.44% over 24h but +0.68% over 1h.",
+        "Fear & Greed remains 81 Extreme Greed and the dashboard shows ETF flows of +$440.70M.",
+        "On-air framing: the Fed delivered a hawkish inflation warning, but risk markets have not produced a decisive selloff. Watch whether that resilience holds or the reaction is delayed."
       ],
-      "takeaway": "The Fed delivered a hawkish inflation warning, but crypto has not produced a decisive risk-off reaction.",
-      "source": "Pre-show screenshots supplied Aug 28 + Jackson Hole article screenshot"
+      "takeaway": "The fresh story is the post-Jackson Hole reaction: a hawkish Fed message without a decisive risk-off break.",
+      "source": "Post-Jackson Hole article screenshot + CoinMarketCap screenshot supplied Aug 28"
     },
     {
       "headline": "SEC crypto custody overhaul advances",
