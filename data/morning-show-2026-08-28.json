@@ -1,11 +1,11 @@
 {
   "date": "2026-08-28",
-  "version": "2026-08-28-v1",
+  "version": "2026-08-28-v2",
   "label": "Friday Aug 28",
   "startTime": "12:00 PM ET",
   "source": "Google Alert Daily Digest received Aug 28, 2026",
-  "title": "Bitcoin Near $78K, SEC Crypto Shake-Up & Schwab Expands Crypto | W3BC LIVE",
-  "description": "Friday W3BC LIVE: Bitcoin steadies near $78K as markets await Fed Chair Kevin Warsh at Jackson Hole, the SEC advances a crypto-custody overhaul and proposed Regulation Crypto Assets framework, Charles Schwab plans to add SOL, AVAX and LINK, tokenized equities push RWA market cap above $30B, plus AI agents with wallets, NFL roster cuts, MLB, UFC and the Betting Desk.",
+  "title": "Fed Warns on Inflation — Bitcoin Barely Flinches | W3BC LIVE",
+  "description": "Friday W3BC LIVE: Fed Chair Kevin Warsh warns inflation remains too high, but crypto is mostly digesting the message rather than breaking decisively. Bitcoin is around the upper-$79Ks on the pre-show screen, total crypto market cap is about $2.67T, sentiment remains Extreme Greed, and ETF flows remain positive. Plus the SEC crypto custody overhaul, Schwab expanding crypto access, tokenized equities and RWAs, AI agents, NFL preseason, UFC and the Betting Desk.",
   "segments": [
     {
       "name": "Open",
@@ -51,21 +51,23 @@
     }
   ],
   "openNotes": [
-    "Bitcoin is near $78K in the digest; use the live Markets screen for the actual on-air price.",
-    "Today's macro catalyst is Fed Chair Kevin Warsh's Jackson Hole speech and the question of what conditions would change rates.",
-    "Institutional adoption has two strong fresh angles: the SEC custody overhaul and Charles Schwab expanding Schwab Crypto to SOL, AVAX and LINK.",
-    "Tokenized equities are leading RWA inflows, with active RWA market cap reported above $30B."
+    "PRE-SHOW MARKET READ: flat/indecisive, not a major risk-off move. Use the live Markets screen for exact prices on air.",
+    "Warsh's Jackson Hole message is hawkish on inflation: price pressures remain too high and the Fed has 'work to do' unless they ease.",
+    "Pre-show screen: BTC about $79.43K, ETH about $2.51K, total crypto market cap about $2.67T, Fear & Greed 81 Extreme Greed, ETF flows +$440.70M.",
+    "Key angle: despite the Fed warning, markets are not panicking. The market is digesting the message.",
+    "Then pivot into SEC custody, Schwab adding SOL/AVAX/LINK, and RWA/tokenization stories."
   ],
   "newsStories": [
     {
-      "headline": "Bitcoin steadies near $78K ahead of Jackson Hole",
+      "headline": "Fed warns on inflation — Bitcoin barely flinches",
       "points": [
-        "The digest says Bitcoin is trading near $78K after losing $80K despite eight consecutive U.S. spot ETF inflow sessions totaling about $2.8B.",
-        "Markets are focused on Fed Chair Kevin Warsh's Jackson Hole speech Friday for clues on rate policy.",
-        "Use live market data for the current BTC print."
+        "Warsh says inflation remains too high and the Fed will have 'work to do' unless price pressures ease.",
+        "On the pre-show CoinMarketCap screen, BTC is about $79,429.80 (-1.28% 24h but +0.59% 1h) and ETH about $2,506.96 (-0.44% 24h but +0.68% 1h).",
+        "Total crypto market cap is about $2.67T (-1.05%), Fear & Greed is 81 Extreme Greed, and the dashboard shows ETF flows of +$440.70M.",
+        "Read this as flat/indecisive digestion rather than a decisive bullish or bearish break; use live prices on air."
       ],
-      "takeaway": "ETF demand remains strong, but macro policy is still controlling the near-term risk backdrop.",
-      "source": "Yahoo Finance / CoinDesk / CNBC / Aug 28 digest"
+      "takeaway": "The Fed delivered a hawkish inflation warning, but crypto has not produced a decisive risk-off reaction.",
+      "source": "Pre-show screenshots supplied Aug 28 + Jackson Hole article screenshot"
     },
     {
       "headline": "SEC crypto custody overhaul advances",
@@ -207,14 +209,14 @@
     "Current odds-feed quota issue remains a data-pipeline problem; do not substitute stale Aug. 20 lines."
   ],
   "ticker": [
-    "BITCOIN STEADIES NEAR $78K AHEAD OF JACKSON HOLE",
-    "FED CHAIR KEVIN WARSH SET FOR KEY JACKSON HOLE SPEECH",
+    "FED WARNS INFLATION REMAINS TOO HIGH — MARKETS MOSTLY DIGEST THE MESSAGE",
+    "BITCOIN HOVERS AROUND THE UPPER-$79KS PRE-SHOW",
+    "CRYPTO MARKET CAP ABOUT $2.67T · FEAR & GREED 81",
+    "ETF FLOWS REMAIN POSITIVE ON PRE-SHOW DASHBOARD",
     "SEC CRYPTO CUSTODY OVERHAUL ADVANCES",
     "CHARLES SCHWAB PLANS TO ADD SOL, AVAX AND LINK",
     "TOKENIZED EQUITIES LEAD RWA INFLOWS AS ACTIVE MARKET CAP TOPS $30B",
-    "SEC PROPOSES STANDALONE REGULATION CRYPTO ASSETS FRAMEWORK",
     "AI AGENTS ARE GETTING WALLETS",
-    "NFL TEAMS PREPARE FOR 53-MAN ROSTER CUTS",
-    "FEDEXCUP FINALE UNDERWAY AT EAST LAKE"
+    "NFL PRESEASON + UFC ON TODAY'S BETTING DESK"
   ]
 }
