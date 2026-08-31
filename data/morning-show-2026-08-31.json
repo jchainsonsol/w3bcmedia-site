@@ -1,0 +1,231 @@
+{
+  "date": "2026-08-31",
+  "version": "2026-08-31-v1",
+  "label": "Monday Aug 31",
+  "startTime": "12:00 PM ET",
+  "source": "Google Alert Daily Digest received Aug 31, 2026",
+  "title": "Bitcoin Holds Near $78K as Institutions Keep Buying | W3BC LIVE",
+  "description": "Monday W3BC LIVE: Bitcoin holds near $78K while ETF demand and institutional adoption remain in focus. We break down Strategy purchase signals, the end of Bitcoin ETFs' nine-day inflow streak, DTCC's October tokenization launch, tokenized stock volume surging to $29.5B, BlackRock BUIDL reclaiming the tokenized Treasury lead, Robinhood Chain and BNB Chain driving tokenized-stock DEX volume, the CLARITY Act, stablecoins, AI risk, NFL roster cuts, UFC Shanghai fallout, MLB and Scottie Scheffler's second FedEx Cup title.",
+  "segments": [
+    {
+      "name": "Open",
+      "kind": "camera",
+      "enabled": true
+    },
+    {
+      "name": "Markets Now",
+      "kind": "markets",
+      "enabled": true,
+      "sponsor": "Bitunix"
+    },
+    {
+      "name": "News Desk",
+      "kind": "news",
+      "enabled": true
+    },
+    {
+      "name": "AI + Technology",
+      "kind": "ai",
+      "enabled": true
+    },
+    {
+      "name": "The Trenches",
+      "kind": "trenches",
+      "enabled": true
+    },
+    {
+      "name": "Sports",
+      "kind": "sports",
+      "enabled": true
+    },
+    {
+      "name": "Betting Desk",
+      "kind": "betting",
+      "enabled": true,
+      "sponsor": "BC.GAME"
+    },
+    {
+      "name": "Close",
+      "kind": "camera",
+      "enabled": true
+    }
+  ],
+  "openNotes": [
+    "Monday reset: use the live Markets screen for exact BTC/ETH/market-cap numbers on air; do not carry Friday's prices forward.",
+    "Lead angle: Bitcoin is holding around the high-$70Ks while institutional adoption and tokenization infrastructure continue advancing underneath the price.",
+    "ETF nuance matters: the digest says U.S. spot BTC ETFs took in $924M Aug 24-28, but Aug 28 itself saw $201.9M of outflows, ending a nine-day inflow streak.",
+    "Tokenization is the strongest structural theme today: DTCC October launch, $29.5B tokenized-stock transfer volume, BUIDL back on top, and Robinhood Chain/BNB Chain DEX activity.",
+    "Sports reset: NFL roster cuts are complete and the regular season is about 10 days away; UFC Shanghai has already happened."
+  ],
+  "newsStories": [
+    {
+      "headline": "Bitcoin near $78K as institutional demand remains the bigger story",
+      "points": [
+        "The digest says Bitcoin rebounded from Friday's low while Strategy's valuation expanded and Michael Saylor signaled Strategy may have resumed purchases.",
+        "Another digest item says institutional investors are increasingly replacing retail traders as the dominant force in Bitcoin markets.",
+        "Use live Markets Now prices on air rather than a fixed digest price."
+      ],
+      "takeaway": "Price is still choppy, but the ownership and demand structure around Bitcoin keeps becoming more institutional.",
+      "source": "CoinDesk / TradingView / Aug 31 digest"
+    },
+    {
+      "headline": "Bitcoin ETF streak ends — after nearly $1B flowed in during the week",
+      "points": [
+        "U.S. spot Bitcoin ETFs recorded about $924M in net inflows from Aug. 24 through Aug. 28.",
+        "Aug. 28 then saw $201.9M in net outflows, ending a nine-day inflow streak."
+      ],
+      "takeaway": "One outflow day matters, but it needs context: the broader week still brought substantial ETF demand.",
+      "source": "Yahoo Finance / Aug 31 digest"
+    },
+    {
+      "headline": "DTCC tokenization moves from pilot to production plumbing",
+      "points": [
+        "The DTC Tokenization Service is scheduled for commercial launch in October 2026.",
+        "Prior testing involved more than 30 firms across collateral pledge, securities lending, Treasury/repo DVP and equity DVP workflows."
+      ],
+      "takeaway": "Tokenization is moving from experiments toward core market infrastructure.",
+      "source": "Yahoo Finance / Aug 31 digest"
+    },
+    {
+      "headline": "Tokenized stock transfer volume surges to $29.5B",
+      "points": [
+        "The digest reports tokenized-stock transfer volume reached $29.5B over 30 days, up 415%.",
+        "Active addresses topped 1.3M as additional platforms expanded tokenized-equity offerings."
+      ],
+      "takeaway": "Tokenized equities are beginning to show meaningful transaction activity, not just headline asset issuance.",
+      "source": "CoinMarketCap / Crypto News / Aug 31 digest"
+    },
+    {
+      "headline": "Robinhood Chain and BNB Chain emerge as tokenized-stock venues",
+      "points": [
+        "The digest says BNB Chain and Robinhood Chain host the top seven tokenized stocks.",
+        "Those markets generated a reported $4.3B in 30-day DEX volume."
+      ],
+      "takeaway": "This is directly relevant to the Robinhood Chain thesis: tokenized equities are already generating onchain trading activity.",
+      "source": "Crypto Briefing / Aug 31 digest"
+    },
+    {
+      "headline": "BlackRock BUIDL retakes tokenized Treasury lead",
+      "points": [
+        "BUIDL is reported at about $2.8B market cap, ahead of Circle USYC.",
+        "The digest separately cites tokenized Treasuries at roughly $15.1B."
+      ],
+      "takeaway": "Treasuries remain one of the clearest real-world use cases for tokenization.",
+      "source": "BeInCrypto / Yahoo Finance / Aug 31 digest"
+    },
+    {
+      "headline": "CLARITY Act heads toward Senate procedural vote",
+      "points": [
+        "The digest says the U.S. Senate will hold a procedural vote on the CLARITY Act.",
+        "The legislation aims to establish a comprehensive federal framework for digital-asset markets."
+      ],
+      "takeaway": "U.S. crypto market structure remains an active legislative story.",
+      "source": "ChainCatcher / Aug 31 digest"
+    },
+    {
+      "headline": "Stablecoin rails keep colliding with traditional banking",
+      "points": [
+        "Treasury is proposing rules for exchanges dealing with foreign stablecoin issuers under the GENIUS Act framework.",
+        "The digest also says JPMorgan is exploring a public stablecoin while the ECB debate centers on central-bank money for tokenized markets."
+      ],
+      "takeaway": "The fight is increasingly about what money settles tokenized markets — bank deposits, stablecoins or central-bank liabilities.",
+      "source": "CryptoSlate / KuCoin / Yahoo Finance / Aug 31 digest"
+    }
+  ],
+  "aiStories": [
+    {
+      "headline": "Financial Stability Board warns frontier AI could amplify cyber risk",
+      "points": [
+        "FSB Chair Andrew Bailey says cyber risk is the most immediate potential financial-system impact from frontier AI models.",
+        "The issue shifts AI risk from abstract capability debates into financial infrastructure and operational resilience."
+      ],
+      "takeaway": "AI risk is becoming a financial-stability issue, not merely a technology-policy issue.",
+      "source": "Financial Stability Board / Aug 31 digest"
+    },
+    {
+      "headline": "AI agents make retrieval engineering core infrastructure",
+      "points": [
+        "The New Stack highlights retrieval and context quality as core engineering disciplines for autonomous agents.",
+        "A separate item emphasizes harnesses, guardrails, tool contracts, permissions and tracing around production agents."
+      ],
+      "takeaway": "The competitive edge in agents is increasingly the system around the model, not just the model itself.",
+      "source": "The New Stack / Aug 31 digest"
+    },
+    {
+      "headline": "AI and robotics drive China's IPO boom",
+      "points": [
+        "The digest highlights AI and robotics companies helping drive a new IPO cycle in China.",
+        "The trend connects AI capital formation with public markets rather than just private venture funding."
+      ],
+      "takeaway": "AI investment is increasingly showing up in public-market issuance.",
+      "source": "Yahoo Finance / Aug 31 digest"
+    }
+  ],
+  "sportsStories": [
+    {
+      "headline": "NFL 53-man rosters are set",
+      "points": [
+        "Sunday was the deadline for NFL teams to finalize their 53-man rosters.",
+        "The regular season is now roughly 10 days away, making depth charts and late roster moves immediately relevant."
+      ],
+      "takeaway": "We are transitioning out of preseason mode and into actual regular-season preparation.",
+      "source": "ESPN / New York Times / Aug 31 digest"
+    },
+    {
+      "headline": "Scottie Scheffler wins his second FedEx Cup",
+      "points": [
+        "Scheffler erased a three-shot deficit with a final-round 4-under 66 at East Lake.",
+        "The win caps another dominant season and gives him his second FedEx Cup title."
+      ],
+      "takeaway": "Scheffler closes the Tour Championship with another major season-defining win.",
+      "source": "Golf Channel / Sky Sports / Aug 31 digest"
+    },
+    {
+      "headline": "Song Yadong scores major UFC Shanghai upset",
+      "points": [
+        "The digest says Song Yadong stopped Umar Nurmagomedov with a perfectly timed uppercut.",
+        "Post-fight attention also turned to the cage-rush involving Nurmagomedov's brother."
+      ],
+      "takeaway": "The UFC Shanghai result invalidates Friday's pre-fight betting board; today we discuss the result, not stale odds.",
+      "source": "MMA Fighting / MMA Mania / MMA Junkie / Aug 31 digest"
+    },
+    {
+      "headline": "Hrgovic beats Itauma for heavyweight title",
+      "points": [
+        "Filip Hrgovic defeated Moses Itauma in what the BBC described as an extraordinary upset.",
+        "Post-fight commentary criticized Itauma's performance and approach."
+      ],
+      "takeaway": "A major heavyweight upset gives us a clean boxing story today.",
+      "source": "BBC Sport / Aug 31 digest"
+    },
+    {
+      "headline": "MLB enters the stretch run",
+      "points": [
+        "MLB's latest power rankings arrive as the playoff race tightens.",
+        "The Yankees took three of four from Boston and clinched the season series in a pivotal AL East matchup."
+      ],
+      "takeaway": "Shift the baseball conversation toward playoff positioning and current series rather than generic standings.",
+      "source": "MLB.com / Aug 31 digest"
+    }
+  ],
+  "bettingNotes": [
+    "Do not reuse Friday's NFL preseason or UFC Shanghai lines; those events are completed.",
+    "NFL: regular season begins soon. Pull only current upcoming markets and clearly label preseason/regular season if any preseason market remains.",
+    "UFC Shanghai is complete; do not display Nurmagomedov vs Song as an upcoming bet.",
+    "MLB is active today; current live lines are required before displaying any recommendation.",
+    "Keep the Betting Desk visual format: games + odds + parlay builder. No stale-feed failure UI."
+  ],
+  "ticker": [
+    "BITCOIN HOLDS AROUND THE HIGH-$70KS AS INSTITUTIONAL DEMAND STAYS IN FOCUS",
+    "BITCOIN ETFs TOOK IN ~$924M LAST WEEK — NINE-DAY INFLOW STREAK ENDS AUG. 28",
+    "DTCC TOKENIZATION SERVICE SET FOR OCTOBER COMMERCIAL LAUNCH",
+    "TOKENIZED STOCK TRANSFER VOLUME HITS $29.5B · UP 415% IN 30 DAYS",
+    "ROBINHOOD CHAIN + BNB CHAIN DRIVE $4.3B TOKENIZED-STOCK DEX VOLUME",
+    "BLACKROCK BUIDL RETAKES TOKENIZED TREASURY LEAD",
+    "CLARITY ACT HEADS TOWARD SENATE PROCEDURAL VOTE",
+    "FSB FLAGS FRONTIER AI CYBER RISK TO FINANCIAL SYSTEM",
+    "NFL 53-MAN ROSTERS SET · REGULAR SEASON APPROACHING",
+    "SCHEFFLER WINS SECOND FEDEX CUP",
+    "SONG YADONG UPSETS UMAR NURMAGOMEDOV AT UFC SHANGHAI"
+  ]
+}
