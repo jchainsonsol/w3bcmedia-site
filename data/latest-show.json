@@ -1,11 +1,11 @@
 {
-  "date": "2026-08-31",
-  "version": "2026-08-31-v1",
-  "file": "data/morning-show-2026-08-31.json",
-  "label": "Monday Aug 31 · W3BC LIVE",
+  "date": "2026-09-02",
+  "version": "2026-09-02-v1",
+  "file": "data/morning-show-2026-09-02.json",
+  "label": "Wednesday Sep 2 · W3BC LIVE",
   "expected": {
-    "news": 8,
-    "ai": 3,
-    "sports": 5
+    "news": 7,
+    "ai": 2,
+    "sports": 4
   }
 }
