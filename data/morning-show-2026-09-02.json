@@ -1,0 +1,199 @@
+{
+  "date": "2026-09-02",
+  "version": "2026-09-02-v1",
+  "label": "Wednesday Sep 2",
+  "startTime": "12:00 PM ET",
+  "source": "Google Alert Daily Digest received Sep 2, 2026",
+  "title": "Bitcoin Slides as Bond Yields Surge — Wall Street Goes Onchain | W3BC LIVE",
+  "description": "Wednesday W3BC LIVE: Bitcoin is trading around $78K as crude rises, global bond markets sell off and inflation keeps pressure on the Fed. Meanwhile Bitcoin ETF buyers returned Monday, major banks are planning a joint stablecoin, the London Stock Exchange is pushing toward tokenized stock trading, Robinhood keeps expanding its tokenization strategy, and the RWA market keeps growing. Plus AI agents, NFL season predictions, MLB's September playoff picture and today's Betting Desk.",
+  "segments": [
+    {
+      "name": "Open",
+      "kind": "camera",
+      "enabled": true
+    },
+    {
+      "name": "Markets Now",
+      "kind": "markets",
+      "enabled": true,
+      "sponsor": "Bitunix"
+    },
+    {
+      "name": "News Desk",
+      "kind": "news",
+      "enabled": true
+    },
+    {
+      "name": "AI + Technology",
+      "kind": "ai",
+      "enabled": true
+    },
+    {
+      "name": "The Trenches",
+      "kind": "trenches",
+      "enabled": true
+    },
+    {
+      "name": "Sports",
+      "kind": "sports",
+      "enabled": true
+    },
+    {
+      "name": "Betting Desk",
+      "kind": "betting",
+      "enabled": true,
+      "sponsor": "BC.GAME"
+    },
+    {
+      "name": "Close",
+      "kind": "camera",
+      "enabled": true
+    }
+  ],
+  "openNotes": [
+    "Lead with the macro conflict: Bitcoin around $78K while crude rises and the global bond sell-off deepens.",
+    "Fed Governor Michael Barr says a rate hike could be appropriate if inflation does not moderate quickly.",
+    "Do not present a static crypto price as live; use Markets Now for exact on-air prices.",
+    "Then pivot to the structural story: LSE tokenized stocks, Robinhood tokenization, major-bank stablecoin plans and growing RWA collateral demand.",
+    "Sports: NFL regular season is approaching; MLB is into the September playoff race."
+  ],
+  "newsStories": [
+    {
+      "headline": "Bitcoin near $78K as bond sell-off deepens",
+      "points": [
+        "The digest highlights Bitcoin trading around $78K while crude rises and a global bond sell-off deepens.",
+        "Another digest item attributes Tuesday's crypto weakness to escalating U.S.-Iran tensions and a broader risk-off move.",
+        "Bitcoin ETF flows remain mixed but constructive: the digest says funds took in $217M Monday after the prior outflow ended a nine-day inflow streak."
+      ],
+      "takeaway": "Macro pressure is back: oil, rates, geopolitics and bond yields are competing with still-positive institutional crypto flows.",
+      "source": "CoinDesk / Bitcoin Magazine / Sep 2 digest"
+    },
+    {
+      "headline": "Fed's Barr leaves another rate hike on the table",
+      "points": [
+        "Reuters reports Fed Governor Michael Barr is open to a rate hike if inflation does not moderate quickly.",
+        "The digest also flags U.S. borrowing costs reaching fresh highs amid inflation fears."
+      ],
+      "takeaway": "Higher-for-longer is not just a Warsh story; inflation is keeping tightening risk alive.",
+      "source": "Reuters / BBC / Sep 2 digest"
+    },
+    {
+      "headline": "London Stock Exchange plans tokenized stock trading",
+      "points": [
+        "WSJ and Bloomberg Law items say the LSE is planning tokenized stocks backed by shares of London-listed companies.",
+        "The plan is tied to a 24-hour trading venue, pushing tokenization directly into major exchange infrastructure."
+      ],
+      "takeaway": "Tokenized equities are moving from crypto-native experiments toward established exchange infrastructure.",
+      "source": "WSJ / Bloomberg Law / Sep 2 digest"
+    },
+    {
+      "headline": "Robinhood keeps pressing its tokenization strategy",
+      "points": [
+        "The digest highlights Robinhood's broader tokenization push across Robinhood Chain and stock tokens.",
+        "The investment thesis is that tokenization could become a long-term growth engine as Robinhood expands beyond traditional brokerage rails."
+      ],
+      "takeaway": "Robinhood's chain strategy remains directly connected to the bigger race to move securities onchain.",
+      "source": "Yahoo Finance / Sep 2 digest"
+    },
+    {
+      "headline": "21 major institutions plan a joint stablecoin",
+      "points": [
+        "The digest says Goldman Sachs, Bank of America, Citi and other institutions are planning a jointly issued dollar stablecoin for 2027.",
+        "Reuters says the group is also considering stablecoins pegged to other G7 currencies, with the euro a priority."
+      ],
+      "takeaway": "Banks are moving from debating stablecoins to building their own shared payment infrastructure.",
+      "source": "Reuters / Banking Dive / Sep 2 digest"
+    },
+    {
+      "headline": "RWA collateral demand keeps growing",
+      "points": [
+        "The digest says tokenized real-world assets and equities collateral reached a monthly high according to DeFiLlama data.",
+        "Another item puts tokenized U.S. Treasuries around $16B as they increasingly become institutional collateral."
+      ],
+      "takeaway": "The RWA story is evolving from issuance toward actual financial utility: collateral, margin and settlement.",
+      "source": "TradingView / FF News / Sep 2 digest"
+    },
+    {
+      "headline": "Crypto market structure bill faces September test",
+      "points": [
+        "CNBC says the Clarity Act is nearing a critical September vote amid doubts about passage before the midterms.",
+        "Separately, the digest highlights the SEC's proposed Regulation Crypto Assets framework."
+      ],
+      "takeaway": "September could be important for whether U.S. crypto policy advances through Congress, regulators, or both.",
+      "source": "CNBC / WilmerHale / Sep 2 digest"
+    }
+  ],
+  "aiStories": [
+    {
+      "headline": "AI agents now need control planes and audits",
+      "points": [
+        "IBM notes a sharp rise in interest around the 'agent control plane' as enterprises move from building agents toward managing them.",
+        "A separate digest item raises the problem of auditing what autonomous agents actually do in production."
+      ],
+      "takeaway": "The next AI-agent infrastructure battle is control, permissions, observability and accountability.",
+      "source": "IBM / HackerNoon / Sep 2 digest"
+    },
+    {
+      "headline": "AI-native companies are turning agents into operating capability",
+      "points": [
+        "The digest highlights OpenAI examples involving Basis, Clay and Exa Labs using agents for onboarding, account management and developer integrations."
+      ],
+      "takeaway": "Agents are shifting from demos toward persistent business workflows.",
+      "source": "OpenAI / Sep 2 digest"
+    }
+  ],
+  "sportsStories": [
+    {
+      "headline": "NFL season predictions arrive as Week 1 approaches",
+      "points": [
+        "NFL.com analysts published 2026 award predictions including MVP and Defensive Player of the Year.",
+        "ESPN released its projected top 100 NFL players for the season."
+      ],
+      "takeaway": "The conversation is officially shifting from preseason roster construction to regular-season expectations.",
+      "source": "NFL.com / ESPN / Sep 2 digest"
+    },
+    {
+      "headline": "Four NFL teams carry four quarterbacks",
+      "points": [
+        "NFL.com says Atlanta, Minnesota, Philadelphia and Pittsburgh opted to keep four quarterbacks on their 53-man rosters."
+      ],
+      "takeaway": "An unusual roster construction angle worth watching as teams finalize Week 1 depth charts.",
+      "source": "NFL.com / Sep 2 digest"
+    },
+    {
+      "headline": "MLB enters the September playoff race",
+      "points": [
+        "MLB.com lays out the playoff picture, tiebreakers and clinching scenarios entering September.",
+        "The digest also flags a shake-up in MLB power rankings."
+      ],
+      "takeaway": "September baseball is here; playoff positioning becomes the main MLB storyline.",
+      "source": "MLB.com / NYT / Sep 2 digest"
+    },
+    {
+      "headline": "Tyson Fury confirms Anthony Joshua fight plan",
+      "points": [
+        "Al Jazeera reports Fury confirmed a planned Anthony Joshua fight at Madison Square Garden, expected in November, though no date has been set."
+      ],
+      "takeaway": "One of boxing's biggest long-discussed matchups may finally be moving toward reality.",
+      "source": "Al Jazeera / Sep 2 digest"
+    }
+  ],
+  "bettingNotes": [
+    "Rebuild today's board from current Sep. 2 events and odds; do not reuse the Aug. 28 NFL preseason/UFC board.",
+    "NFL: regular season is approaching; verify actual Week 1 markets before display.",
+    "MLB: September playoff races are active; use today's live schedule and lines.",
+    "UFC: digest references future cards, not a current Sep. 2 betting slate; verify before adding.",
+    "Display-only format remains: games, odds and parlay builder; no sportsbook buttons needed."
+  ],
+  "ticker": [
+    "BITCOIN AROUND $78K AS GLOBAL BOND SELL-OFF DEEPENS",
+    "FED'S BARR OPEN TO HIKE IF INFLATION STAYS HOT",
+    "BITCOIN ETFs TOOK IN $217M MONDAY",
+    "LONDON STOCK EXCHANGE PLANS TOKENIZED STOCK TRADING",
+    "ROBINHOOD PUSHES DEEPER INTO TOKENIZATION",
+    "21 MAJOR BANKS PLAN JOINT STABLECOIN",
+    "TOKENIZED TREASURIES BECOMING INSTITUTIONAL COLLATERAL",
+    "CLARITY ACT FACES CRITICAL SEPTEMBER TEST",
+    "NFL WEEK 1 APPROACHES · MLB PLAYOFF RACE HEATS UP"
+  ]
+}
