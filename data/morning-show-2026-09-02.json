@@ -1,11 +1,11 @@
 {
   "date": "2026-09-02",
-  "version": "2026-09-02-v2",
-  "label": "Wednesday Sep 2",
+  "version": "2026-09-02-v3",
+  "label": "Wednesday Sep 2 · 11:23 AM News Update",
   "startTime": "12:00 PM ET",
-  "source": "Google Alert Daily Digest received Sep 2, 2026",
-  "title": "Bitcoin Gives Back August Gains — September Starts Risk-Off | W3BC LIVE",
-  "description": "Wednesday W3BC LIVE: Bitcoin is around $76.5K after an unexpectedly strong August close of roughly +25%. September is starting differently: U.S. spot Bitcoin ETFs posted about $236.5M in net outflows Tuesday, oil is higher, bond yields are surging and inflation keeps rate-hike risk alive. We break down why the chart carries a bearish bias into September while the longer-term institutional story keeps building through tokenized stocks, bank stablecoins, Robinhood Chain and RWAs.",
+  "source": "Google Alert Daily Digest · Sep 2 2026 · 11:23 AM update",
+  "title": "Bitcoin Holds Through Macro Pressure as Wall Street Goes Onchain | W3BC LIVE",
+  "description": "Wednesday W3BC LIVE: Bitcoin is around the mid-$76Ks after August closed roughly 25% green and U.S. spot Bitcoin ETFs shed about $236M to start September. We break down the bearish September chart bias, surging global bond yields, the Fed rate debate, and Bitcoin's relative resilience. Then: SEC blockchain transfer-agent rules, record tokenized equities and RWAs, LSE blockchain connectivity, ICE/tZERO, major-bank stablecoins, Robinhood Chain RWA growth, AI agents, NFL Week 1 and MLB's September playoff race.",
   "segments": [
     {
       "name": "Open",
@@ -51,152 +51,156 @@
     }
   ],
   "openNotes": [
-    "Use live Markets Now for exact price; pre-show reference supplied by J Chains is BTC around $76,500.",
-    "August closed roughly +25%, Bitcoin's strongest month since Nov. 2024 and first positive August since 2021.",
-    "September opened with $236.46M of U.S. spot Bitcoin ETF net outflows on Sep. 1; user screenshot shows -$236.50M / -3.01K BTC.",
-    "Frame the chart with a BEARISH BIAS, not a guaranteed bearish outcome: after an unusually strong August, expect risk of giving some gains back in historically weak September.",
-    "Macro confirms caution: oil higher, global bond sell-off, higher yields, inflation pressure and Fed hike risk.",
-    "Then separate price action from infrastructure adoption: LSE tokenized stocks, bank stablecoin plans, Robinhood tokenization and RWA collateral growth."
+    "Lead with the tension: BTC is around the mid-$76Ks after a huge August, September begins with a large ETF outflow, but the new digest says Bitcoin is withstanding $90 oil and rising yields better than some traditional assets.",
+    "Keep the chart stance as BEARISH BIAS / risk of August giveback — not a prediction. Let price invalidate the thesis.",
+    "ETF update: digest reports roughly $236M outflow, with IBIT accounting for most; another item calls it the largest daily withdrawal since July 31.",
+    "Macro: global bond yields are surging. NY Fed President John Williams says rising long-term yields reflect a strong economy rather than inflation fears; other Fed officials are still signaling hike risk.",
+    "Main structural theme: SEC proposes modernized transfer-agent rules that contemplate blockchain records/tokenized securities; tokenized equities hit $4.45B and RWA $34.7B in CoinDesk Research's August report.",
+    "LSE/Payward blockchain connection, ICE investment in tZERO, bank stablecoin plans and Robinhood Chain RWA volume reinforce the Wall Street-onchain thesis.",
+    "Sports refresh: Week 1 predictions are now the NFL angle; MLB September playoff race + Angels $4B sale; UFC 332 title-fight change is news, not a verified betting slate."
   ],
   "newsStories": [
     {
-      "headline": "Bitcoin near $76.5K as September starts risk-off",
+      "headline": "Bitcoin starts September under pressure — but shows relative resilience",
       "points": [
-        "Pre-show BTC reference supplied by J Chains is around $76,500; use the live Markets screen for the exact on-air number.",
-        "Bitcoin closed August up about 25%, its strongest month since November 2024 and its first positive August since 2021.",
-        "That unusually strong August changes the setup: September has historically been Bitcoin's weakest calendar month on average, so the working chart thesis is a bearish bias and potential giveback of some August gains — not a prediction that price must fall.",
-        "U.S. spot Bitcoin ETFs recorded about $236.46M in net outflows on Sep. 1, reversing Monday's roughly $216.7M inflow. The supplied ETF screenshot rounds the outflow to -$236.50M / -3.01K BTC.",
-        "Macro pressure adds to the caution: rising oil, a global bond sell-off, higher yields and geopolitical tension."
+        "Use Markets Now for the exact live BTC price; pre-show reference remains around the mid-$76Ks.",
+        "The update says U.S. spot Bitcoin ETFs shed about $236M, with BlackRock IBIT accounting for most of the outflow.",
+        "CoinDesk also highlights Bitcoin withstanding $90 oil and rising yields even as those headwinds hit major traditional assets."
       ],
-      "takeaway": "August surprised to the upside. September begins with weaker price action, a large ETF outflow and a macro backdrop that supports a bearish chart bias until price proves otherwise.",
-      "source": "J Chains pre-show market/ETF snapshot + Sep. 2 web verification"
+      "takeaway": "The bearish September bias remains valid, but relative strength matters: don't confuse a cautious setup with confirmation of a breakdown.",
+      "source": "CoinDesk / CryptoRank / Sep 2 11:23 update"
     },
     {
-      "headline": "Fed's Barr leaves another rate hike on the table",
+      "headline": "Global bond yields surge as the Fed debate gets more complicated",
       "points": [
-        "Reuters reports Fed Governor Michael Barr is open to a rate hike if inflation does not moderate quickly.",
-        "The digest also flags U.S. borrowing costs reaching fresh highs amid inflation fears."
+        "The digest flags an intensifying global bond sell-off alongside inflation concerns and U.S.-Iran tensions.",
+        "Reuters reports NY Fed President John Williams says rising long-term yields are tied to a strong economy rather than inflation fears.",
+        "Other coverage in the digest says more Fed officials are signaling openness to higher rates."
       ],
-      "takeaway": "Higher-for-longer is not just a Warsh story; inflation is keeping tightening risk alive.",
-      "source": "Reuters / BBC / Sep 2 digest"
+      "takeaway": "Rates remain the main macro risk to the chart, but policymakers disagree about what the bond move is actually signaling.",
+      "source": "Reuters / Guardian / Sep 2 update"
     },
     {
-      "headline": "London Stock Exchange plans tokenized stock trading",
+      "headline": "SEC proposes blockchain-era transfer-agent rules",
       "points": [
-        "WSJ and Bloomberg Law items say the LSE is planning tokenized stocks backed by shares of London-listed companies.",
-        "The plan is tied to a 24-hour trading venue, pushing tokenization directly into major exchange infrastructure."
+        "The update says the SEC has proposed modernizing transfer-agent rules that have been largely unchanged since the 1970s.",
+        "The proposal includes standards around blockchain recordkeeping and tokenized securities."
       ],
-      "takeaway": "Tokenized equities are moving from crypto-native experiments toward established exchange infrastructure.",
-      "source": "WSJ / Bloomberg Law / Sep 2 digest"
+      "takeaway": "This is infrastructure-level regulation: the rules governing ownership records themselves are being updated for tokenization.",
+      "source": "CoinMarketCap / CryptoRank / Sep 2 update"
     },
     {
-      "headline": "Robinhood keeps pressing its tokenization strategy",
+      "headline": "Tokenized equities and RWAs hit records",
       "points": [
-        "The digest highlights Robinhood's broader tokenization push across Robinhood Chain and stock tokens.",
-        "The investment thesis is that tokenization could become a long-term growth engine as Robinhood expands beyond traditional brokerage rails."
+        "CoinDesk Research's August STAR report in the digest puts tokenized RWA at a record $34.7B.",
+        "Tokenized equity market cap reached an all-time high of $4.45B, while euro stablecoins also hit a record.",
+        "Another digest item says tokenized stocks added roughly 928K holders in August, the biggest monthly gain on record."
       ],
-      "takeaway": "Robinhood's chain strategy remains directly connected to the bigger race to move securities onchain.",
-      "source": "Yahoo Finance / Sep 2 digest"
+      "takeaway": "Tokenization growth is showing up in assets, market cap and users — not just announcements.",
+      "source": "CoinDesk / Cryptopolitan / Sep 2 update"
     },
     {
-      "headline": "21 major institutions plan a joint stablecoin",
+      "headline": "Traditional exchanges keep building blockchain rails",
       "points": [
-        "The digest says Goldman Sachs, Bank of America, Citi and other institutions are planning a jointly issued dollar stablecoin for 2027.",
-        "Reuters says the group is also considering stablecoins pegged to other G7 currencies, with the euro a priority."
+        "The digest says ICE is investing in tZERO to support a tokenized-securities platform.",
+        "LSE and Payward are highlighted as connecting regulated markets with blockchain ecosystems, including a planned xStocks product.",
+        "Separate LSE coverage says tokenized U.K. stocks are intended to carry the same rights as conventional shares."
       ],
-      "takeaway": "Banks are moving from debating stablecoins to building their own shared payment infrastructure.",
-      "source": "Reuters / Banking Dive / Sep 2 digest"
+      "takeaway": "The exchange layer is moving onchain, which is more consequential than another isolated token launch.",
+      "source": "Banking Exchange / FinTech Futures / Morningstar / Sep 2 update"
     },
     {
-      "headline": "RWA collateral demand keeps growing",
+      "headline": "Major banks push toward shared stablecoins",
       "points": [
-        "The digest says tokenized real-world assets and equities collateral reached a monthly high according to DeFiLlama data.",
-        "Another item puts tokenized U.S. Treasuries around $16B as they increasingly become institutional collateral."
+        "The update repeats that Goldman Sachs, Bank of America and other major institutions plan a joint dollar stablecoin in 2027.",
+        "Additional coverage names Wells Fargo, BofA, Citi and UBS among institutions involved in stablecoin efforts."
       ],
-      "takeaway": "The RWA story is evolving from issuance toward actual financial utility: collateral, margin and settlement.",
-      "source": "TradingView / FF News / Sep 2 digest"
+      "takeaway": "Stablecoins are becoming bank payment infrastructure, not merely crypto trading tools.",
+      "source": "Reuters / Financial Advisor IQ / Sep 2 update"
     },
     {
-      "headline": "Crypto market structure bill faces September test",
+      "headline": "Robinhood Chain RWA activity grows",
       "points": [
-        "CNBC says the Clarity Act is nearing a critical September vote amid doubts about passage before the midterms.",
-        "Separately, the digest highlights the SEC's proposed Regulation Crypto Assets framework."
+        "The digest reports Robinhood Chain RWA volume around $390M and tokenized RWA market capitalization above $84M.",
+        "The activity includes memecoin/stock-pair experimentation alongside real-world assets."
       ],
-      "takeaway": "September could be important for whether U.S. crypto policy advances through Congress, regulators, or both.",
-      "source": "CNBC / WilmerHale / Sep 2 digest"
+      "takeaway": "Robinhood Chain remains worth tracking because tokenized assets are beginning to produce measurable onchain activity.",
+      "source": "Crypto News / Sep 2 update"
     }
   ],
   "aiStories": [
     {
-      "headline": "AI agents now need control planes and audits",
+      "headline": "What happens when AI agents do business with AI agents?",
       "points": [
-        "IBM notes a sharp rise in interest around the 'agent control plane' as enterprises move from building agents toward managing them.",
-        "A separate digest item raises the problem of auditing what autonomous agents actually do in production."
+        "Harvard Business Review raises governance questions around what autonomous agents can see, decide and transact when interacting commercially.",
+        "CIO separately argues agents need explicit stopping conditions as they move from answering questions to taking control."
       ],
-      "takeaway": "The next AI-agent infrastructure battle is control, permissions, observability and accountability.",
-      "source": "IBM / HackerNoon / Sep 2 digest"
+      "takeaway": "Agentic commerce creates a new infrastructure problem: permissions, limits and accountability.",
+      "source": "Harvard Business Review / CIO / Sep 2 update"
     },
     {
-      "headline": "AI-native companies are turning agents into operating capability",
+      "headline": "More agents can actually make a system worse",
       "points": [
-        "The digest highlights OpenAI examples involving Basis, Clay and Exa Labs using agents for onboarding, account management and developer integrations."
+        "Tech Xplore highlights research showing that adding AI agents can sometimes reduce overall system performance."
       ],
-      "takeaway": "Agents are shifting from demos toward persistent business workflows.",
-      "source": "OpenAI / Sep 2 digest"
+      "takeaway": "Agent count isn't capability. Coordination and architecture matter.",
+      "source": "Tech Xplore / Sep 2 update"
     }
   ],
   "sportsStories": [
     {
-      "headline": "NFL season predictions arrive as Week 1 approaches",
+      "headline": "NFL Week 1 takes over the conversation",
       "points": [
-        "NFL.com analysts published 2026 award predictions including MVP and Defensive Player of the Year.",
-        "ESPN released its projected top 100 NFL players for the season."
+        "ESPN published bold predictions for all 32 teams as the 2026 regular season approaches.",
+        "Week 1 game-pick coverage is beginning to replace preseason roster talk."
       ],
-      "takeaway": "The conversation is officially shifting from preseason roster construction to regular-season expectations.",
-      "source": "NFL.com / ESPN / Sep 2 digest"
+      "takeaway": "Move the Sports Desk off preseason and onto Week 1 expectations, matchups and predictions.",
+      "source": "ESPN / Sep 2 update"
     },
     {
-      "headline": "Four NFL teams carry four quarterbacks",
+      "headline": "MLB September playoff race is underway",
       "points": [
-        "NFL.com says Atlanta, Minnesota, Philadelphia and Pittsburgh opted to keep four quarterbacks on their 53-man rosters."
+        "ESPN evaluates remaining strength of schedule for playoff contenders.",
+        "September now makes schedule difficulty and October positioning the core MLB story."
       ],
-      "takeaway": "An unusual roster construction angle worth watching as teams finalize Week 1 depth charts.",
-      "source": "NFL.com / Sep 2 digest"
+      "takeaway": "This is the useful baseball angle for today's show.",
+      "source": "ESPN / Sep 2 update"
     },
     {
-      "headline": "MLB enters the September playoff race",
+      "headline": "Angels sale announced at $4B valuation",
       "points": [
-        "MLB.com lays out the playoff picture, tiebreakers and clinching scenarios entering September.",
-        "The digest also flags a shake-up in MLB power rankings."
+        "The New York Times item says Arte Moreno will sell the Los Angeles Angels to Rams owner Stan Kroenke at a $4B valuation.",
+        "The deal is expected to close in Q1 2027 pending MLB owner approval."
       ],
-      "takeaway": "September baseball is here; playoff positioning becomes the main MLB storyline.",
-      "source": "MLB.com / NYT / Sep 2 digest"
+      "takeaway": "A major sports-business story and another huge franchise valuation.",
+      "source": "New York Times / Sep 2 update"
     },
     {
-      "headline": "Tyson Fury confirms Anthony Joshua fight plan",
+      "headline": "UFC 332 reportedly reshuffling after Shevchenko injury",
       "points": [
-        "Al Jazeera reports Fury confirmed a planned Anthony Joshua fight at Madison Square Garden, expected in November, though no date has been set."
+        "Sports Illustrated says UFC is working on an interim women's flyweight title bout between Natalia Silva and Wang Cong after Valentina Shevchenko's injury."
       ],
-      "takeaway": "One of boxing's biggest long-discussed matchups may finally be moving toward reality.",
-      "source": "Al Jazeera / Sep 2 digest"
+      "takeaway": "Use as UFC news only until the promotion confirms the card and current odds are verified.",
+      "source": "Sports Illustrated / Sep 2 update"
     }
   ],
   "bettingNotes": [
-    "Rebuild today's board from current Sep. 2 events and odds; do not reuse the Aug. 28 NFL preseason/UFC board.",
-    "NFL: regular season is approaching; verify actual Week 1 markets before display.",
-    "MLB: September playoff races are active; use today's live schedule and lines.",
-    "UFC: digest references future cards, not a current Sep. 2 betting slate; verify before adding.",
-    "Display-only format remains: games, odds and parlay builder; no sportsbook buttons needed."
+    "Do NOT show the old Aug. 28 NFL preseason/UFC board.",
+    "Today's NFL content should be Week 1 only; verify current game lines before putting odds on screen.",
+    "MLB is active today and can populate the game/odds board if current lines are verified.",
+    "Do not build a UFC 332 parlay from the digest; the card is reportedly changing and odds are not supplied here.",
+    "Keep the display-only UI: matchup, odds, best bets/parlay builder. No clickable sportsbook controls."
   ],
   "ticker": [
-    "BTC ~ $76.5K PRE-SHOW · SEPTEMBER STARTS RISK-OFF",
-    "BITCOIN CLOSED AUGUST ~25% GREEN — FIRST POSITIVE AUGUST SINCE 2021",
-    "SEP. 1 BITCOIN ETF NET FLOW: -$236.46M",
-    "W3BC CHART BIAS: BEARISH UNTIL PRICE PROVES OTHERWISE",
-    "GLOBAL BOND SELLOFF + HIGHER OIL KEEP MACRO PRESSURE ON",
-    "FED'S BARR OPEN TO HIKE IF INFLATION STAYS HOT",
-    "LONDON STOCK EXCHANGE PLANS TOKENIZED STOCK TRADING",
-    "21 MAJOR BANKS PLAN JOINT STABLECOIN",
-    "ROBINHOOD PUSHES DEEPER INTO TOKENIZATION"
+    "BTC MID-$76Ks PRE-SHOW · BEARISH SEPTEMBER BIAS REMAINS",
+    "BITCOIN ETF OUTFLOW ~ $236M · IBIT ACCOUNTS FOR MOST",
+    "BITCOIN SHOWS RELATIVE STRENGTH VS $90 OIL + RISING YIELDS",
+    "GLOBAL BOND YIELDS SURGE · FED SIGNALS REMAIN MIXED",
+    "SEC PROPOSES BLOCKCHAIN-ERA TRANSFER AGENT RULES",
+    "TOKENIZED RWA RECORD: $34.7B · EQUITIES: $4.45B",
+    "ICE INVESTS IN TZERO · LSE CONNECTS MARKETS TO BLOCKCHAIN",
+    "MAJOR BANKS PLAN SHARED STABLECOIN INFRASTRUCTURE",
+    "ROBINHOOD CHAIN RWA VOLUME REPORTED AROUND $390M",
+    "NFL WEEK 1 APPROACHES · MLB SEPTEMBER PLAYOFF RACE"
   ]
 }
