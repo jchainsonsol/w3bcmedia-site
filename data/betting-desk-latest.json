@@ -1,0 +1,67 @@
+{
+  "date": "2026-09-03",
+  "updated": "11:45 AM ET",
+  "source": "SportsbookReview.com",
+  "note": "Current featured board snapshot. Verify live line before betting.",
+  "columns": [
+    {
+      "title": "NCAAF · TODAY",
+      "market": "SPREAD",
+      "games": [
+        {
+          "time": "6:00 PM",
+          "matchup": "UMass @ Rutgers",
+          "away": "+29.5 (-115)",
+          "home": "-29.5 (-105)"
+        },
+        {
+          "time": "7:00 PM",
+          "matchup": "Albany @ Buffalo",
+          "away": "+18.5 (-110)",
+          "home": "-18.5 (-108)"
+        }
+      ]
+    },
+    {
+      "title": "MLB · TODAY",
+      "market": "MONEYLINE",
+      "games": [
+        {
+          "time": "12:35 PM",
+          "matchup": "Giants @ Pirates",
+          "away": "+140",
+          "home": "-170"
+        },
+        {
+          "time": "1:10 PM",
+          "matchup": "Blue Jays @ Guardians",
+          "away": "-110",
+          "home": "-110"
+        },
+        {
+          "time": "2:10 PM",
+          "matchup": "White Sox @ Astros",
+          "away": "+135",
+          "home": "-165"
+        }
+      ]
+    }
+  ],
+  "parlayWatch": [
+    {
+      "label": "NCAAF FAVORITE",
+      "pick": "Rutgers -29.5",
+      "price": "-105"
+    },
+    {
+      "label": "NCAAF FAVORITE",
+      "pick": "Buffalo -18.5",
+      "price": "-108"
+    },
+    {
+      "label": "MLB FAVORITE",
+      "pick": "Astros ML",
+      "price": "-165"
+    }
+  ]
+}
