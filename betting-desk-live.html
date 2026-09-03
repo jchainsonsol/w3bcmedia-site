@@ -1,100 +1,35 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>W3BC Betting Desk</title>
 <style>
-:root{--bg:#05080a;--p:#081014;--p2:#0b1317;--l:#20323a;--c:#26d7e8;--g:#68ef8d;--r:#ff5f68;--y:#ffd166;--m:#829097;--t:#f5f8f9}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#05080a;color:var(--t);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow:hidden}
+:root{--bg:#05080a;--p:#081014;--l:#20323a;--c:#26d7e8;--g:#68ef8d;--r:#ff5f68;--y:#ffd166;--m:#829097;--t:#f5f8f9}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:var(--bg);color:var(--t);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow:hidden}
 .wrap{height:100vh;padding:12px 14px;background:radial-gradient(circle at 12% 0,#0a1f26 0,#05080a 38%)}
-.top{height:54px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--l);padding:0 4px 9px}.ey{font-size:8px;letter-spacing:.15em;color:var(--c);font-weight:950}.title{font-size:27px;font-weight:950;line-height:1}.sub{font-size:8px;color:var(--m);margin-top:4px}.stamp{text-align:right;font-size:8px;color:var(--m);line-height:1.45}.stamp b{color:var(--g)}
-.main{height:calc(100% - 62px);display:grid;grid-template-columns:1.12fr 1.12fr .86fr;grid-template-rows:1fr 230px;gap:10px}
-.panel{border:1px solid var(--l);background:linear-gradient(180deg,#091116,#060b0e);min-height:0;overflow:hidden}.ph{height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;border-bottom:1px solid var(--l);background:#0a1418}.ph b{font-size:13px;letter-spacing:.05em}.ph span{font-size:7px;color:var(--m);letter-spacing:.08em}.nfl .ph b{color:#53e5f2}.ufc .ph b{color:#ff6a6f}.parlays .ph b{color:#6ff2c0}
-.table{display:grid;height:calc(100% - 38px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#2b5962 #071014}.table::-webkit-scrollbar{width:8px}.table::-webkit-scrollbar-track{background:#071014}.table::-webkit-scrollbar-thumb{background:#2b5962;border-radius:8px}.thead,.game{display:grid;grid-template-columns:1fr 76px 76px;align-items:center}.thead{height:28px;padding:0 10px;background:#071014;border-bottom:1px solid var(--l);font-size:7px;color:#58dbe7;font-weight:900;letter-spacing:.08em}.game{min-height:38px;padding:5px 10px;border-bottom:1px solid #18262d}.match{font-size:9px;font-weight:800;line-height:1.22}.time{display:block;font-size:6px;color:var(--m);margin-top:2px;font-weight:700}.odd{text-align:center;font-size:9px;font-weight:950}.fav{color:var(--g)}.dog{color:var(--r)}
-.parlayList{padding:9px;display:grid;gap:8px;height:calc(100% - 38px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#2f6650 #071014}.parlayList::-webkit-scrollbar{width:8px}.parlayList::-webkit-scrollbar-track{background:#071014}.parlayList::-webkit-scrollbar-thumb{background:#2f6650;border-radius:8px}.parlay{border:1px solid #2f6650;background:#07100c;padding:9px}.parlay h3{font-size:9px;margin:0 0 6px;color:#fff;letter-spacing:.06em}.legs{font-size:9px;line-height:1.55;color:#d7e0e3}.parlayOdds{font-size:22px;font-weight:950;color:#7ef45f;margin-top:6px}.note{font-size:7px;color:var(--m);margin-top:5px;line-height:1.35}
-.bottom{grid-column:1/4;display:grid;grid-template-columns:1.2fr 1fr;gap:10px}.best,.builder{border:1px solid var(--l);background:#071014;padding:10px}.sect{font-size:12px;font-weight:950;color:#5de3ea;letter-spacing:.07em;margin-bottom:8px}.bestGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.pick{border:1px solid #2a5c45;background:#08110c;padding:10px}.pick small{font-size:7px;color:var(--y);font-weight:900}.pick b{display:block;font-size:16px;margin-top:7px}.pick .o{font-size:22px;color:var(--g);font-weight:950;margin-top:3px}
-.builderRows{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.build{border:1px solid #27545b;background:#081116;padding:9px}.build strong{display:block;font-size:9px;color:#fff;margin-bottom:5px}.build div{font-size:8px;color:#ccd6da;line-height:1.45}.build .total{font-size:20px;color:#63f198;font-weight:950;margin-top:6px}
-.foot{position:absolute;left:18px;bottom:5px;font-size:6px;color:#607078;letter-spacing:.04em}
-@media(max-width:1100px){html,body{overflow:auto}.wrap{height:auto}.main{height:auto;grid-template-columns:1fr}.bottom{grid-column:auto;grid-template-columns:1fr}.panel{min-height:420px}}
-</style>
-</head>
-<body>
-<div class="wrap">
-  <div class="top">
-    <div><div class="ey">W3BC SPORTSBOOK INTELLIGENCE</div><div class="title">Betting Desk</div><div class="sub">TODAY'S BC.GAME BOARD · SCREEN VERIFIED 8/28 · DISPLAY ONLY</div></div>
-    <div class="stamp">NFL PRESEASON + UFC FIGHT NIGHT<br><b>NO STALE FEED · MANUAL VERIFIED BOARD</b></div>
-  </div>
-
-  <div class="main">
-    <section class="panel nfl">
-      <div class="ph"><b>NFL PRESEASON</b><span>MONEYLINE</span></div>
-      <div class="table">
-        <div class="thead"><div>MATCHUP</div><div>AWAY</div><div>HOME</div></div>
-        <div class="game"><div class="match">Baltimore Ravens @ Washington Commanders<span class="time">TODAY · 18:00</span></div><div class="odd fav">-159</div><div class="odd dog">+122</div></div>
-        <div class="game"><div class="match">Miami Dolphins @ Atlanta Falcons<span class="time">TODAY · 19:00</span></div><div class="odd dog">+152</div><div class="odd fav">-200</div></div>
-        <div class="game"><div class="match">Carolina Panthers @ Houston Texans<span class="time">TODAY · 19:00</span></div><div class="odd">-109</div><div class="odd fav">-119</div></div>
-        <div class="game"><div class="match">New York Jets @ New York Giants<span class="time">TODAY · 19:30</span></div><div class="odd dog">+132</div><div class="odd fav">-172</div></div>
-        <div class="game"><div class="match">Jacksonville Jaguars @ Tampa Bay Buccaneers<span class="time">TODAY · 19:30</span></div><div class="odd dog">+118</div><div class="odd fav">-154</div></div>
-        <div class="game"><div class="match">Dallas Cowboys @ New Orleans Saints<span class="time">TODAY · 20:00</span></div><div class="odd fav">-156</div><div class="odd dog">+120</div></div>
-        <div class="game"><div class="match">Green Bay Packers @ Arizona Cardinals<span class="time">TODAY · 20:00</span></div><div class="odd fav">-119</div><div class="odd">-109</div></div>
-        <div class="game"><div class="match">Kansas City Chiefs @ Seattle Seahawks<span class="time">TODAY · 20:00</span></div><div class="odd fav">-116</div><div class="odd">-111</div></div>
-        <div class="game"><div class="match">Philadelphia Eagles @ Cincinnati Bengals<span class="time">TODAY · 20:00</span></div><div class="odd fav">-152</div><div class="odd">-116</div></div>
-        <div class="game"><div class="match">Denver Broncos @ Minnesota Vikings<span class="time">TODAY · 21:00</span></div><div class="odd fav">-196</div><div class="odd dog">+148</div></div>
-        <div class="game"><div class="match">Indianapolis Colts @ Detroit Lions<span class="time">TOMORROW · 13:00</span></div><div class="odd fav">-196</div><div class="odd dog">+150</div></div>
-        <div class="game"><div class="match">Tennessee Titans @ Chicago Bears<span class="time">TOMORROW · 18:00</span></div><div class="odd fav">-154</div><div class="odd dog">+118</div></div>
-      </div>
-    </section>
-
-    <section class="panel ufc">
-      <div class="ph"><b>UFC FIGHT NIGHT · NURMAGOMEDOV vs SONG</b><span>MONEYLINE</span></div>
-      <div class="table">
-        <div class="thead"><div>FIGHT</div><div>FIGHTER 1</div><div>FIGHTER 2</div></div>
-        <div class="game"><div class="match">Meng Ding vs Cameron Nelson<span class="time">TOMORROW · 03:05</span></div><div class="odd fav">-164</div><div class="odd dog">+123</div></div>
-        <div class="game"><div class="match">Xiong Jingnan vs Julia Polastri<span class="time">TOMORROW · 03:30</span></div><div class="odd dog">+200</div><div class="odd fav">-286</div></div>
-        <div class="game"><div class="match">Lawrence Lui vs Hector Santiago<span class="time">TOMORROW · 03:55</span></div><div class="odd fav">-312</div><div class="odd dog">+215</div></div>
-        <div class="game"><div class="match">Xiao Long vs Francesco Nuzzi<span class="time">TOMORROW · 04:20</span></div><div class="odd fav">-192</div><div class="odd dog">+140</div></div>
-        <div class="game"><div class="match">Jack Jenkins vs Sean Woodson<span class="time">TOMORROW · 04:45</span></div><div class="odd dog">+120</div><div class="odd fav">-161</div></div>
-        <div class="game"><div class="match">Rei Tsuruya vs Kevin Borjas<span class="time">TOMORROW · 05:10</span></div><div class="odd fav">-714</div><div class="odd dog">+410</div></div>
-        <div class="game"><div class="match">Namsrai Batbayar vs Andre Lima<span class="time">TOMORROW · 05:35</span></div><div class="odd dog">+210</div><div class="odd fav">-303</div></div>
-        <div class="game"><div class="match">Bilal Hasan vs Nilson Rojas<span class="time">TOMORROW · 06:10</span></div><div class="odd fav">-909</div><div class="odd dog">+475</div></div>
-        <div class="game"><div class="match">Ce Liu vs Levi Rodrigues Jr<span class="time">TOMORROW · 06:40</span></div><div class="odd fav">-204</div><div class="odd dog">+148</div></div>
-        <div class="game"><div class="match">Alex Perez vs Su Mudaerji<span class="time">TOMORROW · 07:10</span></div><div class="odd dog">+170</div><div class="odd fav">-238</div></div>
-        <div class="game"><div class="match">Aori Qileng vs Kai Asakura<span class="time">TOMORROW · 07:40</span></div><div class="odd dog">+320</div><div class="odd fav">-500</div></div>
-        <div class="game"><div class="match">Xiaonan Yan vs Denise Gomes<span class="time">TOMORROW · 08:10</span></div><div class="odd fav">-167</div><div class="odd dog">+125</div></div>
-        <div class="game"><div class="match">Umar Nurmagomedov vs Yadong Song<span class="time">TOMORROW · 08:40</span></div><div class="odd fav">-556</div><div class="odd dog">+340</div></div>
-      </div>
-    </section>
-
-    <section class="panel parlays">
-      <div class="ph"><b>W3BC PARLAYS</b><span>BEST ODDS TO WIN</span></div>
-      <div class="parlayList">
-        <div class="parlay"><h3>NFL PRESEASON PARLAY</h3><div class="legs">Atlanta Falcons ML -200<br>Denver Broncos ML -196<br>New York Giants ML -172</div><div class="parlayOdds">+258</div><div class="note">All 3 must win. Built from the strongest favorites shown on the supplied NFL board.</div></div>
-        <div class="parlay"><h3>UFC PARLAY</h3><div class="legs">Bilal Hasan ML -909<br>Rei Tsuruya ML -714<br>Umar Nurmagomedov ML -556</div><div class="parlayOdds">-203</div><div class="note">Highest-confidence UFC favorite stack from the supplied board.</div></div>
-        <div class="parlay"><h3>W3BC COMBO</h3><div class="legs">Atlanta Falcons ML -200<br>Bilal Hasan ML -909<br>Rei Tsuruya ML -714<br>Umar Nurmagomedov ML -556</div><div class="parlayOdds">+124</div><div class="note">One NFL anchor plus the three strongest UFC favorites.</div></div>
-      </div>
-    </section>
-
-    <section class="bottom">
-      <div class="best">
-        <div class="sect">BEST BETS TODAY</div>
-        <div class="bestGrid">
-          <div class="pick"><small>NFL FAVORITE</small><b>Atlanta Falcons ML</b><div class="o">-200</div></div>
-          <div class="pick"><small>UFC FAVORITE</small><b>Umar Nurmagomedov ML</b><div class="o">-556</div></div>
-          <div class="pick"><small>UFC FAVORITE</small><b>Bilal Hasan ML</b><div class="o">-909</div></div>
-        </div>
-      </div>
-      <div class="builder">
-        <div class="sect">PARLAY BUILDER · QUICK VIEW</div>
-        <div class="builderRows">
-          <div class="build"><strong>NFL 3-LEG</strong><div>Falcons<br>Broncos<br>Giants</div><div class="total">+258</div></div>
-          <div class="build"><strong>UFC 3-LEG</strong><div>Hasan<br>Tsuruya<br>Nurmagomedov</div><div class="total">-203</div></div>
-          <div class="build"><strong>COMBO 4-LEG</strong><div>Falcons<br>Hasan<br>Tsuruya<br>Nurmagomedov</div><div class="total">+124</div></div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <div class="foot">ODDS VIA USER-SUPPLIED BC.GAME SCREENSHOTS · VERIFY LIVE LINE BEFORE BETTING · NFL PRESEASON</div>
+.top{height:58px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--l);padding:0 4px 9px}.ey{font-size:8px;letter-spacing:.15em;color:var(--c);font-weight:950}.title{font-size:28px;font-weight:950;line-height:1}.sub{font-size:8px;color:var(--m);margin-top:4px}.stamp{text-align:right;font-size:8px;color:var(--m);line-height:1.45}.stamp b{color:var(--g)}
+.main{height:calc(100% - 66px);display:grid;grid-template-columns:1fr 1fr .8fr;grid-template-rows:1fr 210px;gap:10px}
+.panel{border:1px solid var(--l);background:linear-gradient(180deg,#091116,#060b0e);min-height:0;overflow:hidden}.ph{height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;border-bottom:1px solid var(--l);background:#0a1418}.ph b{font-size:13px;letter-spacing:.05em}.ph span{font-size:7px;color:var(--m);letter-spacing:.08em}
+.table{height:calc(100% - 38px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#2b5962 #071014}.thead,.game{display:grid;grid-template-columns:1fr 92px 92px;align-items:center}.thead{height:28px;padding:0 10px;background:#071014;border-bottom:1px solid var(--l);font-size:7px;color:#58dbe7;font-weight:900;letter-spacing:.08em}.game{min-height:54px;padding:7px 10px;border-bottom:1px solid #18262d}.match{font-size:10px;font-weight:850}.time{display:block;font-size:7px;color:var(--m);margin-top:4px}.odd{text-align:center;font-size:12px;font-weight:950}
+.watch{padding:10px;height:calc(100% - 38px);overflow-y:auto;display:grid;gap:8px}.card{border:1px solid #2f6650;background:#07100c;padding:10px}.card small{color:var(--y);font-size:7px;font-weight:900}.card b{display:block;font-size:15px;margin-top:6px}.price{font-size:22px;color:var(--g);font-weight:950;margin-top:3px}
+.bottom{grid-column:1/4;display:grid;grid-template-columns:1fr 1fr;gap:10px}.box{border:1px solid var(--l);background:#071014;padding:12px}.sect{font-size:12px;font-weight:950;color:#5de3ea;letter-spacing:.07em;margin-bottom:9px}.builder{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.build{border:1px solid #27545b;background:#081116;padding:10px}.build strong{font-size:9px}.build div{font-size:8px;color:#ccd6da;line-height:1.45;margin-top:5px}.source{font-size:9px;color:#cbd4d8;line-height:1.6}.source b{color:var(--c)}
+@media(max-width:1100px){html,body{overflow:auto}.wrap{height:auto}.main{height:auto;grid-template-columns:1fr}.bottom{grid-column:auto;grid-template-columns:1fr}.panel{min-height:360px}}
+</style></head>
+<body><div class="wrap">
+<div class="top"><div><div class="ey">W3BC SPORTSBOOK INTELLIGENCE</div><div class="title">Betting Desk</div><div class="sub" id="sub">LOADING CURRENT BOARD…</div></div><div class="stamp" id="stamp">SPORTSBOOK REVIEW<br><b>LIVE BOARD SNAPSHOT</b></div></div>
+<div class="main" id="main"><section class="panel"><div class="ph"><b>LOADING</b></div></section></div>
 </div>
-</body>
-</html>
+<script>
+async function load(){
+ try{
+  const r=await fetch('data/betting-desk-latest.json?ts='+Date.now(),{cache:'no-store'});
+  const d=await r.json();
+  document.getElementById('sub').textContent=d.date+' · UPDATED '+d.updated+' · '+d.source.toUpperCase();
+  const cols=(d.columns||[]).map(c=>'<section class="panel"><div class="ph"><b>'+c.title+'</b><span>'+c.market+'</span></div><div class="table"><div class="thead"><div>MATCHUP</div><div>AWAY</div><div>HOME</div></div>'+c.games.map(g=>'<div class="game"><div class="match">'+g.matchup+'<span class="time">'+g.time+' ET</span></div><div class="odd">'+g.away+'</div><div class="odd">'+g.home+'</div></div>').join('')+'</div></section>');
+  const watch='<section class="panel"><div class="ph"><b>PARLAY WATCH</b><span>DISPLAY ONLY</span></div><div class="watch">'+(d.parlayWatch||[]).map(x=>'<div class="card"><small>'+x.label+'</small><b>'+x.pick+'</b><div class="price">'+x.price+'</div></div>').join('')+'</div></section>';
+  const bottom='<section class="bottom"><div class="box"><div class="sect">PARLAY BUILDER · QUICK VIEW</div><div class="builder">'+(d.parlayWatch||[]).map((x,i)=>'<div class="build"><strong>LEG '+(i+1)+'</strong><div>'+x.pick+'<br>'+x.price+'</div></div>').join('')+'</div></div><div class="box"><div class="sect">SOURCE + STATUS</div><div class="source"><b>'+d.source+'</b><br>'+d.note+'<br>No stale UFC or preseason cards are loaded.</div></div></section>';
+  document.getElementById('main').innerHTML=cols.join('')+watch+bottom;
+ }catch(e){
+  document.getElementById('main').innerHTML='<section class="panel" style="grid-column:1/4;padding:30px"><b>BETTING DATA UNAVAILABLE</b><br><span style="color:#829097">Could not load today\'s local odds snapshot.</span></section>';
+ }
+}
+load();
+</script></body></html>
