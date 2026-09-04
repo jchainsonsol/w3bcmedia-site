@@ -1,5 +1,6 @@
 import http from 'node:http';
 import crypto from 'node:crypto';
+import { spawn } from 'node:child_process';
 import WebSocket from 'ws';
 
 const HTTP_PORT = Number(process.env.W3BC_BRIDGE_PORT || 8765);
@@ -65,7 +66,7 @@ function cors(res) {
 
 function validElgatoHost(host) {
   if (!host || host.length > 128 || /[\/@?#]/.test(host)) return false;
-  if (/^[a-z0-9][a-z0-9.-]*\.local$/i.test(host)) return true;
+  if (/^[a-z0-9][a-z0-9.-]*\.local\.?$/i.test(host)) return true;
   const m = host.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
   if (!m) return false;
   const n = m.slice(1).map(Number);
@@ -92,13 +93,53 @@ function elgatoRequest(host, method='GET', body=null) {
   });
 }
 
+function dnsSd(args, timeout=2600) {
+  return new Promise((resolve, reject) => {
+    let out='', err='';
+    let child;
+    try { child = spawn('dns-sd', args); } catch (e) { return reject(e); }
+    const timer=setTimeout(()=>{ try { child.kill('SIGTERM'); } catch {} resolve(out); }, timeout);
+    child.stdout.on('data', d => out += d.toString());
+    child.stderr.on('data', d => err += d.toString());
+    child.on('error', e => { clearTimeout(timer); reject(e); });
+    child.on('close', code => { clearTimeout(timer); if (out) resolve(out); else if (code && err) reject(new Error(err.trim())); else resolve(out); });
+  });
+}
+
+async function discoverElgato() {
+  if (process.platform !== 'darwin') throw new Error('Automatic Elgato discovery currently requires macOS.');
+  const browse = await dnsSd(['-B','_elg._tcp','local.'], 2200);
+  const names=[];
+  for (const line of browse.split(/\r?\n/)) {
+    if (!/\bAdd\b/.test(line) || !/_elg\._tcp/.test(line)) continue;
+    const idx=line.indexOf('_elg._tcp.');
+    if (idx < 0) continue;
+    const name=line.slice(idx+'_elg._tcp.'.length).trim();
+    if (name && !names.includes(name)) names.push(name);
+  }
+  if (!names.length) throw new Error('No Elgato Key Light was found on this Mac network.');
+  for (const name of names) {
+    try {
+      const resolved = await dnsSd(['-L',name,'_elg._tcp','local.'], 2200);
+      const m = resolved.match(/can be reached at\s+([^\s:]+)\.?:(\d+)/i);
+      if (!m) continue;
+      const host=m[1].replace(/\.$/,'');
+      const port=Number(m[2]);
+      if (port !== 9123 || !validElgatoHost(host)) continue;
+      const data=await elgatoRequest(host);
+      return {name,host,port,data};
+    } catch {}
+  }
+  throw new Error('Elgato service was found, but the Key Light did not answer on port 9123.');
+}
+
 const server = http.createServer(async (req, res) => {
   cors(res);
   if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
   const url = new URL(req.url, `http://${req.headers.host || '127.0.0.1'}`);
   if (url.pathname === '/health') {
     res.writeHead(200, {'Content-Type':'application/json'});
-    return res.end(JSON.stringify({ ok:true, obsConnected:identified, obsUrl:OBS_URL, elgatoBridge:true }));
+    return res.end(JSON.stringify({ ok:true, obsConnected:identified, obsUrl:OBS_URL, elgatoBridge:true, elgatoDiscovery:process.platform==='darwin' }));
   }
   if (url.pathname === '/scene' && (req.method === 'POST' || req.method === 'GET')) {
     let scene = url.searchParams.get('name');
@@ -113,6 +154,16 @@ const server = http.createServer(async (req, res) => {
       return res.end(JSON.stringify({ok:true,scene}));
     } catch (e) {
       res.writeHead(503, {'Content-Type':'application/json'});
+      return res.end(JSON.stringify({ok:false,error:e.message}));
+    }
+  }
+  if (url.pathname === '/elgato/discover' && req.method === 'GET') {
+    try {
+      const found=await discoverElgato();
+      res.writeHead(200, {'Content-Type':'application/json'});
+      return res.end(JSON.stringify({ok:true,...found}));
+    } catch (e) {
+      res.writeHead(404, {'Content-Type':'application/json'});
       return res.end(JSON.stringify({ok:false,error:e.message}));
     }
   }
