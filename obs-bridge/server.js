@@ -63,13 +63,42 @@ function cors(res) {
   res.setHeader('Cache-Control', 'no-store');
 }
 
+function validElgatoHost(host) {
+  if (!host || host.length > 128 || /[\/@?#]/.test(host)) return false;
+  if (/^[a-z0-9][a-z0-9.-]*\.local$/i.test(host)) return true;
+  const m = host.match(/^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/);
+  if (!m) return false;
+  const n = m.slice(1).map(Number);
+  if (n.some(x => x < 0 || x > 255)) return false;
+  return n[0] === 10 || n[0] === 127 || (n[0] === 192 && n[1] === 168) || (n[0] === 172 && n[1] >= 16 && n[1] <= 31) || (n[0] === 169 && n[1] === 254);
+}
+
+function elgatoRequest(host, method='GET', body=null) {
+  return new Promise((resolve, reject) => {
+    const payload = body ? JSON.stringify(body) : null;
+    const request = http.request({ host, port: 9123, path: '/elgato/lights', method, timeout: 2500, headers: payload ? {'Content-Type':'application/json','Content-Length':Buffer.byteLength(payload)} : {} }, response => {
+      const chunks=[];
+      response.on('data', c => chunks.push(c));
+      response.on('end', () => {
+        const raw = Buffer.concat(chunks).toString();
+        if ((response.statusCode || 500) >= 400) return reject(new Error(`Elgato HTTP ${response.statusCode}`));
+        try { resolve(JSON.parse(raw || '{}')); } catch { reject(new Error('Invalid Elgato response')); }
+      });
+    });
+    request.on('timeout', () => request.destroy(new Error('Elgato timeout')));
+    request.on('error', reject);
+    if (payload) request.write(payload);
+    request.end();
+  });
+}
+
 const server = http.createServer(async (req, res) => {
   cors(res);
   if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
   const url = new URL(req.url, `http://${req.headers.host || '127.0.0.1'}`);
   if (url.pathname === '/health') {
     res.writeHead(200, {'Content-Type':'application/json'});
-    return res.end(JSON.stringify({ ok:true, obsConnected:identified, obsUrl:OBS_URL }));
+    return res.end(JSON.stringify({ ok:true, obsConnected:identified, obsUrl:OBS_URL, elgatoBridge:true }));
   }
   if (url.pathname === '/scene' && (req.method === 'POST' || req.method === 'GET')) {
     let scene = url.searchParams.get('name');
@@ -82,6 +111,23 @@ const server = http.createServer(async (req, res) => {
       await obsRequest('SetCurrentProgramScene', { sceneName: scene });
       res.writeHead(200, {'Content-Type':'application/json'});
       return res.end(JSON.stringify({ok:true,scene}));
+    } catch (e) {
+      res.writeHead(503, {'Content-Type':'application/json'});
+      return res.end(JSON.stringify({ok:false,error:e.message}));
+    }
+  }
+  if (url.pathname === '/elgato' && (req.method === 'GET' || req.method === 'POST')) {
+    let host = url.searchParams.get('host');
+    let state = null;
+    if (req.method === 'POST') {
+      const chunks=[]; for await (const c of req) chunks.push(c);
+      try { const body=JSON.parse(Buffer.concat(chunks).toString() || '{}'); host = body.host || host; state = body.state || {}; } catch {}
+    }
+    if (!validElgatoHost(host)) { res.writeHead(400, {'Content-Type':'application/json'}); return res.end(JSON.stringify({ok:false,error:'Use a private IP or .local hostname for the Elgato light.'})); }
+    try {
+      const data = req.method === 'GET' ? await elgatoRequest(host) : await elgatoRequest(host,'PUT',{numberOfLights:1,lights:[state || {}]});
+      res.writeHead(200, {'Content-Type':'application/json'});
+      return res.end(JSON.stringify({ok:true,host,data}));
     } catch (e) {
       res.writeHead(503, {'Content-Type':'application/json'});
       return res.end(JSON.stringify({ok:false,error:e.message}));
