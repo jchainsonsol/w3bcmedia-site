@@ -1,0 +1,146 @@
+{
+  "date":"2026-09-09",
+  "version":"2026-09-09-v1",
+  "label":"Wednesday Sep 9 · W3BC LIVE",
+  "startTime":"12:00 PM ET",
+  "source":"Google Alert Daily Digest · Sep 9 2026 · 11:25 AM + current Reuters/WSJ verification",
+  "title":"Oil Breaks $100 as Fed Decision Gets Messy — Robinhood Doubles Down Onchain | W3BC LIVE",
+  "description":"Wednesday W3BC LIVE: Oil has broken $100 as Middle East tensions hit markets and the Fed's September decision becomes unusually uncertain. We break down the split between economists and markets, Robinhood's new Crypto.com prediction-market deal, Vlad Tenev's escalating tokenized-stock fight with AMC, tokenized equities trading $1B while traditional markets were closed, U.S. Bancorp's live stablecoin transaction, the $320M Liquid Network hack and partial Bitcoin return, DeepSeek's IPO plans, AI-agent security, NFL Week 1 and today's Betting Desk.",
+  "segments":[
+    {"name":"Open","kind":"camera","enabled":true},
+    {"name":"Markets Now","kind":"markets","enabled":true,"sponsor":"Bitunix"},
+    {"name":"News Desk","kind":"news","enabled":true},
+    {"name":"AI + Technology","kind":"ai","enabled":true},
+    {"name":"The Trenches","kind":"trenches","enabled":true},
+    {"name":"Sports","kind":"sports","enabled":true},
+    {"name":"Betting Desk","kind":"betting","enabled":true,"sponsor":"BC.GAME"},
+    {"name":"Close","kind":"camera","enabled":true}
+  ],
+  "openNotes":[
+    "OPEN: Oil is now above $100. That changes the inflation conversation immediately and gives us the cleanest lead into markets and the Fed.",
+    "FED: Reuters says 65 of 93 economists — about 70% — expect the Fed to HOLD next week. But that is down from 90% in August, while markets have priced in two hikes by March. This is genuine disagreement, not a settled decision.",
+    "ONCHAIN: Robinhood is attacking two fronts at once — expanding prediction markets with Crypto.com while Vlad Tenev publicly defends tokenizing companies' stocks without asking the issuer for permission.",
+    "TOKENIZATION: 42 major tokenized equities reportedly traded $1.01B over Labor Day weekend while the traditional stock market was closed. That's a 24/7-market story viewers immediately understand.",
+    "BANKING: U.S. Bancorp executed its first live transaction using the dollar-backed USBDC stablecoin. The rails keep moving from crypto experiments into banks."
+  ],
+  "newsStories":[
+    {
+      "headline":"OIL BREAKS $100 — AND THE FED JUST GOT HARDER",
+      "dek":"Middle East escalation pushed Brent above $100 as Wall Street fell and inflation fears returned.",
+      "body":"Brent crude crossed $100 a barrel Wednesday for the first time since July 24, reaching roughly $100.95 as escalating U.S.-Iran tensions raised fears of energy disruption. Stocks moved lower and Treasury yields remained elevated. The timing matters: the Fed meets September 15-16, and another energy-driven inflation shock could change the calculus just days before the decision.",
+      "points":["BRENT: traded as high as ~$100.95","FED MEETING: Sep 15-16","10Y TREASURY: near 4.8%","CATALYST: Middle East escalation + energy inflation"],
+      "quote":"Financial markets remain genuinely divided over whether the FOMC will raise rates at next week's September meeting. — Matthew Ryan, Ebury",
+      "takeaway":"READ: Oil above $100 isn't just an energy story. It feeds directly into inflation, rates, bonds, equities and Bitcoin. Friday's CPI now matters even more.",
+      "source":"Reuters · Sep 9"
+    },
+    {
+      "headline":"FED: ECONOMISTS SAY HOLD. MARKETS AREN'T SO SURE.",
+      "dek":"The September decision is unusually unsettled less than a week before the meeting.",
+      "body":"A Reuters poll finds 65 of 93 economists — about 70% — expect the Fed to leave rates at 3.50%-3.75% next week. That's still a clear majority, but conviction has collapsed from 90% in August. Only 56% expect rates to remain unchanged for the entire year, while the rest see at least one hike. Financial markets have gone further and priced in two hikes by March.",
+      "points":["70%: expect HOLD next week","90%: expected HOLD in August","56%: expect no change all year","MARKETS: pricing two hikes by March"],
+      "quote":"If there's an upside surprise on the inflation data, they're not going to wait around. — Eli Nir, TD Securities",
+      "takeaway":"READ: Yesterday's 'Fed hikes are back' story needs nuance today. A hold is still the economist consensus — but the probability of tightening has risen dramatically. CPI can flip this conversation again.",
+      "source":"Reuters poll · Sep 9"
+    },
+    {
+      "headline":"ROBINHOOD EXPANDS ITS PREDICTION-MARKET EMPIRE",
+      "dek":"Robinhood will add Crypto.com event contracts and take minority stakes in Crypto.com and its prediction-market business.",
+      "body":"Robinhood has reached a multiyear agreement with Crypto.com that will bring Crypto.com's yes-or-no event contracts onto Robinhood. The brokerage is also taking minority stakes in Crypto.com and OG, the exchange's newly spun-out prediction-market company. Robinhood already works with Kalshi and is building deeper into event contracts as sports, politics and other real-world outcomes become tradeable products.",
+      "points":["MULTIYEAR partnership","YES/NO event contracts coming to Robinhood","ROBINHOOD takes minority stakes in Crypto.com + OG","Prediction markets continue moving toward mainstream brokerage"],
+      "takeaway":"READ: Robinhood increasingly looks less like a stock brokerage and more like an everything-market — stocks, crypto, tokenized assets and now a much larger prediction-market business.",
+      "source":"Wall Street Journal · Sep 8"
+    },
+    {
+      "headline":"VLAD TENEV TO AMC: YOU DON'T CONTROL TOKENIZATION",
+      "dek":"Robinhood's CEO is pushing back publicly as the fight over tokenized AMC shares escalates.",
+      "body":"The dispute between AMC CEO Adam Aron and Robinhood is becoming a much bigger debate about who controls an asset once public shares exist. Today's digest reports Vlad Tenev arguing that companies cannot dictate how third parties tokenize exposure to their stock. That directly challenges Aron's criticism that Robinhood's tokenized AMC product undermines the traditional shareholder relationship.",
+      "points":["AMC objected publicly to tokenized AMC shares","Tenev pushed back on issuer consent","Core question: what does a stock token legally represent?","This fight could help define future tokenized-equity market structure"],
+      "takeaway":"READ: This is bigger than AMC. If issuers don't control tokenization, we're potentially moving toward a world where public assets can have permissionless 24/7 representations across multiple financial rails.",
+      "source":"CNBC / Yahoo Finance · Sep 9 digest"
+    },
+    {
+      "headline":"TOKENIZED STOCKS TRADED $1B WHILE WALL STREET WAS CLOSED",
+      "dek":"The 24/7-market thesis is becoming measurable rather than theoretical.",
+      "body":"The 42 largest tokenized equities reportedly generated $1.01 billion of trading volume over Labor Day weekend — when the traditional U.S. stock market was closed. Separately, distributed tokenized-asset holders reached a record 3.67 million, with tokenized stocks accounting for about 2.96 million of them. Trading volume has cooled from the prior surge, but ownership continues to expand.",
+      "points":["$1.01B: weekend tokenized-equity volume","42: largest tokenized equities measured","3.67M: distributed tokenized-asset holders","2.96M: holders attributed to tokenized stocks"],
+      "takeaway":"READ: This is the simplest tokenization pitch possible: Wall Street closes. Blockchains don't. A billion dollars traded while the underlying market was on holiday.",
+      "source":"The Defiant / CryptoRank / BeInCrypto · Sep 9 digest"
+    },
+    {
+      "headline":"U.S. BANCORP EXECUTES LIVE STABLECOIN TRANSACTION",
+      "dek":"Another major U.S. bank has moved from talking about blockchain payments to using them.",
+      "body":"Reuters reports U.S. Bancorp executed its first live transaction using USBDC, a dollar-backed stablecoin. The development arrives as Visa expands onchain credit infrastructure for stablecoin-linked card programs and banks increasingly test tokenized deposits, settlement and other blockchain-based payment rails.",
+      "points":["U.S. BANCORP: first live USBDC transaction","USBDC: dollar-backed stablecoin","Context: stablecoin payments + bank settlement continue converging"],
+      "takeaway":"READ: The important adoption signal is repetition. Visa, banks and payment companies aren't announcing one blockchain pilot anymore — they're building overlapping pieces of an onchain financial system.",
+      "source":"Reuters · Sep 9 via digest"
+    },
+    {
+      "headline":"$320M LIQUID NETWORK HACK — MOST BTC RETURNED",
+      "dek":"Hackers reportedly drained nearly 95% of Liquid Network's Bitcoin reserves before returning much of the haul.",
+      "body":"A major exploit hit the Bitcoin sidechain Liquid Network, with reports putting the stolen amount around $320 million and roughly 95% of the network's Bitcoin reserves. The Hacker News reports 3,400 Bitcoin have since been returned, while about 598.5 BTC remained outstanding at publication.",
+      "points":["~$320M: reported hack size","~95%: reported share of Liquid BTC reserves drained","3,400 BTC: reportedly returned","~598.5 BTC: still outstanding in cited report"],
+      "takeaway":"READ: This is another reminder that Bitcoin itself and infrastructure built around Bitcoin are different security surfaces. Sidechains, bridges and custody systems introduce their own risks.",
+      "source":"The Hacker News / Yahoo Finance · Sep 9 digest"
+    }
+  ],
+  "aiStories":[
+    {
+      "headline":"DEEPSEEK MOVES TOWARD A CHINA IPO",
+      "dek":"The Chinese AI startup has tapped CITIC Securities to prepare for a possible STAR Market listing.",
+      "body":"Reuters reports DeepSeek has hired CITIC Securities to begin preparing for a domestic IPO on Shanghai's STAR Market. The company aims to start the listing process this year, although timing, fundraising size and valuation have not been finalized. The move would give public markets another major way to price the global AI race outside the U.S.",
+      "points":["ADVISER: CITIC Securities","TARGET: Shanghai STAR Market","TIMING: aims to begin IPO process in 2026","Use of capital: compute, model development and talent"],
+      "takeaway":"READ: AI's capital race is global. DeepSeek going public would give investors a much clearer market comparison between China's AI ecosystem and the enormous private valuations attached to U.S. leaders.",
+      "source":"Reuters · Sep 9"
+    },
+    {
+      "headline":"AI AGENTS CAN BE HIJACKED BY THINGS YOU DON'T EVEN SEE",
+      "dek":"Hidden prompt injections in documents, emails, images, metadata and code can manipulate autonomous agents.",
+      "body":"Security researchers continue warning that agentic AI creates a new attack surface: instructions can be concealed inside material an agent is asked to process. Because agents can potentially browse, send messages, access files or take other actions, a successful prompt injection can become much more consequential than manipulating a normal chatbot response.",
+      "points":["Attack surface includes documents + email","Hidden instructions can exist in images + metadata + code","Agent permissions determine how much damage an injection can cause"],
+      "takeaway":"READ: The security rule for AI agents is becoming obvious: don't give an agent more authority than you can afford to have hijacked.",
+      "source":"SecurityWeek · Sep 9 digest"
+    }
+  ],
+  "sportsStories":[
+    {
+      "headline":"BAKER MAYFIELD GETS $165M EXTENSION",
+      "body":"NFL Network reports Tampa Bay and Baker Mayfield agreed to a three-year, $165 million contract extension as the 2026 season gets underway.",
+      "points":["3 YEARS","$165 MILLION","Tampa Bay locks in its starting QB"],
+      "takeaway":"READ: Tampa isn't treating Baker as a bridge quarterback anymore. That's franchise-quarterback money and a major commitment entering the new season.",
+      "source":"NFL.com · Sep 9 digest"
+    },
+    {
+      "headline":"NFL WEEK 1: THE REAL GAMES FINALLY START",
+      "body":"NFL.com's first regular-season power rankings are out, with roster overhauls already moving teams before Week 1. The useful shift now is away from preseason predictions and into actual matchups, injuries and results.",
+      "points":["Week 1 begins the real 2026 data set","Cowboys rising after defensive makeover","Bears dropped outside NFL.com's top 10"],
+      "takeaway":"READ: We can stop arguing about preseason. Starting now, teams get judged by wins, losses and what happens on the field.",
+      "source":"NFL.com · Sep 9 digest"
+    },
+    {
+      "headline":"MVP LEAVES UFC AFTER 5-1 RUN",
+      "body":"Michael 'Venom' Page has left the UFC following a 5-1 run with the promotion. Dana White confirmed the departure after Page's latest victory.",
+      "points":["UFC RECORD: 5-1","STATUS: departed promotion","Page has already responded publicly to criticism from fans"],
+      "takeaway":"READ: Going 5-1 and still leaving tells you this isn't simply a wins-and-losses business. Style, contracts and promotion value matter too.",
+      "source":"The Independent / Sports Illustrated · Sep 9 digest"
+    }
+  ],
+  "bettingNotes":[
+    "TODAY ONLY: verify every displayed line against the live Betting Desk source before air.",
+    "CHAMPIONS LEAGUE: today's digest highlights Sporting vs Galatasaray, Real Madrid vs Inter Milan and Liverpool vs Atletico Madrid.",
+    "MLB PROP WATCH: digest highlights Rockies vs Yankees and Will Warren over 4.5 hits allowed; re-check the actual current market before displaying.",
+    "Do not convert editorial betting picks into W3BC picks without current odds verification.",
+    "Betting Desk remains viewer-first: game, market, odds, sportsbook/source, then parlay builder."
+  ],
+  "ticker":[
+    "BRENT CRUDE BREAKS $100 AS MIDDLE EAST TENSIONS HIT MARKETS",
+    "REUTERS POLL: 70% OF ECONOMISTS EXPECT FED HOLD NEXT WEEK",
+    "MARKETS PRICE TWO FED HIKES BY MARCH",
+    "ROBINHOOD EXPANDS PREDICTION MARKETS WITH CRYPTO.COM DEAL",
+    "VLAD TENEV PUSHES BACK ON AMC OVER TOKENIZED STOCKS",
+    "TOKENIZED EQUITIES TRADE $1.01B OVER LABOR DAY WEEKEND",
+    "TOKENIZED ASSET HOLDERS HIT RECORD 3.67M",
+    "U.S. BANCORP EXECUTES FIRST LIVE USBDC STABLECOIN TRANSACTION",
+    "LIQUID NETWORK HIT BY ~$320M BITCOIN EXPLOIT · MOST BTC RETURNED",
+    "DEEPSEEK TAPS CITIC SECURITIES FOR POSSIBLE CHINA IPO"
+  ]
+}
