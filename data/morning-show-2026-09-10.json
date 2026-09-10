@@ -1,0 +1,134 @@
+{
+  "date":"2026-09-10",
+  "version":"2026-09-10-fun-v1",
+  "label":"Thursday Sep 10 · W3BC LIVE · NEW FORMAT",
+  "startTime":"12:00 PM ET",
+  "source":"Google Alert Daily Digest · Sep 10 2026 · 11:18 AM",
+  "title":"Wall Street Goes Onchain While Oil Tops $100 | W3BC LIVE",
+  "description":"Thursday W3BC LIVE tests a looser, more interactive format: Oil above $100, Bitcoin near $80K, Nasdaq investing $100M in Kraken parent company Payward, tokenized assets hitting record adoption, Vlad Tenev vs AMC, a blockchain rewind after a $74M exploit, AI doomsday odds, NFL Week 1 reactions, The Trenches and a live Betting Desk build.",
+  "segments":[
+    {"name":"What The Hell Is Going On?","kind":"camera","enabled":true},
+    {"name":"Markets Now · Pick A Side","kind":"markets","enabled":true,"sponsor":"Bitunix"},
+    {"name":"The Big Story","kind":"news","enabled":true},
+    {"name":"Bullshit or Bullish?","kind":"news","enabled":true},
+    {"name":"You Can't Make This Shit Up","kind":"news","enabled":true},
+    {"name":"AI Doomsday Clock","kind":"ai","enabled":true},
+    {"name":"The Trenches","kind":"trenches","enabled":true},
+    {"name":"Sports · Overreaction Thursday","kind":"sports","enabled":true},
+    {"name":"Betting Desk · Build It Live","kind":"betting","enabled":true,"sponsor":"BC.GAME"},
+    {"name":"Receipts + Close","kind":"camera","enabled":true}
+  ],
+  "openNotes":[
+    "WHAT THE HELL IS GOING ON? Put three numbers on screen: OIL $100+ · BTC ~ $80K morning snapshot · NASDAQ → KRAKEN $100M. Don't explain everything yet. Set the table and ask chat: RISK ON OR RISK OFF?",
+    "OPENING QUESTION: Bitcoin is rising while oil is above $100 and equities are under pressure. Is Bitcoin finally trading like digital gold, or is this one morning of noise?",
+    "TEASE THE SHOW: Wall Street is investing directly into crypto infrastructure, Vlad is fighting AMC over who controls tokenized stocks, and a blockchain reportedly rewound two hours to undo a $74M exploit. Plenty to argue about today.",
+    "NEW FORMAT RULE: facts first, then take a side. Every segment should end with a question, prediction, rating or chat decision."
+  ],
+  "newsStories":[
+    {
+      "headline":"THE BIG STORY · NASDAQ PUTS $100M INTO KRAKEN PARENT",
+      "dek":"The company that operates one of Wall Street's most important exchanges is putting real money behind tokenized markets.",
+      "body":"Nasdaq will invest $100 million in Payward, Kraken's parent company, as the two firms deepen their tokenization partnership. The digest says they expect to launch tokenized equities in the second quarter of 2027. At the same time, tokenized-asset adoption continues to climb: another report in today's digest puts holders above 3.5 million and represented asset value near $387 billion.",
+      "points":["$100M · Nasdaq investment in Kraken parent Payward","Q2 2027 · targeted tokenized-equities launch","3.5M+ · reported tokenized-asset holders","~$387B · represented asset value in cited report"],
+      "takeaway":"ON-AIR READ: This isn't crypto begging Wall Street to show up anymore. Nasdaq is writing the check. The question is whether tokenized equities become a side product — or eventually become how markets trade.",
+      "source":"Reuters / CNBC / Yahoo Finance via Sep 10 digest"
+    },
+    {
+      "headline":"BULLSHIT OR BULLISH? · BITCOIN IS BECOMING DIGITAL GOLD",
+      "dek":"Bitcoin climbed as oil topped $100 and equities fell, creating a very different correlation story than the usual risk-asset trade.",
+      "body":"CoinDesk reports Bitcoin up about 1.4% since midnight UTC to roughly $79,742 while Brent crude traded above $100 and European equities fell. One session doesn't establish a new regime, but it gives us a clean question: is Bitcoin beginning to attract a geopolitical or hard-asset bid alongside gold?",
+      "points":["BTC snapshot: ~$79,742 in cited report","OIL: above $100","EQUITIES: under pressure","TODAY'S VOTE: BULLISH · BULLSHIT · TOO EARLY"],
+      "takeaway":"YOUR JOB: Pick one. Then make chat pick one. Save the result so we can come back to it later.",
+      "source":"CoinDesk via Sep 10 digest"
+    },
+    {
+      "headline":"BULLSHIT OR BULLISH? · COMPANIES DON'T CONTROL TOKENIZATION",
+      "dek":"Vlad Tenev says public companies cannot control financial products built around their shares.",
+      "body":"The Robinhood-AMC fight keeps escalating. Today's digest says Tenev defended tokenized stocks while acknowledging that token holders do not receive all the same rights as direct shareholders. The argument is bigger than AMC: once a company is public, should the issuer have any say over third-party blockchain products that reference its shares?",
+      "points":["AMC objects to tokenized AMC products","Tenev says issuers can't control third-party financial products","Token holders may not receive traditional shareholder rights","TODAY'S VOTE: VLAD RIGHT · AMC RIGHT · BOTH HAVE A POINT"],
+      "takeaway":"ON-AIR QUESTION: If I can build an ETF around your stock without your permission, why should tokenization be different? Then argue the other side: when does a token become misleading because people think they own the underlying share?",
+      "source":"CNBC via Sep 10 digest"
+    },
+    {
+      "headline":"YOU CAN'T MAKE THIS SHIT UP · THEY REWOUND THE BLOCKCHAIN",
+      "dek":"A Crypto.com-backed blockchain reportedly erased nearly two hours of transaction history after a $74M exploit.",
+      "body":"Today's digest highlights reports that a Crypto.com-backed blockchain rewound nearly two hours of transaction history to recover funds after a roughly $74 million exploit. Forget the technical jargon for a second: blockchains sell permanence. So the fun argument is whether recovering stolen money justifies changing history.",
+      "points":["~$74M · reported exploit","~2 HOURS · transaction history reportedly rewound","CORE PRINCIPLE: immutability vs recovery","CHAT VOTE: REWIND IT · NEVER TOUCH THE CHAIN"],
+      "takeaway":"ON-AIR READ: If the chain can be rewound when enough money disappears, what exactly does immutable mean? But if you can save $74 million and choose not to, is that actually better? Pick your poison.",
+      "source":"Yahoo Finance / 24/7 Wall St. via Sep 10 digest"
+    },
+    {
+      "headline":"QUICK HIT · COINBASE SAYS REGULATION MOVES WITH OR WITHOUT CLARITY",
+      "dek":"Brian Armstrong says U.S. crypto regulation can keep advancing regardless of the upcoming CLARITY Act vote.",
+      "body":"The CLARITY Act faces an uncertain vote next week, but Coinbase CEO Brian Armstrong argues the regulatory process doesn't stop if the bill fails. Separately, Reuters reports crypto firms and banks are taking their lobbying fight directly into senators' home states ahead of the vote.",
+      "points":["CLARITY vote faces uncertainty next week","Coinbase says rulemaking can advance regardless","Crypto and banking interests are lobbying aggressively"],
+      "takeaway":"QUESTION: Does crypto actually need one giant bill, or is regulatory clarity going to arrive piece by piece anyway?",
+      "source":"CNBC / Reuters via Sep 10 digest"
+    }
+  ],
+  "aiStories":[
+    {
+      "headline":"AI DOOMSDAY CLOCK · WHAT'S YOUR NUMBER?",
+      "dek":"An Anthropic researcher reportedly puts the chance that AI could kill humanity above 10%.",
+      "body":"Today's digest includes BBC, Guardian and PBS coverage of escalating AI-safety warnings. The most provocative number: an Anthropic researcher reportedly believes there is greater than a 10% chance AI could kill all humans. Instead of reading another AI-risk article, put the probability question directly to the room.",
+      "points":[">10% · risk estimate attributed to Anthropic researcher","YOUR NUMBER: ___%","CHAT MEDIAN: ___%","REVISIT: once a month"],
+      "takeaway":"FORMAT: Put a 0-100% gauge on screen. You choose your number BEFORE reading chat. Then let chat vote and discuss why the numbers are different.",
+      "source":"BBC / Guardian / PBS via Sep 10 digest"
+    },
+    {
+      "headline":"AI AGENTS FOUND EACH OTHER — COOL OR CREEPY?",
+      "dek":"BBC coverage describes an AI bot reacting after discovering a way to communicate with other agents.",
+      "body":"The digest highlights BBC reporting about AI becoming harder to control, including a bot posting, 'We've found other agents!' after discovering a way to communicate with other bots. The useful conversation isn't whether the sentence sounds spooky. It's what happens when autonomous agents can discover, coordinate and act with one another without a human explicitly orchestrating every interaction.",
+      "points":["AGENT-TO-AGENT discovery","Autonomy + coordination are the real issue","CHAT VOTE: COOL · CREEPY · INEVITABLE"],
+      "takeaway":"QUESTION: At what point does agent-to-agent communication become infrastructure rather than a science experiment?",
+      "source":"BBC via Sep 10 digest"
+    }
+  ],
+  "sportsStories":[
+    {
+      "headline":"OVERREACTION THURSDAY · DRAKE MAYE PANIC BUTTON?",
+      "body":"Seattle beat New England 13-10 in the 2026 NFL Kickoff Game, and the digest says Drake Maye threw three interceptions. One ugly opener is exactly what Overreaction Thursday is for.",
+      "points":["SEAHAWKS 13 · PATRIOTS 10","MAYE: 3 interceptions","VERDICT: OVERREACTION · REAL PROBLEM"],
+      "takeaway":"MAKE THE CALL: Are we worried about Drake Maye after one game, or are people about to spend four days doing ridiculous Week 1 analysis?",
+      "source":"NFL.com / Sky Sports via Sep 10 digest"
+    },
+    {
+      "headline":"OVERREACTION THURSDAY · LIV GOLF IS DYING",
+      "body":"Rory McIlroy believes players will leave LIV Golf, while BBC coverage says the established tours expect significant interest from players looking to return. That doesn't mean LIV disappears tomorrow, but it gives us a clean sports-business debate.",
+      "points":["McIlroy predicts player departures","Traditional tours expect interest in returns","VERDICT: DYING · RESETTING · FINE"],
+      "takeaway":"QUESTION: Was LIV ultimately a permanent rival league, or an extremely expensive negotiating weapon that changed golf forever anyway?",
+      "source":"BBC / Guardian / Sky Sports via Sep 10 digest"
+    },
+    {
+      "headline":"FIGHT DESK · MVP OUT OF THE UFC",
+      "body":"Dana White confirmed the UFC is parting ways with Michael 'Venom' Page after his contract ended. Page has responded publicly to the news.",
+      "points":["MVP: leaving UFC","Contract completed","Page has responded to Dana White's comments"],
+      "takeaway":"QUICK TAKE: Another reminder that combat sports value isn't determined by record alone — contracts, entertainment value and matchmaking all matter.",
+      "source":"Yahoo Sports / MMA Mania via Sep 10 digest"
+    }
+  ],
+  "bettingNotes":[
+    "BUILD IT LIVE: don't start with a finished W3BC parlay. Put the best current games/markets on screen and choose legs during the segment.",
+    "Let chat nominate a leg, but verify the live line before adding anything to the viewer card.",
+    "Use the live Betting Desk source for every game and price. The digest is editorial context, not current odds.",
+    "Optional recurring score: JCHAINS PICK · CHAT PICK · CONSENSUS PICK. Track results rather than pretending every day is a win."
+  ],
+  "closeNotes":[
+    "RECEIPTS: Return to the Markets Now call from earlier — ABOVE / BELOW / CHOP — and see how it aged during the show.",
+    "Show the Bullshit or Bullish chat result again if possible.",
+    "One sentence each: WHAT MATTERED TODAY · WHAT WAS RIDICULOUS · WHAT WE'RE WATCHING TOMORROW.",
+    "GM. GET MONEY."
+  ],
+  "ticker":[
+    "NASDAQ INVESTS $100M IN KRAKEN PARENT AS TOKENIZATION PUSH DEEPENS",
+    "TOKENIZED ASSET HOLDERS REPORTED ABOVE 3.5M · VALUE NEAR $387B",
+    "BITCOIN RISES AS OIL TOPS $100 AND EQUITIES FALL",
+    "FED DECISION COULD HINGE ON FRIDAY INFLATION DATA",
+    "VLAD TENEV: COMPANIES CAN'T CONTROL HOW THEIR STOCK IS TOKENIZED",
+    "CRYPTO.COM-BACKED CHAIN REPORTEDLY REWINDS ~2 HOURS AFTER $74M EXPLOIT",
+    "COINBASE CEO SAYS U.S. CRYPTO RULES CAN ADVANCE WITH OR WITHOUT CLARITY",
+    "AI SAFETY WARNINGS INTENSIFY · WHAT'S YOUR DOOMSDAY NUMBER?",
+    "SEAHAWKS BEAT PATRIOTS 13-10 · DRAKE MAYE THROWS THREE PICKS",
+    "TODAY: BULLSHIT OR BULLISH? · OVERREACTION THURSDAY · BUILD THE PARLAY LIVE"
+  ]
+}
