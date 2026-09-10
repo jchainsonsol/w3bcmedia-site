@@ -1,7 +1,7 @@
 {
-  "date":"2026-09-09",
-  "version":"2026-09-09-v1",
-  "file":"data/morning-show-2026-09-09.json",
-  "label":"Wednesday Sep 9 · W3BC LIVE",
-  "expected":{"news":7,"ai":2,"sports":3}
+  "date":"2026-09-10",
+  "version":"2026-09-10-fun-v1",
+  "file":"data/morning-show-2026-09-10.json",
+  "label":"Thursday Sep 10 · W3BC LIVE · NEW FORMAT",
+  "expected":{"news":5,"ai":2,"sports":3}
 }
