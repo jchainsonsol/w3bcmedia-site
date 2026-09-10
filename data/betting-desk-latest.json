@@ -1,67 +1,32 @@
 {
-  "date": "2026-09-03",
-  "updated": "11:45 AM ET",
-  "source": "SportsbookReview.com",
-  "note": "Current featured board snapshot. Verify live line before betting.",
-  "columns": [
-    {
-      "title": "NCAAF · TODAY",
-      "market": "SPREAD",
-      "games": [
-        {
-          "time": "6:00 PM",
-          "matchup": "UMass @ Rutgers",
-          "away": "+29.5 (-115)",
-          "home": "-29.5 (-105)"
-        },
-        {
-          "time": "7:00 PM",
-          "matchup": "Albany @ Buffalo",
-          "away": "+18.5 (-110)",
-          "home": "-18.5 (-108)"
-        }
-      ]
-    },
-    {
-      "title": "MLB · TODAY",
-      "market": "MONEYLINE",
-      "games": [
-        {
-          "time": "12:35 PM",
-          "matchup": "Giants @ Pirates",
-          "away": "+140",
-          "home": "-170"
-        },
-        {
-          "time": "1:10 PM",
-          "matchup": "Blue Jays @ Guardians",
-          "away": "-110",
-          "home": "-110"
-        },
-        {
-          "time": "2:10 PM",
-          "matchup": "White Sox @ Astros",
-          "away": "+135",
-          "home": "-165"
-        }
-      ]
-    }
+  "date":"2026-09-10",
+  "updated":"11:25 AM ET",
+  "source":"User-provided sportsbook board screenshot",
+  "note":"NFL Week 1 moneyline snapshot. Verify live line before betting.",
+  "columns":[
+    {"title":"NFL · TONIGHT","market":"MONEYLINE","games":[
+      {"time":"8:35 PM ET","matchup":"49ers @ Rams","away":"+166","home":"-208"}
+    ]},
+    {"title":"NFL · SUNDAY 1 PM","market":"MONEYLINE","games":[
+      {"time":"1:00 PM ET","matchup":"Bears @ Panthers","away":"-175","home":"+134"},
+      {"time":"1:00 PM ET","matchup":"Bills @ Texans","away":"-127","home":"-102"},
+      {"time":"1:00 PM ET","matchup":"Browns @ Jaguars","away":"+310","home":"-455"},
+      {"time":"1:00 PM ET","matchup":"Falcons @ Steelers","away":"+148","home":"-196"},
+      {"time":"1:00 PM ET","matchup":"Jets @ Titans","away":"-101","home":"-128"},
+      {"time":"1:00 PM ET","matchup":"Saints @ Lions","away":"+245","home":"-345"},
+      {"time":"1:00 PM ET","matchup":"Buccaneers @ Bengals","away":"+160","home":"-213"},
+      {"time":"1:00 PM ET","matchup":"Ravens @ Colts","away":"-189","home":"+142"}
+    ]},
+    {"title":"NFL · LATE / PRIME","market":"MONEYLINE","games":[
+      {"time":"4:25 PM ET","matchup":"Commanders @ Eagles","away":"+182","home":"-244"},
+      {"time":"4:25 PM ET","matchup":"Packers @ Vikings","away":"-101","home":"-128"},
+      {"time":"4:25 PM ET","matchup":"Dolphins @ Raiders","away":"+134","home":"-175"},
+      {"time":"4:25 PM ET","matchup":"Cardinals @ Chargers","away":"+360","home":"-556"},
+      {"time":"8:20 PM ET","matchup":"Cowboys @ Giants","away":"-167","home":"+128"},
+      {"time":"Mon 8:15 PM ET","matchup":"Broncos @ Chiefs","away":"+118","home":"-154"}
+    ]}
   ],
-  "parlayWatch": [
-    {
-      "label": "NCAAF FAVORITE",
-      "pick": "Rutgers -29.5",
-      "price": "-105"
-    },
-    {
-      "label": "NCAAF FAVORITE",
-      "pick": "Buffalo -18.5",
-      "price": "-108"
-    },
-    {
-      "label": "MLB FAVORITE",
-      "pick": "Astros ML",
-      "price": "-165"
-    }
-  ]
+  "parlayWatch":[],
+  "viewerPrompts":["TONIGHT'S GAME","3 LINES I LIKE","DOG OF THE WEEK","BUILD THE PARLAY LIVE"],
+  "productionNote":"Do not pre-populate a finished parlay. Host and chat build it live; verify prices before displaying selections."
 }
