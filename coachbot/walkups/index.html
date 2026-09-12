@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d10">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <title>Fireflies Walk-Ups</title>
+  <style>
+    :root{--bg:#090b0e;--panel:#15191f;--panel2:#1d232b;--border:#303844;--text:#f7f8fa;--muted:#9da7b4;--yellow:#ffd83d;--green:#72e4a3;--red:#ff6b6b}
+    *{box-sizing:border-box}body{margin:0;background:#050607;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}button{font:inherit;touch-action:manipulation}.app{max-width:760px;margin:0 auto;min-height:100vh;background:var(--bg)}
+    header{padding:16px;border-bottom:1px solid var(--border);background:#11161c}.head{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:14px;background:var(--yellow);color:#111;display:grid;place-items:center;font-weight:950}h1,h2,p{margin:0}h1{font-size:21px}.sub{color:var(--muted);font-size:13px;margin-top:4px}.badge{border:1px solid #56616e;border-radius:999px;padding:7px 10px;color:#fff0a4;font-size:11px;font-weight:900;white-space:nowrap}
+    main{padding:12px}.toolbar{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:8px}.btn{border:1px solid var(--border);border-radius:12px;min-height:48px;background:var(--panel2);color:var(--text);font-weight:850;cursor:pointer;padding:9px 11px}.btn.primary{background:var(--yellow);border-color:var(--yellow);color:#111}.btn.danger{color:#ffd3d3}.btn:disabled{opacity:.45;cursor:not-allowed}.status{margin-top:10px;padding:11px 12px;border:1px solid var(--border);border-radius:12px;background:var(--panel);font-size:13px;color:var(--muted)}.status.ready{border-color:rgba(114,228,163,.55);color:var(--green)}
+    .now{margin-top:12px;border:1px solid rgba(255,216,61,.42);background:rgba(255,216,61,.06);border-radius:16px;padding:14px}.eyebrow{font-size:11px;color:var(--muted);font-weight:850;letter-spacing:.04em}.nowname{font-size:25px;font-weight:950;margin-top:3px}.progress{height:7px;border-radius:999px;background:#272e37;overflow:hidden;margin-top:12px}.bar{height:100%;width:0;background:var(--yellow)}
+    .section{margin-top:14px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:10px}.section h2{font-size:18px}.hint{font-size:12px;color:var(--muted);margin-top:3px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:10px}.player{border:1px solid var(--border);border-radius:15px;background:var(--panel);padding:12px;display:grid;gap:9px}.player.active{border-color:var(--yellow);background:rgba(255,216,61,.07)}.playername{font-size:18px;font-weight:950}.play{width:100%;min-height:52px;border:1px solid var(--yellow);border-radius:11px;background:var(--yellow);color:#111;font-weight:950;cursor:pointer}.missing{color:var(--red);font-size:11px;font-weight:800}.team{margin-top:12px;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:14px}.team .play{margin-top:10px}.help{margin-top:12px;padding:12px;border:1px solid var(--border);border-radius:14px;background:var(--panel);font-size:13px;color:var(--muted);line-height:1.45}.footer{text-align:center;padding:18px;color:var(--muted);font-size:10px}
+    @media(max-width:560px){.toolbar{grid-template-columns:1fr 1fr}.toolbar .primary{grid-column:1/-1}.grid{grid-template-columns:1fr}.play{min-height:58px}.playername{font-size:20px}}
+  </style>
+</head>
+<body>
+<div class="app">
+<header><div class="head"><div class="brand"><div class="logo">CB</div><div><h1>Fireflies Walk-Ups</h1><div class="sub">Coach Bot • Game Day Audio Board</div></div></div><div class="badge">FIELD MODE</div></div></header>
+<main>
+  <div class="toolbar">
+    <button id="offlineBtn" class="btn primary" type="button">⬇ Make Offline Ready</button>
+    <button id="testBtn" class="btn" type="button">🔊 Test Speaker</button>
+    <button id="stopBtn" class="btn danger" type="button">■ STOP</button>
+  </div>
+  <div id="status" class="status">Connect your phone to the Bluetooth speaker, then tap Test Speaker.</div>
+
+  <section class="now">
+    <div class="eyebrow">NOW PLAYING</div>
+    <div id="nowName" class="nowname">Nothing yet</div>
+    <div id="nowTime" class="sub">Tap any player below.</div>
+    <div class="progress"><div id="progressBar" class="bar"></div></div>
+  </section>
+
+  <section class="section">
+    <div class="sectionhead"><div><h2>Player Walk-Ups</h2><div class="hint">One tap stops the current clip and starts that player from the beginning.</div></div></div>
+    <div id="playerGrid" class="grid"></div>
+  </section>
+
+  <section class="team">
+    <div class="eyebrow">TEAM AUDIO</div>
+    <div class="playername">Light It Up, Fireflies</div>
+    <button class="play" type="button" data-team>▶ PLAY TEAM SONG</button>
+  </section>
+
+  <div class="help"><strong style="color:var(--text)">At the field:</strong> pair the phone with the Bluetooth speaker normally. Open this link in Safari, tap <b>Make Offline Ready</b> once before the game, then anyone with the link can run walk-ups. iPhone hardware volume controls the speaker volume.</div>
+</main>
+<div class="footer">COACH BOT • HOBGOOD FIREFLIES</div>
+</div>
+<audio id="audio" preload="auto"></audio>
+<script>
+(function(){
+  const players=[
+    {name:'Ariel',file:'./audio/ariel.mp3'},
+    {name:'Ben',file:'./audio/ben.mp3'},
+    {name:'Dylan',file:'./audio/dylan.mp3'},
+    {name:'Emerson',file:'./audio/emerson.mp3'},
+    {name:'Everett',file:'./audio/everett.mp3'},
+    {name:'Hudson',file:'./audio/hudson.mp3'},
+    {name:'Magnolia',file:'./audio/magnolia.mp3'},
+    {name:'Oaklee',file:'./audio/oaklee.mp3'},
+    {name:'Thomas',file:'./audio/thomas.mp3'},
+    {name:'Matthew',file:'./audio/matthew.mp3'}
+  ];
+  const team={name:'Light It Up, Fireflies',file:'./audio/team.mp3'};
+  const audio=document.getElementById('audio'),grid=document.getElementById('playerGrid'),status=document.getElementById('status'),nowName=document.getElementById('nowName'),nowTime=document.getElementById('nowTime'),bar=document.getElementById('progressBar');
+  let currentButton=null;
+  function fmt(v){if(!isFinite(v))return '0:00';const m=Math.floor(v/60),s=Math.floor(v%60);return m+':'+String(s).padStart(2,'0')}
+  function setStatus(text,ready=false){status.textContent=text;status.classList.toggle('ready',ready)}
+  function stopAll(){audio.pause();audio.currentTime=0;if(currentButton){currentButton.closest('.player')?.classList.remove('active');currentButton=null}nowName.textContent='Stopped';nowTime.textContent='Ready.';bar.style.width='0%'}
+  async function playClip(name,file,button){try{audio.pause();audio.currentTime=0;if(currentButton){currentButton.closest('.player')?.classList.remove('active')}currentButton=button;button.closest('.player')?.classList.add('active');audio.src=file;nowName.textContent=name;nowTime.textContent='Loading…';await audio.play();setStatus('Playing through this phone’s current audio output.',true)}catch(e){nowTime.textContent='Could not play file.';setStatus('Audio file is missing or this browser blocked playback.') }}
+  players.forEach(p=>{const card=document.createElement('div');card.className='player';card.innerHTML='<div><div class="playername"></div><div class="missing" hidden>Audio not uploaded yet</div></div><button class="play" type="button">▶ PLAY WALK-UP</button>';card.querySelector('.playername').textContent=p.name;const b=card.querySelector('.play');b.addEventListener('click',()=>playClip(p.name,p.file,b));grid.appendChild(card)});
+  document.querySelector('[data-team]').addEventListener('click',e=>playClip(team.name,team.file,e.currentTarget));
+  document.getElementById('stopBtn').addEventListener('click',stopAll);
+  document.getElementById('testBtn').addEventListener('click',()=>{const b=document.querySelector('[data-team]');playClip('Speaker Test — Fireflies',team.file,b)});
+  audio.addEventListener('timeupdate',()=>{nowTime.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration);bar.style.width=(audio.duration?Math.min(100,audio.currentTime/audio.duration*100):0)+'%'});
+  audio.addEventListener('ended',()=>{bar.style.width='100%';nowTime.textContent='Finished';if(currentButton){currentButton.closest('.player')?.classList.remove('active');currentButton=null}});
+  const files=['./','./index.html','./manifest.webmanifest','./sw.js',team.file,...players.map(p=>p.file)];
+  document.getElementById('offlineBtn').addEventListener('click',async()=>{const btn=document.getElementById('offlineBtn');btn.disabled=true;btn.textContent='Caching audio…';try{const cache=await caches.open('fireflies-walkups-v1');let done=0;for(const file of files){try{await cache.add(file);done++;setStatus('Saving for offline use: '+done+' / '+files.length)}catch(e){}}btn.textContent='✓ Offline Ready';setStatus('Offline ready on this device. You can keep using the board if field service drops.',true)}catch(e){btn.disabled=false;btn.textContent='⬇ Make Offline Ready';setStatus('Could not cache files. Make sure you are on the live HTTPS site.')}});
+  if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{})}
+})();
+</script>
+</body>
+</html>
