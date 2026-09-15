@@ -1,7 +1,7 @@
 {
-  "date":"2026-09-14",
-  "version":"2026-09-14-live-v2",
-  "file":"data/morning-show-2026-09-14.json",
-  "label":"Monday Sep 14 · W3BC LIVE",
-  "expected":{"news":5,"ai":1,"sports":4}
+  "date":"2026-09-15",
+  "version":"2026-09-15-live-v1",
+  "file":"data/morning-show-2026-09-15.json",
+  "label":"Tuesday Sep 15 · W3BC LIVE",
+  "expected":{"news":4,"robinhood":2,"ai":1,"sports":3}
 }
