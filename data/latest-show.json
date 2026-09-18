@@ -1,7 +1,12 @@
 {
-  "date":"2026-09-17",
-  "version":"2026-09-17-live-v1",
-  "file":"data/morning-show-2026-09-17.json",
-  "label":"Thursday Sep 17 · W3BC LIVE",
-  "expected":{"news":4,"robinhood":3,"ai":1,"sports":3}
+  "date": "2026-09-18",
+  "version": "2026-09-18-live-v1",
+  "file": "data/morning-show-2026-09-18.json",
+  "label": "PIZZA FRIDAY · Sep 18 · W3BC LIVE",
+  "expected": {
+    "news": 4,
+    "robinhood": 3,
+    "ai": 1,
+    "sports": 3
+  }
 }
