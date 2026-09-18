@@ -1,0 +1,237 @@
+{
+  "date": "2026-09-18",
+  "version": "2026-09-18-live-v1",
+  "label": "PIZZA FRIDAY · Sep 18 · W3BC LIVE",
+  "startTime": "12:00 PM ET · 90 MINUTES",
+  "source": "Google Alert Daily Digest · Sep 18 2026 · 11:17 AM + SEC/Federal Reserve verification",
+  "title": "Tokenized Stocks Are Here | Bitcoin Bounces + PIZZA FRIDAY",
+  "description": "PIZZA FRIDAY on W3BC LIVE. The SEC's new five-year Innovation Exemption is opening a real U.S. pathway for tokenized stocks while Bitcoin rebounds toward $78K after the Fed hike and CLARITY setback. We're breaking down what the SEC rules actually allow, the next phase of onchain finance, Bitcoin ETF outflows, institutional rails, AI-agent risk, NFL Week 2, UFC 331 and The Trenches. GM. Get Money. 1% Better Every Day.",
+  "segments": [
+    {
+      "name": "PIZZA FRIDAY · What The Hell Is Going On?",
+      "kind": "camera",
+      "enabled": true
+    },
+    {
+      "name": "Markets Now · BTC Fights Back",
+      "kind": "markets",
+      "enabled": true,
+      "sponsor": "Bitunix"
+    },
+    {
+      "name": "News Desk · Tokenization Is Coming to America",
+      "kind": "news",
+      "enabled": true
+    },
+    {
+      "name": "Onchain Wall Street · The Rails Keep Building",
+      "kind": "robinhood",
+      "enabled": true
+    },
+    {
+      "name": "AI Doom Meter · Who Gave the Agent the Keys?",
+      "kind": "ai",
+      "enabled": true
+    },
+    {
+      "name": "Sports · Week 2 + UFC 331",
+      "kind": "sports",
+      "enabled": true
+    },
+    {
+      "name": "The Trenches · Pizza Friday Degeneracy",
+      "kind": "trenches",
+      "enabled": true
+    },
+    {
+      "name": "Receipts + Pizza Friday Close",
+      "kind": "camera",
+      "enabled": true
+    }
+  ],
+  "openNotes": [
+    "PIZZA FRIDAY 🍕 · HAVE FUN WITH THIS ONE",
+    "FRIDAY · NOON ET · 90 MINUTES",
+    "BTC · RECOVERING TOWARD $78K IN TODAY'S ALERT",
+    "SEC TOKENIZED STOCK EXEMPTION · STILL THE STRUCTURAL A-STORY",
+    "FED · 25 BPS HIKE NOW IN THE REARVIEW",
+    "CLARITY · CONGRESS STALLED, REGULATORS KEEP MOVING",
+    "THE TRENCHES · FRIDAY ENERGY, NOT A BOARD MEETING"
+  ],
+  "newsStories": [
+    {
+      "headline": "TOKENIZATION IS COMING TO AMERICA · NOW WHAT?",
+      "dek": "The SEC's Innovation Exemption is the week's structural story — today we move from headline to consequences.",
+      "body": "The SEC's temporary conditional exemption allows qualifying Tokenized Securities Venues to facilitate onchain trading of tokenized NMS stocks. The SEC says qualifying tokenized shares must carry the same rights and privileges as equivalent traditional shares, issuers can object to unaffiliated third-party tokenization, smart contracts must be public and auditable, and the exemption expires five years after publication.",
+      "points": [
+        "FIVE-YEAR · TEMPORARY CONDITIONAL EXEMPTION",
+        "TOKENIZED NMS STOCK · ONCHAIN VENUES",
+        "SAME RIGHTS + PRIVILEGES · REQUIRED",
+        "ISSUERS · CAN OBJECT",
+        "PUBLIC + AUDITABLE SMART CONTRACTS"
+      ],
+      "takeaway": "YESTERDAY WAS 'THE SEC OPENED THE DOOR.' TODAY: WHO WALKS THROUGH IT FIRST — AND WHAT DOES A BROKERAGE LOOK LIKE WHEN THE ASSET CAN LIVE IN YOUR WALLET?",
+      "source": "SEC · Sep 17 / Sep 18 digest"
+    },
+    {
+      "headline": "BITCOIN BOUNCES · DID THE MARKET ABSORB THE BAD NEWS?",
+      "dek": "Today's alert has BTC recovering from roughly $75,972 overnight to just below $78K.",
+      "body": "After the CLARITY setback and the Fed's 25-basis-point hike, today's digest says Bitcoin recovered toward $78,000 and was on a third straight day of gains. That's the setup for a live chart conversation, not a victory lap: determine whether price is reclaiming structure or simply bouncing after the policy shock.",
+      "points": [
+        "BTC · ~$75,972 → JUST BELOW $78K IN ALERT",
+        "THIRD STRAIGHT DAY OF GAINS · REPORTED",
+        "FED HIKE · ABSORBED OR DELAYED REACTION?",
+        "PULL UP LIVE CHART · LET PRICE DECIDE"
+      ],
+      "takeaway": "THE HEADLINES WERE UGLY. PRICE IS TRYING TO TELL A DIFFERENT STORY. LET'S SEE IF IT'S REAL.",
+      "source": "CoinDesk / Barron's via Sep 18 digest"
+    },
+    {
+      "headline": "ETF EXODUS · $746M OUT IN TWO DAYS",
+      "dek": "The Fed shock is showing up in ETF flows even as Bitcoin attempts to recover.",
+      "body": "Today's alert cites Forbes reporting roughly $746 million leaving spot Bitcoin ETFs over two days, with BlackRock's IBIT leading the outflows. Treat the figure as the report's estimate and contrast fund flows with today's live BTC price action.",
+      "points": [
+        "SPOT BTC ETFs · $746M TWO-DAY OUTFLOW REPORTED",
+        "BLACKROCK IBIT · LEADING EXIT IN REPORT",
+        "PRICE vs FLOWS · WATCH THE DIVERGENCE",
+        "INSTITUTIONAL ADOPTION · NOT A STRAIGHT LINE"
+      ],
+      "takeaway": "ADOPTION CAN BE STRUCTURALLY BULLISH WHILE MONEY STILL RUNS FOR THE DOOR ON A BAD MACRO DAY.",
+      "source": "Forbes via Sep 18 digest"
+    },
+    {
+      "headline": "CLARITY AFTERMATH · REGULATORS FILL THE VOID",
+      "dek": "The Senate setback has shifted attention toward what the SEC and CFTC can do without comprehensive legislation.",
+      "body": "Today's digest says crypto firms are shifting focus toward regulators after CLARITY failed to advance. The contrast with the SEC's tokenized-stock action is the useful story: Congress stalled on broad market structure while agency-level policy continues to move.",
+      "points": [
+        "CLARITY · FAILED TO ADVANCE",
+        "INDUSTRY · FOCUS SHIFTS TO REGULATORS",
+        "SEC · TOKENIZED STOCK ACTION ALREADY HERE",
+        "POLICY · MOVING PIECEMEAL"
+      ],
+      "takeaway": "WASHINGTON DIDN'T STOP MOVING. IT JUST STOPPED MOVING THROUGH ONE BIG BILL.",
+      "source": "The Hill / NPR / SEC via Sep 18 digest"
+    }
+  ],
+  "robinhoodStories": [
+    {
+      "headline": "ROBINHOOD CORNER · TOKENIZED STOCKS GET A U.S. LANE",
+      "dek": "Today's alert explicitly connects the SEC decision with Robinhood and the next stage of tokenized equities.",
+      "body": "The digest highlights Robinhood-related coverage following the SEC exemption. The key distinction remains ownership rights: Robinhood currently describes some stock tokens as tokenized debt securities backed 1:1 by shares that provide economic exposure, while the SEC's TSV framework requires qualifying tokenized NMS stocks to provide equivalent shareholder rights and privileges.",
+      "points": [
+        "ROBINHOOD · TOKENIZATION FRONT AND CENTER",
+        "ECONOMIC EXPOSURE ≠ ALWAYS DIRECT SHARE OWNERSHIP",
+        "SEC TSV MODEL · SAME RIGHTS + PRIVILEGES",
+        "NEXT RACE · WHO BUILDS THE BEST U.S. EXPERIENCE?"
+      ],
+      "takeaway": "THE MARKET IS MOVING FROM 'CAN WE TOKENIZE A STOCK?' TO 'WHAT EXACTLY DO I OWN WHEN I BUY THE TOKEN?'",
+      "source": "Yahoo Finance / SEC via Sep 18 digest"
+    },
+    {
+      "headline": "RWA FUTURES · $107.6B MONTHLY VOLUME",
+      "dek": "Today's alert highlights an OKX/Token Terminal report saying RWA futures reached $107.6B in monthly volume.",
+      "body": "The alert says RWA futures reached $107.6 billion in monthly volume and caught up with Bitcoin futures in nine months. Separately, a DeFiLlama-based item says about $34 billion of onchain RWAs exist, with roughly 11.3% deployed in DeFi. These are source-specific measurements, but both point toward rapidly expanding RWA trading infrastructure.",
+      "points": [
+        "RWA FUTURES · $107.6B MONTHLY VOLUME REPORTED",
+        "ONCHAIN RWA · ~$34B DEFI LLAMA FIGURE",
+        "~11.3% · REPORTEDLY DEPLOYED IN DEFI",
+        "STOCKS + BONDS + COMMODITIES · CONVERGING ONCHAIN"
+      ],
+      "takeaway": "TOKENIZATION ISN'T JUST ISSUANCE ANYMORE. THE TRADING LAYER IS STARTING TO MATTER.",
+      "source": "OKX / Token Terminal / DeFiLlama-based reporting via Sep 18 digest"
+    },
+    {
+      "headline": "THE RAILS · PAXOS + STABLECOINS + TOKENIZED COLLATERAL",
+      "dek": "Institutional infrastructure keeps filling in underneath the headline products.",
+      "body": "Today's digest highlights Paxos regulated infrastructure going live for institutional access on Avalanche, Ownera and DFNS partnering around tokenized collateral, and Visa continuing to build stablecoin tooling for banks. Actual adoption and flows still need to be watched rather than assumed.",
+      "points": [
+        "PAXOS × AVALANCHE · REGULATED INFRASTRUCTURE LIVE",
+        "OWNERA × DFNS · TOKENIZED COLLATERAL",
+        "VISA · STABLECOIN TOOLING FOR BANKS",
+        "INFRASTRUCTURE LIVE ≠ GUARANTEED USAGE"
+      ],
+      "takeaway": "EVERY WEEK ANOTHER PIECE OF THE ONCHAIN FINANCIAL STACK SHOWS UP.",
+      "source": "TradingView / Securities Finance Times / Globe and Mail via Sep 18 digest"
+    }
+  ],
+  "aiStories": [
+    {
+      "headline": "AI DOOM METER · WHO GAVE THE AGENT THE KEYS?",
+      "dek": "The scarier agent story may be bad human permissioning, not a robot spontaneously going rogue.",
+      "body": "Science News argues that when AI agents compromise real systems, human decisions around access, autonomy and safeguards may be the deeper issue. Today's alert also highlights a report about experimental OpenAI models producing unexpected behavior involving instructions around human controls. Keep the second claim attributed to the report rather than treating the alert headline as established fact.",
+      "points": [
+        "AGENTS · REAL SYSTEM ACCESS",
+        "AUTONOMY · HOW MUCH IS TOO MUCH?",
+        "PERMISSIONS · HUMAN DESIGN PROBLEM",
+        "GUARDRAILS · MATTER MORE AS AGENTS ACT"
+      ],
+      "takeaway": "THE DANGER CHANGES WHEN AI STOPS SUGGESTING AN ACTION AND ACTUALLY HAS PERMISSION TO TAKE IT.",
+      "source": "Science News / Independent via Sep 18 digest"
+    }
+  ],
+  "sportsStories": [
+    {
+      "headline": "NFL · WEEK 2 — WHO LIED TO US IN WEEK 1?",
+      "body": "NFL.com and CBS Sports have their Week 2 picks out, with CBS framing the fun question perfectly: Week 1 lies. Use the segment to challenge the biggest overreactions and then look at today's actual matchups rather than reading a rankings list.",
+      "points": [
+        "WEEK 2 PICKS · LIVE",
+        "WEEK 1 · WHO FOOLED US?",
+        "LIONS AT BILLS · CBS HIGHLIGHT",
+        "BULLPEN · BEST UPSET CALL"
+      ],
+      "takeaway": "PIZZA FRIDAY RULE: EVERYONE GETS ONE NFL TAKE THEY'LL REGRET BY MONDAY.",
+      "source": "NFL.com / CBS Sports / CNN via Sep 18 digest"
+    },
+    {
+      "headline": "UFC 331 · VAN vs PANTOJA 2",
+      "body": "Today's digest has the UFC 331 pre-fight press conference scheduled Friday, centered on Joshua Van vs Alexandre Pantoja 2, with Arman Tsarukyan and Mauricio Ruffy also highlighted.",
+      "points": [
+        "UFC 331 · VAN vs PANTOJA 2",
+        "PRESS CONFERENCE · FRIDAY",
+        "TSARUKYAN + RUFFY · ALSO FEATURED"
+      ],
+      "takeaway": "FRIDAY FIGHT TALK — QUICK PICKS, THEN MOVE.",
+      "source": "UFC / YouTube alerts via Sep 18 digest"
+    },
+    {
+      "headline": "SPORTSBOOK · NFL WEEK 1 WAS MASSIVE",
+      "body": "ESPN reports approximately $595 million was wagered with New York sportsbooks in NFL Week 1, the state's biggest opening-week handle since launch. That's a useful sports-business quick hit before any betting discussion.",
+      "points": [
+        "NEW YORK · ~$595M WEEK 1 HANDLE",
+        "OPENING WEEK · STATE RECORD REPORTED",
+        "NFL BETTING · STILL EXPANDING"
+      ],
+      "takeaway": "THE NFL ISN'T JUST AMERICA'S BIGGEST SPORTS PRODUCT — IT'S BECOMING AN ENORMOUS BETTING PRODUCT TOO.",
+      "source": "ESPN via Sep 18 digest"
+    }
+  ],
+  "bettingNotes": [
+    "PIZZA FRIDAY · BETTING DESK CAN COME OUT IF WE HAVE A REAL WEEK 2 ANGLE",
+    "USE CURRENT VERIFIED LINES ONLY",
+    "NO RANDOM PROMO ODDS FROM GOOGLE ALERTS",
+    "3-LEG ML PARLAY ONLY IF THE BOARD ACTUALLY SUPPORTS IT"
+  ],
+  "closeNotes": [
+    "PIZZA FRIDAY · END LIGHT, NOT LIKE A CABLE NEWS SHOW",
+    "BTC · FINAL LIVE CHART CHECK",
+    "TOKENIZED STOCKS · WHO BENEFITS FIRST?",
+    "RWA VOLUME · WATCH THIS TREND",
+    "BEST BULLPEN NFL TAKE",
+    "PIZZA CHECK · WHAT ARE WE ORDERING?",
+    "1% BETTER · GM GET MONEY · HAVE A WEEKEND"
+  ],
+  "ticker": [
+    "PIZZA FRIDAY · W3BC LIVE",
+    "SEC FIVE-YEAR INNOVATION EXEMPTION OPENS U.S. PATH FOR TOKENIZED STOCKS",
+    "QUALIFYING TOKENIZED NMS STOCKS MUST PRESERVE EQUIVALENT SHAREHOLDER RIGHTS",
+    "BITCOIN RECOVERS TOWARD $78K IN FRIDAY MORNING REPORTING",
+    "SPOT BITCOIN ETFs SEE REPORTED $746M TWO-DAY OUTFLOW",
+    "FED TARGET RANGE NOW 3.75%-4.00% AFTER 25 BP HIKE",
+    "RWA FUTURES REPORTED AT $107.6B MONTHLY VOLUME",
+    "ONCHAIN RWA ASSETS REPORTED AROUND $34B BY DEFILLAMA-BASED ITEM",
+    "PAXOS REGULATED INFRASTRUCTURE GOES LIVE FOR INSTITUTIONAL AVALANCHE ACCESS",
+    "NFL WEEK 2 · WHO LIED TO US IN WEEK 1?",
+    "UFC 331 · VAN vs PANTOJA 2",
+    "GM · GET MONEY · 1% BETTER EVERY DAY"
+  ]
+}
