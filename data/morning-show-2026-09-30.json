@@ -1,0 +1,125 @@
+{
+  "date": "2026-09-30",
+  "version": "2026-09-30-space-v1",
+  "label": "WEDNESDAY · Sep 30 · W3BC LIVE",
+  "startTime": "X SPACE · RECORDED FOR VIDEO",
+  "source": "Google Alert Daily Digest · Sep 29 2026",
+  "title": "Robinhood HOOD Summit | Tokenized Stocks, Robinhood Chain + What's Next",
+  "description": "W3BC LIVE Wednesday conversation. The HOOD Summit is underway, so we're using Robinhood as the jumping-off point for a broader conversation about tokenized stocks, Robinhood Chain, prediction markets, AI agents and where onchain finance is heading. This is an X Space first — recorded and dressed for video so the best conversations can flow into the W3BC YouTube/content pipeline. GM. Get Money. 1% Better Every Day.",
+  "segments": [
+    {
+      "name": "Wednesday Open · What Are We Watching?",
+      "kind": "camera",
+      "enabled": true
+    },
+    {
+      "name": "Markets · Quick Check",
+      "kind": "markets",
+      "enabled": true,
+      "sponsor": "Bitunix"
+    },
+    {
+      "name": "HOOD Summit · Robinhood's Next Move",
+      "kind": "news",
+      "enabled": true
+    },
+    {
+      "name": "Onchain · Tokenized Stocks + Robinhood Chain",
+      "kind": "news",
+      "enabled": true
+    },
+    {
+      "name": "AI · Agents Enter the Workforce",
+      "kind": "ai",
+      "enabled": true
+    },
+    {
+      "name": "Sports · NFL + UFC",
+      "kind": "sports",
+      "enabled": true
+    },
+    {
+      "name": "The Trenches · What Has Attention?",
+      "kind": "trenches",
+      "enabled": true
+    },
+    {
+      "name": "Wednesday Close · What Mattered?",
+      "kind": "camera",
+      "enabled": true
+    }
+  ],
+  "openNotes": [
+    "WEDNESDAY · X SPACE FIRST · RECORD EVERYTHING",
+    "KEEP IT CONVERSATIONAL — THE RUNDOWN IS A MAP, NOT A SCRIPT",
+    "HOOD SUMMIT · PRIMARY CONVERSATION STARTER",
+    "TOKENIZED STOCKS + ROBINHOOD CHAIN · NATURAL FOLLOW-ON",
+    "IF THE CONVERSATION IS GOOD · FULL VIDEO + CLIPS TO YOUTUBE"
+  ],
+  "newsStories": [
+    {
+      "headline": "HOOD SUMMIT · ROBINHOOD'S NEXT MOVE",
+      "dek": "Use the summit as today's jumping-off point, not a permanent show theme.",
+      "body": "The HOOD Summit kicked off yesterday afternoon and continues today. Use the live event and announcements as the primary conversation starter, then connect what matters to Robinhood's broader product and onchain strategy.",
+      "points": [
+        "HOOD SUMMIT · LIVE TODAY",
+        "WHAT IS ROBINHOOD ACTUALLY BUILDING NEXT?",
+        "PRODUCT ANNOUNCEMENTS · REACT LIVE",
+        "BROKERAGE + CRYPTO + ONCHAIN · CONVERGING"
+      ],
+      "takeaway": "DON'T JUST RECAP THE STAGE. ASK WHAT EACH ANNOUNCEMENT MEANS FOR WHERE ROBINHOOD IS GOING.",
+      "source": "HOOD Summit · live discussion"
+    },
+    {
+      "headline": "TOKENIZED STOCKS · THE U.S. RACE KEEPS MOVING",
+      "dek": "Yesterday's digest kept Robinhood and Coinbase in the tokenized-stock conversation.",
+      "body": "The Sep. 29 digest highlighted coverage of the SEC Innovation Exemption and tokenized-stock venues, with Robinhood and Coinbase among the companies discussed as expanding in the category.",
+      "points": [
+        "TOKENIZED STOCKS · U.S. PATH DEVELOPING",
+        "ROBINHOOD + COINBASE · BOTH IN THE CONVERSATION",
+        "OWNERSHIP + RIGHTS · STILL MATTER",
+        "WATCH PRODUCT EXECUTION, NOT JUST HEADLINES"
+      ],
+      "takeaway": "THE INTERESTING QUESTION ISN'T WHETHER STOCKS CAN BE TOKENIZED ANYMORE. IT'S WHAT THE BEST USER EXPERIENCE LOOKS LIKE.",
+      "source": "Sep 29 Google Alert digest"
+    },
+    {
+      "headline": "ROBINHOOD CHAIN · INFRASTRUCTURE BECOMES THE STORY",
+      "dek": "Yesterday's digest also surfaced fresh Robinhood Chain ecosystem coverage.",
+      "body": "The Sep. 29 digest included Robinhood Chain coverage alongside Robinhood market activity. Use it as a bridge from Summit product news into the infrastructure discussion.",
+      "points": [
+        "ROBINHOOD CHAIN · ECOSYSTEM",
+        "ONCHAIN FINANCE · INFRASTRUCTURE LAYER",
+        "TOKENIZED ASSETS · DISTRIBUTION + SETTLEMENT",
+        "WHAT BELONGS ONCHAIN? · ASK THE SPACE"
+      ],
+      "takeaway": "THE BIGGER STORY MAY BE THE STACK ROBINHOOD IS ASSEMBLING AROUND THE USER.",
+      "source": "Sep 29 Google Alert digest"
+    }
+  ],
+  "ai": {
+    "headline": "AI AGENTS · FROM CHAT TO WORK",
+    "detail": "Yesterday's digest focused on agents entering the workforce and acting across apps and services. Ask what changes when agents can transact, negotiate and execute rather than just answer questions."
+  },
+  "sports": {
+    "headline": "NFL CHAOS + UFC QUICK HITS",
+    "detail": "Week 3 produced a pile of close finishes; Bears beat the Eagles 27-7 Monday night in the supplied digest. UFC gets a quick check before moving back to the room."
+  },
+  "closeNotes": [
+    "WHAT DID THE HOOD SUMMIT ACTUALLY CHANGE?",
+    "BEST TAKE FROM THE SPACE",
+    "TOKENIZED STOCKS / ROBINHOOD CHAIN · WHAT TO WATCH NEXT",
+    "MARK THE BEST TIMESTAMPS FOR CLIPS",
+    "TRANSCRIPT → CLIPS → FULL YOUTUBE EPISODE IF THE ROOM DELIVERED",
+    "GM GET MONEY · 1% BETTER EVERY DAY"
+  ],
+  "ticker": [
+    "W3BC LIVE · WEDNESDAY",
+    "HOOD SUMMIT · ROBINHOOD'S NEXT MOVE",
+    "TOKENIZED STOCKS · U.S. MARKET STRUCTURE KEEPS EVOLVING",
+    "ROBINHOOD CHAIN · WATCH THE INFRASTRUCTURE",
+    "AI AGENTS · FROM CHAT TO WORK",
+    "NFL WEEK 3 · CHAOS EVERYWHERE",
+    "GM · GET MONEY · 1% BETTER EVERY DAY"
+  ]
+}
